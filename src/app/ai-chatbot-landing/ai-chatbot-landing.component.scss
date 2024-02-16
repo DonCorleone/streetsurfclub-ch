@@ -1,0 +1,10 @@
+.bg-gradient {
+    &::before {
+        background-image: url(../../assets/images/bg/bg2.png);
+    }
+}
+.bg-gradient2 {
+    &::before {
+        background-image: url(../../assets/images/bg/bg3.png);
+    }
+}

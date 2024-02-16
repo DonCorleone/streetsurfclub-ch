@@ -1,0 +1,96 @@
+.navbar-nav {
+    .nav-item {
+        &.active {
+            .nav-link {
+                @apply text-[#ff493d];
+            }
+        }
+    }
+}
+.isSticky {
+    @apply py-[20px];
+    box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+}
+.overlay-popup {
+    background-color: rgba(59, 61, 80, .5);
+}
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,-100%,0)
+    } to {
+        opacity: 1;
+        transform: translateZ(0)
+    }
+}
+
+// Max width 767px
+@media only screen and (max-width: 767px) {
+
+    .navbar-area {
+        .navbar {
+            .navbar-collapse {
+                @apply hidden;
+                @apply p-[23px];
+                @apply mt-[20px];
+                max-height: 50vh;
+                @apply bg-[#f7f7f7];
+                overflow: {
+                    y: scroll;
+                    x: hidden;
+                };
+            }
+            &.active {
+                .navbar-toggler {
+                    .burger-menu {
+                        i {
+                            &::before {
+                                content: "\eb98";
+                            }
+                        }
+                    }
+                }
+                .navbar-collapse {
+                    @apply block;
+                }
+            }
+        }
+    }
+
+}
+
+// Min width 768px to Max width 991px
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .navbar-area {
+        .navbar {
+            .navbar-collapse {
+                @apply hidden;
+                @apply p-[25px];
+                @apply mt-[20px];
+                max-height: 50vh;
+                @apply bg-[#f7f7f7];
+                overflow: {
+                    y: scroll;
+                    x: hidden;
+                };
+            }
+            &.active {
+                .navbar-toggler {
+                    .burger-menu {
+                        i {
+                            &::before {
+                                content: "\eb98";
+                            }
+                        }
+                    }
+                }
+                .navbar-collapse {
+                    @apply block;
+                }
+            }
+        }
+    }
+
+}

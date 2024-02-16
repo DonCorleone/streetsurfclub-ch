@@ -1,0 +1,116 @@
+.navbar-nav {
+    .nav-item {
+        &.active {
+            .nav-link {
+                @apply text-[#019866];
+            }
+        }
+    }
+}
+.isSticky {
+    @apply py-[20px];
+    box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+
+    .navbar {
+        &.pb-0 {
+            padding-bottom: 0;
+        }
+    }
+}
+.overlay-popup {
+    background-color: rgba(59, 61, 80, .5);
+}
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0,-100%,0)
+    } to {
+        opacity: 1;
+        transform: translateZ(0)
+    }
+}
+
+// Max width 767px
+@media only screen and (max-width: 767px) {
+
+    .navbar-area {
+        .navbar {
+            .navbar-collapse {
+                @apply hidden;
+                @apply p-[23px];
+                @apply bg-white;
+                @apply mt-[25px];
+                max-height: 50vh;
+                overflow: {
+                    y: scroll;
+                    x: hidden;
+                };
+            }
+            &.active {
+                .navbar-toggler {
+                    .burger-menu {
+                        i {
+                            &::before {
+                                content: "\eb98";
+                            }
+                        }
+                    }
+                }
+                .navbar-collapse {
+                    @apply block;
+                }
+            }
+        }
+        &.isSticky {
+            .navbar {
+                .navbar-collapse {
+                    @apply bg-[#f7f7f7];
+                }
+            }
+        }
+    }
+
+}
+
+// Min width 768px to Max width 991px
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .navbar-area {
+        .navbar {
+            .navbar-collapse {
+                @apply hidden;
+                @apply p-[25px];
+                @apply bg-white;
+                @apply mt-[30px];
+                max-height: 50vh;
+                overflow: {
+                    y: scroll;
+                    x: hidden;
+                };
+            }
+            &.active {
+                .navbar-toggler {
+                    .burger-menu {
+                        i {
+                            &::before {
+                                content: "\eb98";
+                            }
+                        }
+                    }
+                }
+                .navbar-collapse {
+                    @apply block;
+                }
+            }
+        }
+        &.isSticky {
+            .navbar {
+                .navbar-collapse {
+                    @apply bg-[#f7f7f7];
+                }
+            }
+        }
+    }
+
+}

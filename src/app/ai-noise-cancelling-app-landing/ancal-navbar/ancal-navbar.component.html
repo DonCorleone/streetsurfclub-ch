@@ -1,0 +1,216 @@
+<div
+    class="navbar-area bg-white py-[25px] md:py-[30px] 2xl:py-[45px]"
+    [ngClass]="{'isSticky sticky top-0 left-0 right-0 z-[991]': isSticky}"
+>
+    <div class="mx-auto px-[12px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1920px] 2xl:px-[30px] 3xl:px-[120px]">
+        <nav class="navbar relative lg:flex flex-wrap" [class.active]="classApplied">
+            <div class="self-center">
+                <div
+                    class="inline-block cursor-pointer"
+                    (click)="scrollTo('home')"
+                >
+                    <img src="assets/images/logo.png" class="inline" alt="logo">
+                </div>
+            </div>
+            <button
+                class="navbar-toggler absolute ml-auto right-0 -top-[2px] lg:hidden"
+                (click)="toggleClass()"
+                type="button"
+            >
+                <span class="burger-menu text-black cursor-pointer leading-none text-[30px]">
+                    <i class="ri-menu-line"></i>
+                </span>
+            </button>
+            <div class="navbar-collapse flex self-center grow basis-auto">
+                <ul class="navbar-nav self-center flex-row lg:ml-[20px] xl:ml-[50px] 2xl:ml-[110px] lg:flex">
+                    <li
+                        class="nav-item text-[14px] md:text-[15px] xl:text-[16px] font-semibold leading-none mt-[21px] lg:mt-0 first:mt-0 lg:ml-[7px] lg:mr-[7px] xl:ml-[15px] xl:mr-[15px] 2xl:ml-[19px] 2xl:mr-[19px] first:ml-0 last:mr-0"
+                        (click)="scrollTo('home')"
+                    >
+                        <span class="nav-link text-[#110e2e] relative z-[1] lg:pl-[7px] lg:pr-[7px] cursor-pointer">
+                            Home
+                            <img src="assets/images/shapes/shape4.png" class="hidden lg:inline-block absolute left-0 right-0 top-1/2 -translate-y-2/4 -z-[1] transition-all opacity-0 ml-auto mr-auto mt-[2px]" alt="image">
+                        </span>
+                    </li>
+                    <li
+                        class="nav-item text-[14px] md:text-[15px] xl:text-[16px] font-semibold leading-none mt-[21px] lg:mt-0 first:mt-0 lg:ml-[7px] lg:mr-[7px] xl:ml-[15px] xl:mr-[15px] 2xl:ml-[19px] 2xl:mr-[19px] first:ml-0 last:mr-0"
+                        (click)="scrollTo('features')"
+                    >
+                        <span class="nav-link text-[#110e2e] relative z-[1] lg:pl-[7px] lg:pr-[7px] cursor-pointer">
+                            Features
+                            <img src="assets/images/shapes/shape4.png" class="hidden lg:inline-block absolute left-0 right-0 top-1/2 -translate-y-2/4 -z-[1] transition-all opacity-0 ml-auto mr-auto mt-[2px]" alt="image">
+                        </span>
+                    </li>
+                    <li
+                        class="nav-item text-[14px] md:text-[15px] xl:text-[16px] font-semibold leading-none mt-[21px] lg:mt-0 first:mt-0 lg:ml-[7px] lg:mr-[7px] xl:ml-[15px] xl:mr-[15px] 2xl:ml-[19px] 2xl:mr-[19px] first:ml-0 last:mr-0"
+                        (click)="scrollTo('pricing')"
+                    >
+                        <span class="nav-link text-[#110e2e] relative z-[1] lg:pl-[7px] lg:pr-[7px] cursor-pointer">
+                            Pricing
+                            <img src="assets/images/shapes/shape4.png" class="hidden lg:inline-block absolute left-0 right-0 top-1/2 -translate-y-2/4 -z-[1] transition-all opacity-0 ml-auto mr-auto mt-[2px]" alt="image">
+                        </span>
+                    </li>
+                    <li
+                        class="nav-item text-[14px] md:text-[15px] xl:text-[16px] font-semibold leading-none mt-[21px] lg:mt-0 first:mt-0 lg:ml-[7px] lg:mr-[7px] xl:ml-[15px] xl:mr-[15px] 2xl:ml-[19px] 2xl:mr-[19px] first:ml-0 last:mr-0"
+                        (click)="scrollTo('blog')"
+                    >
+                        <span class="nav-link text-[#110e2e] relative z-[1] lg:pl-[7px] lg:pr-[7px] cursor-pointer">
+                            Blog
+                            <img src="assets/images/shapes/shape4.png" class="hidden lg:inline-block absolute left-0 right-0 top-1/2 -translate-y-2/4 -z-[1] transition-all opacity-0 ml-auto mr-auto mt-[2px]" alt="image">
+                        </span>
+                    </li>
+                    <li
+                        class="nav-item text-[14px] md:text-[15px] xl:text-[16px] font-semibold leading-none mt-[21px] lg:mt-0 first:mt-0 lg:ml-[7px] lg:mr-[7px] xl:ml-[15px] xl:mr-[15px] 2xl:ml-[19px] 2xl:mr-[19px] first:ml-0 last:mr-0"
+                    >
+                        <span
+                            class="nav-link text-[#110e2e] relative z-[1] lg:pl-[7px] lg:pr-[7px] cursor-pointer"
+                            (click)="openPopup()"
+                        >
+                            Contact
+                            <img src="assets/images/shapes/shape4.png" class="hidden lg:inline-block absolute left-0 right-0 top-1/2 -translate-y-2/4 -z-[1] transition-all opacity-0 ml-auto mr-auto mt-[2px]" alt="image">
+                        </span>
+                    </li>
+                </ul>
+                <div class="other-options ml-auto self-center md:mt-[20px] md:border-t md:pt-[20px] lg:mt-0 lg:border-none lg:pt-0">
+                    <span
+                        class="mt-[21px] md:mt-0 inline-block text-[14px] md:text-[15px] xl:text-[16px] leading-none font-semibold md:mr-[25px] xl:mr-[30px] cursor-pointer transition-all hover:underline"
+                        (click)="openSigninSignupPopup()"
+                    >
+                        Signin / Signup
+                    </span>
+                    <a href="javascript:void(0);" class="mt-[19px] md:mt-0 inline-block relative text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#110e2e] font-semibold rounded-[4px] bg-[#ffdd6f] py-[14px] md:py-[15px] xl:py-[16px] pr-[22px] pl-[62px] md:pr-[25px] md:pl-[68px] xl:pr-[30px] xl:pl-[71px] transition-all hover:bg-[#75e6e3]">
+                        <span class="absolute left-[21px] md:left-[25px] xl:left-[30px] top-1/2 -translate-y-2/4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="24" viewBox="0 0 31 24" fill="none">
+                                <path d="M25.0605 9.04149C24.6634 3.98947 20.4252 0 15.2728 0C10.8655 0 7.08221 2.86256 5.86148 7.03748C2.37928 8.24621 0 11.5451 0 15.2728C0 20.0848 3.91529 24.0001 8.7273 24.0001H22.9092C27.1201 24.0001 30.5456 20.5746 30.5456 16.3637C30.5456 12.9284 28.2874 9.97967 25.0605 9.04149ZM22.9092 21.8183H8.7273C5.11747 21.8183 2.18183 18.8826 2.18183 15.2728C2.18183 12.3142 4.18147 9.71567 7.04403 8.95422C7.43675 8.84949 7.73894 8.5353 7.82839 8.1393C8.60294 4.68765 11.7339 2.18183 15.2728 2.18183C19.3026 2.18183 22.9048 5.37166 22.9048 9.91531C22.9048 10.4488 23.2899 10.9037 23.8157 10.9909C26.4514 11.4328 28.3637 13.692 28.3637 16.3637C28.3637 19.3713 25.9168 21.8183 22.9092 21.8183Z" fill="#110e2e"/>
+                                <path d="M20.4077 13.4106C20.8342 13.8371 20.8342 14.5266 20.4077 14.9531L16.044 19.3168C15.8422 19.5186 15.5575 19.6364 15.2728 19.6364C14.988 19.6364 14.7033 19.5186 14.5015 19.3168L10.1378 14.9531C9.7113 14.5266 9.7113 13.8371 10.1378 13.4106C10.5644 12.984 11.2538 12.984 11.6804 13.4106L14.1819 15.9121V7.63638C14.1819 7.0342 14.6706 6.54547 15.2728 6.54547C15.875 6.54547 16.3637 7.0342 16.3637 7.63638V15.9121L18.8651 13.4106C19.2917 12.984 19.9812 12.984 20.4077 13.4106Z" fill="#110e2e"/>
+                            </svg>
+                        </span>
+                        Get Canora for Free
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- Contact Popup -->
+<div
+    class="overlay-popup fixed top-0 bottom-0 left-0 right-0 flex items-center z-[9992] px-[10px]"
+    *ngIf="isOpen"
+>
+    <div class="w-full sm:w-[500px] md:w-[600px] lg:w-[700px] p-[20px] sm:p-[30px] md:p-[40px] lg:p-[50px] relative bg-white ml-auto mr-auto">
+        <h3 class="text-[#110e2e] font-bold text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px] mb-[20px] md:mb-[25px] lg:mb-[30px]">
+            Let’s get started!
+        </h3>
+        <form>
+            <div class="mb-[15px] md:mb-[20px] lg:mb-[25px]">
+                <input type="text" placeholder="Your name *" class="block w-full text-[13px] md:text-[14px] lg:text-[15px] bg-[#f7f5f0] h-[50px] md:h-[60px] outline-0 text-[#110e2e] px-[15px] md:px-[20px] placeholder:text-[#666666] placeholder:transition-all focus:placeholder:text-transparent">
+            </div>
+            <div class="mb-[15px] md:mb-[20px] lg:mb-[25px]">
+                <input type="email" placeholder="Your email *" class="block w-full text-[13px] md:text-[14px] lg:text-[15px] bg-[#f7f5f0] h-[50px] md:h-[60px] outline-0 text-[#110e2e] px-[15px] md:px-[20px] placeholder:text-[#666666] placeholder:transition-all focus:placeholder:text-transparent">
+            </div>
+            <div class="mb-[15px] md:mb-[20px] lg:mb-[25px]">
+                <textarea cols="30" rows="4" placeholder="Your message *" class="block w-full text-[13px] md:text-[14px] lg:text-[15px] bg-[#f7f5f0] outline-0 text-[#110e2e] p-[15px] md:p-[20px] placeholder:text-[#666666] placeholder:transition-all focus:placeholder:text-transparent"></textarea>
+            </div>
+            <button type="submit" class="inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#110e2e] font-semibold rounded-[7px] bg-[#ffdd6f] px-[30px] lg:px-[35px] py-[14px] md:py-[15px] lg:py-[16px] transition-all hover:bg-[#75e6e3]">
+                Send Message
+            </button>
+        </form>
+        <button (click)="closePopup()" type="button" class="absolute right-[10px] top-[10px] leading-none text-[25px] md:text-[35px] transition-all text-[#110e2e] hover:text-[red]">
+            <i class="ri-close-fill -mt-[1px]"></i>
+        </button>
+    </div>
+</div>
+
+<!-- Signin/Signup Popup -->
+<div
+    class="overlay-popup fixed top-0 bottom-0 left-0 right-0 flex items-center z-[9992] px-[10px]"
+    *ngIf="isSigninSignupOpen"
+>
+    <div class="w-full sm:w-[500px] md:w-[600px] lg:w-[700px] p-[20px] sm:p-[30px] md:p-[40px] lg:p-[50px] relative bg-white ml-auto mr-auto">
+        <ul class="mb-[20px] md:mb-[30px]">
+            <li
+                class="inline-block font-bold rounded-[4px] text-[15px] md:text-[18px] cursor-pointer text-[#110e2e] px-[30px] py-[12px]"
+                (click)="switchTab($event, 'tab1')"
+                [ngClass]="{'bg-[#75e6e3]': currentTab === 'tab1'}"
+            >
+                Sign in
+            </li>
+            <li
+                class="inline-block font-bold rounded-[4px] text-[15px] md:text-[18px] cursor-pointer text-[#110e2e] px-[30px] py-[12px]"
+                (click)="switchTab($event, 'tab2')"
+                [ngClass]="{'bg-[#75e6e3]': currentTab === 'tab2'}"
+            >
+                Sign up
+            </li>
+        </ul>
+        <div
+            id="tab1"
+            *ngIf="currentTab === 'tab1'"
+        >
+            <h3 class="text-[#110e2e] font-bold text-[18px] md:text-[20px] lg:text-[22px] xl:text-[25px] mb-[7px]">
+                Sign in
+            </h3>
+            <p class="text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#666666] leading-[1.8] mb-[15px] md:mb-[20px] lg:mb-[25px]">
+                Welcome back!
+            </p>
+            <form>
+                <button type="button" class="block text-center w-full bg-[#f8f9f9] border-[2px] border-[#f8f9f9] text-[14px] md:text-[15px] xl:text-[16px] rounded-[5px] px-[30px] py-[2px] md:py-[6px] transition-all hover:border-[#75e6e3]">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block mr-[10px] w-[28px] md:w-[35px]">
+                        <path d="M37.9766 16.4093H36.4998V16.3332H19.9998V23.6665H30.3609C28.8493 27.9354 24.7876 30.9998 19.9998 30.9998C13.9251 30.9998 8.99984 26.0746 8.99984 19.9998C8.99984 13.9251 13.9251 8.99984 19.9998 8.99984C22.8039 8.99984 25.355 10.0577 27.2974 11.7856L32.483 6.6C29.2087 3.54842 24.8288 1.6665 19.9998 1.6665C9.87526 1.6665 1.6665 9.87525 1.6665 19.9998C1.6665 30.1244 9.87526 38.3332 19.9998 38.3332C30.1244 38.3332 38.3332 30.1244 38.3332 19.9998C38.3332 18.7706 38.2067 17.5707 37.9766 16.4093Z" fill="#FFC107"></path>
+                        <path d="M3.78076 11.4666L9.80418 15.884C11.434 11.8488 15.3812 8.99984 20.0003 8.99984C22.8043 8.99984 25.3554 10.0577 27.2978 11.7856L32.4834 6.60001C29.2091 3.54842 24.8293 1.6665 20.0003 1.6665C12.9584 1.6665 6.85159 5.64209 3.78076 11.4666Z" fill="#FF3D00"></path>
+                        <path d="M20 38.3337C24.7355 38.3337 29.0383 36.5215 32.2915 33.5744L26.6174 28.7729C24.7149 30.2197 22.3901 31.0023 20 31.0004C15.2315 31.0004 11.1825 27.9598 9.65721 23.7166L3.67871 28.3228C6.71288 34.2601 12.8747 38.3337 20 38.3337Z" fill="#4CAF50"></path>
+                        <path d="M37.9768 16.4093H36.5V16.3333H20V23.6666H30.3611C29.638 25.6983 28.3356 27.4737 26.6147 28.7733L26.6174 28.7715L32.2916 33.573C31.8901 33.9378 38.3333 29.1666 38.3333 19.9999C38.3333 18.7707 38.2068 17.5708 37.9768 16.4093Z" fill="#1976D2"></path>
+                    </svg>
+                    Sign in with Google
+                </button>
+                <div class="relative leading-none z-[1] my-[15px] md:my-[20px] lg:my-[25px] text-center before:absolute before:left-0 before:right-0 before:top-1/2 before:-translate-y-2/4 before:h-[1px] before:bg-[#eeeeee] before:-z-[1]">
+                    <span class="inline-block bg-white px-[15px] text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px]">
+                        OR
+                    </span>
+                </div>
+                <input type="email" placeholder="Enter your email *" class="block w-full text-[13px] md:text-[14px] lg:text-[15px] border border-[#eeeeee] h-[50px] md:h-[60px] outline-0 text-[#110e2e] px-[15px] md:px-[20px] placeholder:text-[#666666] placeholder:transition-all focus:placeholder:text-transparent">
+                <button type="submit" class="mt-[15px] md:mt-[20px] inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#110e2e] font-semibold rounded-[7px] bg-[#ffdd6f] px-[30px] lg:px-[35px] py-[14px] md:py-[15px] transition-all hover:bg-[#75e6e3]">
+                    Sign in
+                </button>
+            </form>
+        </div>
+        <div
+            id="tab2"
+            *ngIf="currentTab === 'tab2'"
+        >
+            <h3 class="text-[#110e2e] font-bold text-[18px] md:text-[20px] lg:text-[22px] xl:text-[25px] mb-[7px]">
+                Create account
+            </h3>
+            <p class="text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#666666] leading-[1.8] mb-[15px] md:mb-[20px] lg:mb-[25px]">
+                No credit card required
+            </p>
+            <form>
+                <button type="button" class="block text-center w-full bg-[#f8f9f9] border-[2px] border-[#f8f9f9] text-[14px] md:text-[15px] xl:text-[16px] rounded-[5px] px-[30px] py-[2px] md:py-[6px] transition-all hover:border-[#75e6e3]">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block mr-[10px] w-[28px] md:w-[35px]">
+                        <path d="M37.9766 16.4093H36.4998V16.3332H19.9998V23.6665H30.3609C28.8493 27.9354 24.7876 30.9998 19.9998 30.9998C13.9251 30.9998 8.99984 26.0746 8.99984 19.9998C8.99984 13.9251 13.9251 8.99984 19.9998 8.99984C22.8039 8.99984 25.355 10.0577 27.2974 11.7856L32.483 6.6C29.2087 3.54842 24.8288 1.6665 19.9998 1.6665C9.87526 1.6665 1.6665 9.87525 1.6665 19.9998C1.6665 30.1244 9.87526 38.3332 19.9998 38.3332C30.1244 38.3332 38.3332 30.1244 38.3332 19.9998C38.3332 18.7706 38.2067 17.5707 37.9766 16.4093Z" fill="#FFC107"></path>
+                        <path d="M3.78076 11.4666L9.80418 15.884C11.434 11.8488 15.3812 8.99984 20.0003 8.99984C22.8043 8.99984 25.3554 10.0577 27.2978 11.7856L32.4834 6.60001C29.2091 3.54842 24.8293 1.6665 20.0003 1.6665C12.9584 1.6665 6.85159 5.64209 3.78076 11.4666Z" fill="#FF3D00"></path>
+                        <path d="M20 38.3337C24.7355 38.3337 29.0383 36.5215 32.2915 33.5744L26.6174 28.7729C24.7149 30.2197 22.3901 31.0023 20 31.0004C15.2315 31.0004 11.1825 27.9598 9.65721 23.7166L3.67871 28.3228C6.71288 34.2601 12.8747 38.3337 20 38.3337Z" fill="#4CAF50"></path>
+                        <path d="M37.9768 16.4093H36.5V16.3333H20V23.6666H30.3611C29.638 25.6983 28.3356 27.4737 26.6147 28.7733L26.6174 28.7715L32.2916 33.573C31.8901 33.9378 38.3333 29.1666 38.3333 19.9999C38.3333 18.7707 38.2068 17.5708 37.9768 16.4093Z" fill="#1976D2"></path>
+                    </svg>
+                    Sign in with Google
+                </button>
+                <div class="relative leading-none z-[1] my-[15px] md:my-[20px] lg:my-[25px] text-center before:absolute before:left-0 before:right-0 before:top-1/2 before:-translate-y-2/4 before:h-[1px] before:bg-[#eeeeee] before:-z-[1]">
+                    <span class="inline-block bg-white px-[15px] text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px]">
+                        OR
+                    </span>
+                </div>
+                <input type="email" placeholder="Enter your email *" class="block w-full text-[13px] md:text-[14px] lg:text-[15px] border border-[#eeeeee] h-[50px] md:h-[60px] outline-0 text-[#110e2e] px-[15px] md:px-[20px] placeholder:text-[#666666] placeholder:transition-all focus:placeholder:text-transparent">
+                <button type="submit" class="mt-[15px] md:mt-[20px] inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#110e2e] font-semibold rounded-[7px] bg-[#ffdd6f] px-[30px] lg:px-[35px] py-[14px] md:py-[15px] transition-all hover:bg-[#75e6e3]">
+                    Sign up
+                </button>
+            </form>
+        </div>
+        <button
+            (click)="closeSigninSignupPopup()"
+            type="button" class="absolute right-[10px] top-[10px] leading-none text-[25px] md:text-[35px] transition-all text-[#110e2e] hover:text-[red]"
+        >
+            <i class="ri-close-fill -mt-[1px]"></i>
+        </button>
+    </div>
+</div>

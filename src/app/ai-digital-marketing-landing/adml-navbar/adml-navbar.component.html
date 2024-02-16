@@ -1,0 +1,126 @@
+<div
+    class="navbar-area py-[25px] md:py-[30px] 2xl:py-[37px] fixed top-0 left-0 right-0 z-[991]"
+    [ngClass]="{'isSticky bg-white': isSticky}"
+>
+    <div class="mx-auto px-[12px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1920px] 2xl:px-[30px] 3xl:px-[120px]">
+        <nav class="navbar relative lg:flex flex-wrap" [class.active]="classApplied">
+            <div class="self-center">
+                <div
+                    class="inline-block cursor-pointer"
+                    (click)="scrollTo('home')"
+                >
+                    <img src="assets/images/logo.png" class="inline" alt="logo">
+                </div>
+            </div>
+            <button
+                class="navbar-toggler absolute ml-auto right-0 -top-[2px] lg:hidden"
+                (click)="toggleClass()"
+                type="button"
+            >
+                <span class="burger-menu text-black cursor-pointer leading-none text-[30px]">
+                    <i class="ri-menu-line"></i>
+                </span>
+            </button>
+            <div class="navbar-collapse flex self-center grow basis-auto">
+                <ul class="navbar-nav self-center flex-row lg:ml-auto lg:flex">
+                    <li
+                        class="nav-item text-[14px] md:text-[15px] lg:text-[16px] font-semibold leading-none mt-[21px] lg:mt-0 first:mt-0 lg:ml-[16px] lg:mr-[16px] xl:ml-[20px] xl:mr-[20px] 2xl:ml-[25px] 2xl:mr-[25px] first:ml-0 last:mr-0"
+                        (click)="scrollTo('home')"
+                    >
+                        <span class="nav-link text-[#110e2e] transition-all hover:text-[#358357] cursor-pointer">
+                            Home
+                        </span>
+                    </li>
+                    <li
+                        class="nav-item text-[14px] md:text-[15px] lg:text-[16px] font-semibold leading-none mt-[21px] lg:mt-0 first:mt-0 lg:ml-[16px] lg:mr-[16px] xl:ml-[20px] xl:mr-[20px] 2xl:ml-[25px] 2xl:mr-[25px] first:ml-0 last:mr-0"
+                        (click)="scrollTo('about')"
+                    >
+                        <span class="nav-link text-[#110e2e] transition-all hover:text-[#358357] cursor-pointer">
+                            About Canora
+                        </span>
+                    </li>
+                    <li
+                        class="nav-item text-[14px] md:text-[15px] lg:text-[16px] font-semibold leading-none mt-[21px] lg:mt-0 first:mt-0 lg:ml-[16px] lg:mr-[16px] xl:ml-[20px] xl:mr-[20px] 2xl:ml-[25px] 2xl:mr-[25px] first:ml-0 last:mr-0"
+                        (click)="scrollTo('testimonials')"
+                    >
+                        <span class="nav-link text-[#110e2e] transition-all hover:text-[#358357] cursor-pointer">
+                            Testimonials
+                        </span>
+                    </li>
+                    <li
+                        class="nav-item text-[14px] md:text-[15px] lg:text-[16px] font-semibold leading-none mt-[21px] lg:mt-0 first:mt-0 lg:ml-[16px] lg:mr-[16px] xl:ml-[20px] xl:mr-[20px] 2xl:ml-[25px] 2xl:mr-[25px] first:ml-0 last:mr-0"
+                        (click)="scrollTo('services')"
+                    >
+                        <span class="nav-link text-[#110e2e] transition-all hover:text-[#358357] cursor-pointer">
+                            Services
+                        </span>
+                    </li>
+                    <li
+                        class="nav-item text-[14px] md:text-[15px] lg:text-[16px] font-semibold leading-none mt-[21px] lg:mt-0 first:mt-0 lg:ml-[16px] lg:mr-[16px] xl:ml-[20px] xl:mr-[20px] 2xl:ml-[25px] 2xl:mr-[25px] first:ml-0 last:mr-0"
+                        (click)="scrollTo('blog')"
+                    >
+                        <span class="nav-link text-[#110e2e] transition-all hover:text-[#358357] cursor-pointer">
+                            Blog
+                        </span>
+                    </li>
+                    <li
+                        class="nav-item text-[14px] md:text-[15px] lg:text-[16px] font-semibold leading-none mt-[21px] lg:mt-0 first:mt-0 lg:ml-[16px] lg:mr-[16px] xl:ml-[20px] xl:mr-[20px] 2xl:ml-[25px] 2xl:mr-[25px] first:ml-0 last:mr-0"
+                    >
+                        <span
+                            class="nav-link text-[#110e2e] transition-all hover:text-[#358357] cursor-pointer"
+                            (click)="openPopup()"
+                        >
+                            Contact Us
+                            <img src="assets/images/shapes/shape4.png" class="hidden lg:inline-block absolute left-0 right-0 top-1/2 -translate-y-2/4 -z-[1] transition-all opacity-0 ml-auto mr-auto mt-[2px]" alt="image">
+                        </span>
+                    </li>
+                </ul>
+                <div class="other-options self-center mt-[21px] lg:mt-0 lg:ml-[30px] xl:ml-[40px] 2xl:ml-[60px]">
+                    <a
+                        href="javascript:void(0);"
+                        class="relative inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] rounded-[50px] bg-[#f16922] text-white font-medium py-[14px] md:py-[15px] lg:py-[16px] px-[30px] md:px-[40px] xl:px-[50px] transition-all hover:bg-[#358357]"
+                        (click)="openPopup()"
+                    >
+                        Let’s Talk
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- Contact Popup -->
+<div
+    class="overlay-popup fixed top-0 bottom-0 left-0 right-0 flex items-center z-[9992] px-[10px]"
+    *ngIf="isOpen"
+>
+    <div class="w-full sm:w-[500px] md:w-[600px] lg:w-[700px] p-[20px] sm:p-[30px] md:p-[40px] lg:p-[50px] relative bg-white ml-auto mr-auto">
+        <h3 class="text-[#110e2e] font-bold text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px] mb-[20px] md:mb-[25px] lg:mb-[30px]">
+            Let’s get started!
+        </h3>
+        <form>
+            <div class="mb-[15px] md:mb-[20px] lg:mb-[25px]">
+                <input type="text" placeholder="Your name *" class="block w-full text-[13px] md:text-[14px] lg:text-[15px] bg-[#f7f7f7] h-[50px] md:h-[60px] outline-0 text-[#110e2e] px-[15px] md:px-[20px] placeholder:text-[#666666] placeholder:transition-all focus:placeholder:text-transparent">
+            </div>
+            <div class="mb-[15px] md:mb-[20px] lg:mb-[25px]">
+                <input type="email" placeholder="Your email *" class="block w-full text-[13px] md:text-[14px] lg:text-[15px] bg-[#f7f7f7] h-[50px] md:h-[60px] outline-0 text-[#110e2e] px-[15px] md:px-[20px] placeholder:text-[#666666] placeholder:transition-all focus:placeholder:text-transparent">
+            </div>
+            <div class="mb-[15px] md:mb-[20px] lg:mb-[25px]">
+                <textarea cols="30" rows="4" placeholder="Your message *" class="block w-full text-[13px] md:text-[14px] lg:text-[15px] bg-[#f7f7f7] outline-0 text-[#110e2e] p-[15px] md:p-[20px] placeholder:text-[#666666] placeholder:transition-all focus:placeholder:text-transparent"></textarea>
+            </div>
+            <button
+                type="submit"
+                class="inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] rounded-[50px] bg-[#358357] text-white font-medium py-[14px] md:py-[15px] lg:py-[16px] px-[30px] md:px-[40px] transition-all hover:bg-[#f16922]"
+            >
+                Send Message
+            </button>
+        </form>
+        <button
+            (click)="closePopup()"
+            type="button"
+            class="absolute right-[10px] top-[10px] leading-none text-[25px] md:text-[35px] transition-all text-[#110e2e] hover:text-[red]"
+        >
+            <i class="ri-close-fill -mt-[1px]"></i>
+        </button>
+    </div>
+</div>

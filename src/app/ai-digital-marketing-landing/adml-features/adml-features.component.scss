@@ -1,0 +1,16 @@
+.group {
+    svg {
+        @apply inline-block;
+        
+        path {
+            @apply transition-all;
+        }
+    }
+    &:hover {
+        svg {
+            path {
+                fill: #358357;
+            }
+        }
+    }
+}

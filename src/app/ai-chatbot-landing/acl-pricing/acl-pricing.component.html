@@ -1,0 +1,224 @@
+<div class="container mx-auto px-[12px] 2xl:px-0">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-[25px]">
+        <div class="self-center" data-aos="fade-up" data-aos-duration="500">
+            <h2 class="font-bold text-[#110e2e] text-[24px] md:text-[30px] lg:text-[34px] leading-[1.3] mb-[12px]">
+                Our transparent and flexible pricing
+            </h2>
+            <p class="text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#666666] leading-[1.8] mb-[15px]">
+                AI chatbots can handle a large number of conversations simultaneously, allowing businesses to efficiently scale their customer support operations.
+            </p>
+            <ul class="tabs mt-[20px] md:mt-[30px] lg:mt-[35px] font-semibold text-[#110e2e] text-[14px] lg:text-[15px] xl:text-[16px]">
+                <li
+                    class="inline-block relative ml-[40px] mr-[40px] first:ml-0 last:mr-0 cursor-pointer before:absolute before:w-[55px] before:h-[24px] before:rounded-[100px] before:bg-white before:border before:border-[#4050e2] before:top-1/2 before:-translate-y-2/4 before:-right-[68px] last:before:hidden after:absolute after:top-1/2 after:-translate-y-2/4 after:w-[23px] after:h-[16px] after:bg-[#4050e2] after:rounded-[100px] after:-right-[40px] last:after:right-auto last:after:-left-[39px]"
+                    (click)="switchTab($event, 'tab1')"
+                    [ngClass]="{'active': currentTab === 'tab1'}"
+                >
+                    Monthly
+                </li>
+                <li
+                    class="inline-block relative ml-[40px] mr-[40px] first:ml-0 last:mr-0 cursor-pointer before:absolute before:w-[55px] before:h-[24px] before:rounded-[100px] before:bg-white before:border before:border-[#4050e2] before:top-1/2 before:-translate-y-2/4 before:-right-[68px] last:before:hidden after:absolute after:top-1/2 after:-translate-y-2/4 after:w-[23px] after:h-[16px] after:bg-[#4050e2] after:rounded-[100px] after:-right-[40px] last:after:right-auto last:after:-left-[39px]"
+                    (click)="switchTab($event, 'tab2')"
+                    [ngClass]="{'active': currentTab === 'tab2'}"
+                >
+                    Yearly
+                </li>
+            </ul>
+        </div>
+        <div class="md:col-span-2 self-center">
+            <div
+                id="tab1"
+                *ngIf="currentTab === 'tab1'"
+            >
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-[25px]">
+                    <div class="rounded-[20px] p-[20px] md:p-[30px] xl:p-[50px] relative z-[1] bg-white" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+                        <h3 class="text-[#110e2e] font-semibold text-[18px] md:text-[20px] lg:text-[22px] mb-[7px] leading-[1.3]">
+                            Individual
+                        </h3>
+                        <p class="text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#666666] leading-[1.8]">
+                            Entrepreneurs & small businesses.
+                        </p>
+                        <span class="block text-[#110e2e] font-bold text-[18px] md:text-[24px] lg:text-[28px] xl:text-[30px] leading-none mt-[20px] md:mt-[25px] lg:mt-[30px]">
+                            Free
+                        </span>
+                        <a href="javascript:void(0);" class="inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] rounded-[7px] bg-[#4050e2] text-white font-semibold py-[14px] md:py-[15px] lg:py-[16px] px-[30px] transition-all hover:bg-[#ff493d] mt-[20px] lg:mt-[30px]">
+                            Get Started Now
+                        </a>
+                        <span class="block text-[#ff493d] text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] leading-none mt-[20px]  md:mt-[25px] lg:mt-[40px] xl:mt-[50px] mb-[17px]">
+                            What’s Included:
+                        </span>
+                        <ul class="text-[#110e2e] font-medium text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px]">
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#110e2e]">
+                                1 active chatbot
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#110e2e]">
+                                1,000 valid chats
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#110e2e]">
+                                Unlimited number of stories
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#110e2e]">
+                                7-day training history
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#110e2e]">
+                                All integrations
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#110e2e]">
+                                Basic reporting
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rounded-[20px] p-[20px] md:p-[30px] xl:p-[50px] relative z-[1] bg-[#4050e2]" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
+                        <h3 class="text-white font-semibold text-[18px] md:text-[20px] lg:text-[22px] mb-[7px] leading-[1.3]">
+                            Business
+                        </h3>
+                        <p class="text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#dcdcdc] leading-[1.8]">
+                            Entrepreneurs & large businesses.
+                        </p>
+                        <span class="block text-white font-bold text-[18px] md:text-[24px] lg:text-[28px] xl:text-[30px] leading-none mt-[20px] md:mt-[25px] lg:mt-[30px]">
+                            $89 <span class="text-[16px] md:text-[18px] -ml-[3px]">USD</span><span class="font-normal text-[16px] md:text-[18px]">/month</span>
+                        </span>
+                        <a href="javascript:void(0);" class="inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] rounded-[7px] bg-[#ff493d] text-white font-semibold py-[14px] md:py-[15px] lg:py-[16px] px-[30px] transition-all hover:bg-white hover:text-[#ff493d] mt-[20px] lg:mt-[30px]">
+                            Get Started Now
+                        </a>
+                        <span class="block text-[#d9d9d9] text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] leading-none mt-[20px]  md:mt-[25px] lg:mt-[40px] xl:mt-[50px] mb-[17px]">
+                            What’s Included:
+                        </span>
+                        <ul class="text-white font-medium text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px]">
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#dcdcdc]">
+                                Unlimited active chatbots
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#dcdcdc]">
+                                Custom chat package
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#dcdcdc]">
+                                Unlimited number of stories
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#dcdcdc]">
+                                Team collaboration
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#dcdcdc]">
+                                Security assistance
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#dcdcdc]">
+                                Custom integrations
+                            </li>
+                        </ul>
+                        <span class="absolute bg-[#110e2e] text-[#ffdd6f] rounded-[3px] py-[3.1px] top-[15px] right-[15px] md:top-[20px] md:right-[20px] xl:top-[25px] xl:right-[25px] pl-[35px] pr-[10px] md:pl-[39px] md:pr-[15px] text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-[10px] md:left-[12px] top-1/2 -translate-y-2/4" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <g clip-path="url(#clip0_111_31)">
+                                    <path d="M2.11761 9.75391C2.11761 9.75391 2.90777 10.9147 4.56386 11.8973C4.56386 11.8973 3.36445 1.76051 11.1794 0C9.17718 7.34848 13.7263 9.42086 15.3845 5.53852C18.1538 9.23582 16.0512 12.4615 16.0512 12.4615C17.1867 12.6251 18.1405 11.3846 18.1405 11.3846C18.149 11.5374 18.1538 11.6912 18.1538 11.8462C18.1538 16.3494 14.5032 20 10 20C5.49675 20 1.84617 16.3494 1.84617 11.8462C1.84617 11.1228 1.94086 10.4216 2.11761 9.75391Z" fill="#FF6536"/>
+                                    <path d="M18.1405 11.3846C18.1405 11.3846 17.1867 12.6251 16.0512 12.4615C16.0512 12.4615 18.1538 9.23582 15.3846 5.53852C13.7263 9.42086 9.17723 7.34848 11.1795 0C10.7609 0.0942969 10.3684 0.212773 10 0.352266V20C14.5032 20 18.1538 16.3494 18.1538 11.8462C18.1538 11.6912 18.1491 11.5374 18.1405 11.3846Z" fill="#FF421D"/>
+                                    <path d="M6.42406 16.4242C6.42406 18.3991 8.02508 20.0002 10 20.0002C11.9749 20.0002 13.5759 18.3991 13.5759 16.4242C13.5759 15.3671 13.1173 14.4172 12.3881 13.7626C11.0055 15.6409 9.03532 12.7916 10.5708 10.7109C10.5708 10.7109 6.42406 11.2306 6.42406 16.4242Z" fill="#FBBF00"/>
+                                    <path d="M13.5759 16.4242C13.5759 15.3671 13.1173 14.4172 12.3881 13.7626C11.0055 15.6409 9.03531 12.7916 10.5708 10.7109C10.5708 10.7109 10.3455 10.7393 10 10.8483V20.0002C11.9749 20.0002 13.5759 18.3991 13.5759 16.4242Z" fill="#FFA900"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_111_31">
+                                        <rect width="20" height="20" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Popular
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div
+                id="tab2"
+                *ngIf="currentTab === 'tab2'"
+            >
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-[25px]">
+                    <div class="rounded-[20px] p-[20px] md:p-[30px] xl:p-[50px] relative z-[1] bg-white" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+                        <h3 class="text-[#110e2e] font-semibold text-[18px] md:text-[20px] lg:text-[22px] mb-[7px] leading-[1.3]">
+                            Individual
+                        </h3>
+                        <p class="text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#666666] leading-[1.8]">
+                            Entrepreneurs & small businesses.
+                        </p>
+                        <span class="block text-[#110e2e] font-bold text-[18px] md:text-[24px] lg:text-[28px] xl:text-[30px] leading-none mt-[20px] md:mt-[25px] lg:mt-[30px]">
+                            Free
+                        </span>
+                        <a href="javascript:void(0);" class="inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] rounded-[7px] bg-[#4050e2] text-white font-semibold py-[14px] md:py-[15px] lg:py-[16px] px-[30px] transition-all hover:bg-[#ff493d] mt-[20px] lg:mt-[30px]">
+                            Get Started Now
+                        </a>
+                        <span class="block text-[#ff493d] text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] leading-none mt-[20px]  md:mt-[25px] lg:mt-[40px] xl:mt-[50px] mb-[17px]">
+                            What’s Included:
+                        </span>
+                        <ul class="text-[#110e2e] font-medium text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px]">
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#110e2e]">
+                                1 active chatbot
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#110e2e]">
+                                1,000 valid chats
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#110e2e]">
+                                Unlimited number of stories
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#110e2e]">
+                                7-day training history
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#110e2e]">
+                                All integrations
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#110e2e]">
+                                Basic reporting
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rounded-[20px] p-[20px] md:p-[30px] xl:p-[50px] relative z-[1] bg-[#4050e2]" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
+                        <h3 class="text-white font-semibold text-[18px] md:text-[20px] lg:text-[22px] mb-[7px] leading-[1.3]">
+                            Business
+                        </h3>
+                        <p class="text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-[#dcdcdc] leading-[1.8]">
+                            Entrepreneurs & large businesses.
+                        </p>
+                        <span class="block text-white font-bold text-[18px] md:text-[24px] lg:text-[28px] xl:text-[30px] leading-none mt-[20px] md:mt-[25px] lg:mt-[30px]">
+                            $889 <span class="text-[16px] md:text-[18px] -ml-[3px]">USD</span><span class="font-normal text-[16px] md:text-[18px]">/year</span>
+                        </span>
+                        <a href="javascript:void(0);" class="inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] rounded-[7px] bg-[#ff493d] text-white font-semibold py-[14px] md:py-[15px] lg:py-[16px] px-[30px] transition-all hover:bg-white hover:text-[#ff493d] mt-[20px] lg:mt-[30px]">
+                            Get Started Now
+                        </a>
+                        <span class="block text-[#d9d9d9] text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] leading-none mt-[20px]  md:mt-[25px] lg:mt-[40px] xl:mt-[50px] mb-[17px]">
+                            What’s Included:
+                        </span>
+                        <ul class="text-white font-medium text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px]">
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#dcdcdc]">
+                                Unlimited active chatbots
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#dcdcdc]">
+                                Custom chat package
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#dcdcdc]">
+                                Unlimited number of stories
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#dcdcdc]">
+                                Team collaboration
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#dcdcdc]">
+                                Security assistance
+                            </li>
+                            <li class="relative pl-[19px] mb-[10px] last:mb-0 before:absolute before:left-0 before:top-1/2 before:-translate-y-2/4 before:w-[10px] before:h-[10px] before:rounded-full before:bg-[#dcdcdc]">
+                                Custom integrations
+                            </li>
+                        </ul>
+                        <span class="absolute bg-[#110e2e] text-[#ffdd6f] rounded-[3px] py-[3.1px] top-[15px] right-[15px] md:top-[20px] md:right-[20px] xl:top-[25px] xl:right-[25px] pl-[35px] pr-[10px] md:pl-[39px] md:pr-[15px] text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-[10px] md:left-[12px] top-1/2 -translate-y-2/4" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <g clip-path="url(#clip0_111_31)">
+                                    <path d="M2.11761 9.75391C2.11761 9.75391 2.90777 10.9147 4.56386 11.8973C4.56386 11.8973 3.36445 1.76051 11.1794 0C9.17718 7.34848 13.7263 9.42086 15.3845 5.53852C18.1538 9.23582 16.0512 12.4615 16.0512 12.4615C17.1867 12.6251 18.1405 11.3846 18.1405 11.3846C18.149 11.5374 18.1538 11.6912 18.1538 11.8462C18.1538 16.3494 14.5032 20 10 20C5.49675 20 1.84617 16.3494 1.84617 11.8462C1.84617 11.1228 1.94086 10.4216 2.11761 9.75391Z" fill="#FF6536"/>
+                                    <path d="M18.1405 11.3846C18.1405 11.3846 17.1867 12.6251 16.0512 12.4615C16.0512 12.4615 18.1538 9.23582 15.3846 5.53852C13.7263 9.42086 9.17723 7.34848 11.1795 0C10.7609 0.0942969 10.3684 0.212773 10 0.352266V20C14.5032 20 18.1538 16.3494 18.1538 11.8462C18.1538 11.6912 18.1491 11.5374 18.1405 11.3846Z" fill="#FF421D"/>
+                                    <path d="M6.42406 16.4242C6.42406 18.3991 8.02508 20.0002 10 20.0002C11.9749 20.0002 13.5759 18.3991 13.5759 16.4242C13.5759 15.3671 13.1173 14.4172 12.3881 13.7626C11.0055 15.6409 9.03532 12.7916 10.5708 10.7109C10.5708 10.7109 6.42406 11.2306 6.42406 16.4242Z" fill="#FBBF00"/>
+                                    <path d="M13.5759 16.4242C13.5759 15.3671 13.1173 14.4172 12.3881 13.7626C11.0055 15.6409 9.03531 12.7916 10.5708 10.7109C10.5708 10.7109 10.3455 10.7393 10 10.8483V20.0002C11.9749 20.0002 13.5759 18.3991 13.5759 16.4242Z" fill="#FFA900"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_111_31">
+                                        <rect width="20" height="20" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Popular
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

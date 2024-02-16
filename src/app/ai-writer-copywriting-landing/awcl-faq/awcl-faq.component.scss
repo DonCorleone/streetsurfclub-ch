@@ -1,0 +1,28 @@
+.accordion {
+    .accordion-header {
+        &::before {
+            content: "\ea12";
+            font: {
+                weight: normal;
+                family: 'remixicon';
+            };
+        }
+        &.open {
+            &::before {
+                content: "\f1ae";
+            }
+        }
+    }
+    .accordion-content {
+        @apply hidden;
+
+        &.open {
+            @apply block;
+        }
+    }
+}
+.bg-image {
+    &::before {
+        background-image: url(../../../assets/images/shapes/wave2.png);
+    }
+}

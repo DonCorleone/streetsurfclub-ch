@@ -1,0 +1,31 @@
+ul {
+    li {
+        button {
+            &.active {
+                @apply bg-[#75e6e3];
+            }
+        }
+    }
+}
+.tabs {
+    li {
+        &::after {
+            @apply opacity-0;
+            @apply transition-all;
+        }
+        &:first-child {
+            &.active {
+                &::after {
+                    @apply opacity-100;
+                }
+            }
+        }
+        &:last-child {
+            &.active {
+                &::after {
+                    @apply opacity-100;
+                }
+            }
+        }
+    }
+}

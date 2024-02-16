@@ -1,0 +1,75 @@
+::ng-deep {
+    .owl-theme {
+        .owl-item {
+            img {
+                @apply w-auto;
+                @apply inline;
+            }
+        }
+        .owl-nav {
+            @apply hidden;
+            @apply md:mt-0;
+            @apply xl:block;
+
+            [class*=owl-] {
+                @apply m-0;
+                @apply absolute;
+                @apply -left-[80px];
+                @apply top-1/2;
+                @apply w-auto;
+                @apply h-auto;
+                @apply -translate-y-2/4;
+                @apply p-0;
+                @apply rounded-[0];
+                @apply bg-transparent;
+                @apply text-[#ff2a60];
+                @apply transition-all;
+                @apply leading-none;
+                @apply text-[70px];
+
+                &.owl-next {
+                    @apply left-auto;
+                    @apply -right-[80px];
+                }
+                &:hover {
+                    @apply text-[#00b67a];
+                    @apply bg-transparent;
+                }
+            }
+        }
+        .owl-dots {
+            @apply text-left;
+            @apply lg:absolute;
+            @apply mt-[15px];
+            @apply md:mt-[20px];
+            @apply lg:mt-0;
+            @apply lg:left-[290px];
+            @apply lg:bottom-[25px];
+            @apply 2xl:left-[315px];
+            @apply 2xl:bottom-[20px];
+
+            .owl-dot {
+                span {
+                    @apply border-[#d9d9d9];
+                    @apply transition-all;
+                    @apply rounded-full;
+                    @apply bg-[#d9d9d9];
+                    @apply first:ml-0;
+                    @apply relative;
+                    @apply mx-[5px];
+                    @apply w-[14px];
+                    @apply h-[14px];
+                    @apply border;
+                    @apply block;
+                    @apply my-0;
+                }
+                &:hover, &.active {
+                    span {
+                        @apply bg-[#ff493d];
+                        @apply border-[#ff493d];
+                    }
+                }
+            }
+        }
+    }
+}

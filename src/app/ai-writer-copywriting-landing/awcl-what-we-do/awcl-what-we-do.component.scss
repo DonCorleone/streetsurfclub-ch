@@ -1,0 +1,8 @@
+.box-shadow {
+    filter: drop-shadow(0px 6.9259257316589355px 12.792593002319336px rgba(0, 191, 67, 0.07)) drop-shadow(0px 32.74074172973633px 50.007408142089844px rgba(0, 191, 67, 0.10)) drop-shadow(0px 85px 157px rgba(0, 191, 67, 0.17));
+}
+.bg-image {
+    &::before {
+        background-image: url(../../../assets/images/shapes/wave1.png);
+    }
+}

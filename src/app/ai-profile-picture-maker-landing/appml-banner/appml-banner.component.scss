@@ -1,0 +1,32 @@
+.bg-image {
+    &::before {
+        background-image: url(../../../assets/images/banners/banner-wave2.png);
+    }
+}
+.btn-box-shadow {
+    box-shadow: 0px 0px 0px 0px rgba(0, 153, 255, 0.10), 1px 6px 13px 0px rgba(0, 153, 255, 0.10), 5px 24px 24px 0px rgba(0, 153, 255, 0.09), 11px 54px 33px 0px rgba(0, 153, 255, 0.05), 20px 96px 39px 0px rgba(0, 153, 255, 0.01), 31px 150px 43px 0px rgba(0, 153, 255, 0.00);
+}
+.image-box-shadow {
+    box-shadow: 0px 1.16667px 3.62037px 0px rgba(0, 0, 0, 0.02), 0px 5.13333px 7.4963px 0px rgba(0, 0, 0, 0.03), 0px 12.6px 14.95px 0px rgba(0, 0, 0, 0.04), 0px 24.26667px 29.3037px 0px rgba(0, 0, 0, 0.04), 0px 40.83333px 53.87963px 0px rgba(0, 0, 0, 0.05), 0px 63px 92px 0px rgba(0, 0, 0, 0.07);
+}
+.gradient-color1 {
+    background: linear-gradient(180deg, #005128 0%, #A4DC2D 100%);
+    filter: drop-shadow(0px 1.8518518209457397px 3.1481480598449707px rgba(0, 0, 0, 0.02)) drop-shadow(0px 8.148148536682129px 6.518518447875977px rgba(0, 0, 0, 0.03)) drop-shadow(0px 20px 13px rgba(0, 0, 0, 0.04)) drop-shadow(0px 38.51852035522461px 25.481481552124023px rgba(0, 0, 0, 0.04)) drop-shadow(0px 64.81481170654297px 46.85185241699219px rgba(0, 0, 0, 0.05)) drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07));
+    box-shadow: 0px 1.16667px 3.62037px 0px rgba(0, 0, 0, 0.02), 0px 5.13333px 7.4963px 0px rgba(0, 0, 0, 0.03), 0px 12.6px 14.95px 0px rgba(0, 0, 0, 0.04), 0px 24.26667px 29.3037px 0px rgba(0, 0, 0, 0.04), 0px 40.83333px 53.87963px 0px rgba(0, 0, 0, 0.05), 0px 63px 92px 0px rgba(0, 0, 0, 0.07);
+}
+.gradient-color2 {
+    background: linear-gradient(180deg, #FF00B8 0%, #FAAF40 44.79%, #4050E2 100%);
+    filter: drop-shadow(0px 1.0370370149612427px 3.1481480598449707px rgba(0, 0, 0, 0.02)) drop-shadow(0px 4.562963008880615px 6.518518447875977px rgba(0, 0, 0, 0.03)) drop-shadow(0px 11.199999809265137px 13px rgba(0, 0, 0, 0.04)) drop-shadow(0px 21.570369720458984px 25.481481552124023px rgba(0, 0, 0, 0.04)) drop-shadow(0px 36.296295166015625px 46.85185241699219px rgba(0, 0, 0, 0.05)) drop-shadow(0px 56px 80px rgba(0, 0, 0, 0.07));
+}
+.gradient-color3 {
+    background: linear-gradient(180deg, #FF2A60 0%, #4050E2 100%);
+    filter: drop-shadow(0px 1.8518518209457397px 3.1481480598449707px rgba(0, 0, 0, 0.02)) drop-shadow(0px 8.148148536682129px 6.518518447875977px rgba(0, 0, 0, 0.03)) drop-shadow(0px 20px 13px rgba(0, 0, 0, 0.04)) drop-shadow(0px 38.51852035522461px 25.481481552124023px rgba(0, 0, 0, 0.04)) drop-shadow(0px 64.81481170654297px 46.85185241699219px rgba(0, 0, 0, 0.05)) drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07));
+}
+.gradient-color4 {
+    background: linear-gradient(180deg, #4050E2 0%, #00B67A 100%);
+    box-shadow: 0px 1.85185px 3.14815px 0px rgba(0, 0, 0, 0.02), 0px 8.14815px 6.51852px 0px rgba(0, 0, 0, 0.03), 0px 20px 13px 0px rgba(0, 0, 0, 0.04), 0px 38.51852px 25.48148px 0px rgba(0, 0, 0, 0.04), 0px 64.81481px 46.85185px 0px rgba(0, 0, 0, 0.05), 0px 100px 80px 0px rgba(0, 0, 0, 0.07);
+}
+.gradient-color5 {
+    background: linear-gradient(180deg, #FFBDB9 0%, #FFBA00 100%);
+    filter: drop-shadow(0px 1.8518518209457397px 3.1481480598449707px rgba(0, 0, 0, 0.02)) drop-shadow(0px 8.148148536682129px 6.518518447875977px rgba(0, 0, 0, 0.03)) drop-shadow(0px 20px 13px rgba(0, 0, 0, 0.04)) drop-shadow(0px 38.51852035522461px 25.481481552124023px rgba(0, 0, 0, 0.04)) drop-shadow(0px 64.81481170654297px 46.85185241699219px rgba(0, 0, 0, 0.05)) drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07));
+}
