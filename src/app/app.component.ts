@@ -3,8 +3,8 @@ import { Router, NavigationCancel, NavigationEnd, RouterOutlet } from '@angular/
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import * as AOS from "aos";
-import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
+import { SidebarComponent } from './common/sidebar/sidebar.component';
 declare let $: any;
 
 @Component({

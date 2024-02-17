@@ -6,7 +6,6 @@ import { NavbarComponent } from '../common/navbar/navbar.component';
 @Component({
     selector: 'app-blog-page',
     templateUrl: './blog-page.component.html',
-    styleUrls: ['./blog-page.component.scss'],
     standalone: true,
     imports: [NavbarComponent, RouterLink, FooterComponent]
 })
