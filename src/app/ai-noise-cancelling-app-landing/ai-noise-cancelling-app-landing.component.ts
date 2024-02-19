@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import * as AOS from "aos";
+import * as AOS from 'aos';
 import { AncalFooterComponent } from './ancal-footer/ancal-footer.component';
 import { AncalBlogComponent } from './ancal-blog/ancal-blog.component';
 import { AncalFaqComponent } from './ancal-faq/ancal-faq.component';
@@ -17,20 +17,32 @@ import { AncalBannerComponent } from './ancal-banner/ancal-banner.component';
 import { AncalNavbarComponent } from './ancal-navbar/ancal-navbar.component';
 
 @Component({
-    selector: 'app-ai-noise-cancelling-app-landing',
-    templateUrl: './ai-noise-cancelling-app-landing.component.html',
-    styleUrls: ['./ai-noise-cancelling-app-landing.component.scss'],
-    standalone: true,
-    imports: [AncalNavbarComponent, AncalBannerComponent, AncalFeaturesComponent, AncalBrandsComponent, AncalDownloadComponent, AncalWhatWeDoComponent, AncalSupportedComponent, AncalTestCanoraComponent, AncalTestimonialsComponent, AncalCtaComponent, AncalPricingComponent, AncalFaqComponent, AncalBlogComponent, AncalFooterComponent]
+  selector: 'app-ai-noise-cancelling-app-landing',
+  templateUrl: './ai-noise-cancelling-app-landing.component.html',
+  standalone: true,
+  imports: [
+    AncalNavbarComponent,
+    AncalBannerComponent,
+    AncalFeaturesComponent,
+    AncalBrandsComponent,
+    AncalDownloadComponent,
+    AncalWhatWeDoComponent,
+    AncalSupportedComponent,
+    AncalTestCanoraComponent,
+    AncalTestimonialsComponent,
+    AncalCtaComponent,
+    AncalPricingComponent,
+    AncalFaqComponent,
+    AncalBlogComponent,
+    AncalFooterComponent,
+  ],
 })
 export class AiNoiseCancellingAppLandingComponent {
+  title = 'AI Noise Cancelling App Landing - Canora';
 
-    title = 'AI Noise Cancelling App Landing - Canora';
+  constructor(private titleService: Title) {}
 
-    constructor(private titleService:Title) {}
-    
-    ngOnInit() {
-        this.titleService.setTitle(this.title);
-    }
-
+  ngOnInit() {
+    this.titleService.setTitle(this.title);
+  }
 }
