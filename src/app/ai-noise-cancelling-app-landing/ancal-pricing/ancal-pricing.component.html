@@ -11,14 +11,14 @@
         </div>
         <ul class="tabs text-center mb-[25px] md:mb-[35px] font-semibold text-[#110e2e] text-[14px] lg:text-[15px] xl:text-[16px]">
             <li
-                class="inline-block relative ml-[40px] mr-[40px] first:ml-0 last:mr-0 cursor-pointer before:absolute before:w-[55px] before:h-[24px] before:rounded-[100px] before:bg-[#d9d9d9] before:top-1/2 before:-translate-y-2/4 before:-right-[68px] last:before:hidden after:absolute after:top-1/2 after:-translate-y-2/4 after:w-[23px] after:h-[16px] after:bg-[#ea4335] after:rounded-[100px] after:-right-[40px] last:after:right-auto last:after:-left-[39px]"
+                class="inline-block relative ml-[40px] mr-[40px] first:ml-0 last:mr-0 cursor-pointer before:absolute before:w-[55px] before:h-[24px] before:rounded-[100px] before:bg-zinc-300 dark:bg-red-800 before:top-1/2 before:-translate-y-2/4 before:-right-[68px] last:before:hidden after:absolute after:top-1/2 after:-translate-y-2/4 after:w-[23px] after:h-[16px] after:bg-[#ea4335] after:rounded-[100px] after:-right-[40px] last:after:right-auto last:after:-left-[39px]"
                 (click)="switchTab($event, 'tab1')"
                 [ngClass]="{'active': currentTab === 'tab1'}"
             >
                 Monthly
             </li>
             <li
-                class="inline-block relative ml-[40px] mr-[40px] first:ml-0 last:mr-0 cursor-pointer before:absolute before:w-[55px] before:h-[24px] before:rounded-[100px] before:bg-[#d9d9d9] before:top-1/2 before:-translate-y-2/4 before:-right-[68px] last:before:hidden after:absolute after:top-1/2 after:-translate-y-2/4 after:w-[23px] after:h-[16px] after:bg-[#ea4335] after:rounded-[100px] after:-right-[40px] last:after:right-auto last:after:-left-[39px]"
+                class="inline-block relative ml-[40px] mr-[40px] first:ml-0 last:mr-0 cursor-pointer before:absolute before:w-[55px] before:h-[24px] before:rounded-[100px] before:bg-zinc-300 dark:bg-red-800 before:top-1/2 before:-translate-y-2/4 before:-right-[68px] last:before:hidden after:absolute after:top-1/2 after:-translate-y-2/4 after:w-[23px] after:h-[16px] after:bg-[#ea4335] after:rounded-[100px] after:-right-[40px] last:after:right-auto last:after:-left-[39px]"
                 (click)="switchTab($event, 'tab2')"
                 [ngClass]="{'active': currentTab === 'tab2'}"
             >
