@@ -44,7 +44,7 @@
                 @apply p-[23px];
                 @apply mt-[25px];
                 max-height: 50vh;
-                @apply bg-[#f7f5f0];
+                @apply bg-stone-100 dark:bg-stone-900;
                 overflow: {
                     y: scroll;
                     x: hidden;
@@ -79,7 +79,7 @@
                 @apply p-[25px];
                 @apply mt-[30px];
                 max-height: 50vh;
-                @apply bg-[#f7f5f0];
+                @apply bg-stone-100 dark:bg-stone-900;
                 overflow: {
                     y: scroll;
                     x: hidden;
