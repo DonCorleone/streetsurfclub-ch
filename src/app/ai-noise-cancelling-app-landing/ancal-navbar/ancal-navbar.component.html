@@ -9,7 +9,7 @@
                     class="inline-block cursor-pointer"
                     (click)="scrollTo('home')"
                 >
-                    <img src="assets/images/logo.png" class="inline" alt="logo">
+                    <img [src]="(isDarkMode$ | async) ? 'assets/images/white-logo.png' : 'assets/images/logo.png'" class="inline" alt="logo">
                 </div>
             </div>
             <button
