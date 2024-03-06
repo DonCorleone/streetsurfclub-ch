@@ -29,7 +29,7 @@ export class AncalNavbarComponent {
   scrollTo(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView(true);
+      element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 
       this.toggleMenu();
     }
