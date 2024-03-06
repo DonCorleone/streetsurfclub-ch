@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-[25px]">
             <div data-aos="fade-in" data-aos-duration="500">
                 <a routerLink="/" class="inline-block">
-                    <img src="assets/images/white-logo.png" alt="white-logo">
+                    <img [src]="(isDarkMode$ | async) ? 'assets/images/white-logo.png' : 'assets/images/logo.png'" alt="white-logo">
                 </a>
             </div>
             <div class="lg:pl-[20px] xl:pl-[50px]" data-aos="fade-in" data-aos-duration="500" data-aos-delay="200">

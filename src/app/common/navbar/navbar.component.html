@@ -6,7 +6,7 @@
         <div class="flex items-center justify-between">
             <div>
                 <a routerLink="/" class="inline-block">
-                    <img src="assets/images/logo.png" alt="logo">
+                    <img [src]="(isDarkMode$ | async) ? 'assets/images/white-logo.png' : 'assets/images/logo.png'" alt="logo">
                 </a>
             </div>
             <div>
