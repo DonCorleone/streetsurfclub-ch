@@ -3,7 +3,7 @@
     [ngClass]="{'isSticky sticky top-0 left-0 right-0 z-[991]': isSticky}"
 >
     <div class="mx-auto px-[12px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1920px] 2xl:px-[30px] 3xl:px-[120px]">
-        <nav class="navbar relative lg:flex flex-wrap" [class.active]="classApplied">
+        <nav class="navbar relative lg:flex flex-wrap" [class.active]="menuOpen">
             <div class="self-center">
                 <div
                     class="inline-block cursor-pointer"
@@ -14,10 +14,10 @@
             </div>
             <button
                 class="navbar-toggler absolute ml-auto right-0 -top-[2px] lg:hidden"
-                (click)="toggleClass()"
+                (click)="toggleMenu()"
                 type="button"
             >
-                <span class="burger-menu text-black cursor-pointer leading-none text-[30px]">
+                <span class="burger-menu text-black dark:text-white cursor-pointer leading-none text-[30px]">
                     <i class="ri-menu-line"></i>
                 </span>
             </button>

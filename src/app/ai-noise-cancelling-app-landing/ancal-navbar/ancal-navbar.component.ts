@@ -17,17 +17,17 @@ export class AncalNavbarComponent {
   constructor(private darkmodeService: DarkmodeService) {
   }
 
-  // Active toggleClass
-  classApplied = false;
+  menuOpen = false;
 
-  toggleClass() {
-    this.classApplied = !this.classApplied;
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
 
   // Section to Section Scroll
   activeSection: string | null = null;
 
   scrollTo(sectionId: string): void {
+    this.toggleMenu();
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({behavior: 'smooth'});
