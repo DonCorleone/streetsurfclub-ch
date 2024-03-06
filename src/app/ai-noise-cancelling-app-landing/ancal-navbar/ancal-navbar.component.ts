@@ -27,10 +27,11 @@ export class AncalNavbarComponent {
   activeSection: string | null = null;
 
   scrollTo(sectionId: string): void {
-    this.toggleMenu();
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({behavior: 'smooth'});
+      element.scrollIntoView(true);
+
+      this.toggleMenu();
     }
   }
 
