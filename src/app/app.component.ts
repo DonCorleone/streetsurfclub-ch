@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Router, NavigationCancel, NavigationEnd, RouterOutlet } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import * as AOS from "aos";
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
-declare let $: any;
 
 @Component({
     selector: 'app-root',
@@ -20,10 +19,10 @@ declare let $: any;
     standalone: true,
     imports: [RouterOutlet, NgxScrollTopModule, SidebarComponent]
 })
-export class AppComponent {
-    
+export class AppComponent implements OnInit{
+
     title = 'Canora - Angular 17 Tailwind AI Startup One Page Template';
-    
+
     location: any;
     routerSubscription: any;
 
@@ -31,6 +30,18 @@ export class AppComponent {
         public router: Router
     ) {
         AOS.init();
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        console.log('User prefers a dark color scheme');
+      }else{
+        console.log('User prefers a light color scheme');
+
+      }
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        const newColorScheme = event.matches ? "dark" : "light";
+        console.log('User now prefers a ' + newColorScheme + ' color scheme');
+      });
+
     }
 
     ngOnInit(){
@@ -48,5 +59,5 @@ export class AppComponent {
             window.scrollTo(0, 0);
         });
     }
-    
+
 }

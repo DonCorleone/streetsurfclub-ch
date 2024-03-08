@@ -2,7 +2,7 @@ ul {
     li {
         button {
             &.active {
-                @apply bg-[#75e6e3];
+                @apply bg-cyan-300 dark:bg-yellow-600;
             }
         }
     }
