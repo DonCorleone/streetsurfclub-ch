@@ -1,0 +1,38 @@
+{
+  "kind": "blogger#postList",
+  "items": [
+    {
+      "kind": "blogger#post",
+      "id": "4660924394819666471",
+      "status": "DRAFT",
+      "blog": {
+        "id": "14706135"
+      },
+      "published": "2008-07-07T12:16:00+02:00",
+      "updated": "2024-02-12T22:16:49+01:00",
+      "url": "http://www.streetsurfclub.ch/2008/07/bukolik-freeride-einschreiben-session.html",
+      "selfLink": "https://content-blogger.googleapis.com/v3/blogs/14706135/posts/4660924394819666471",
+      "title": "Bukolik Freeride :: Einschreiben  - Session beginnt Morgen!",
+      "titleLink": "http://www.bukolik.ch/",
+      "author": {
+        "id": "12064267187796888175",
+        "displayName": "StreetSurfClub",
+        "url": "https://www.blogger.com/profile/12064267187796888175",
+        "image": {
+          "url": ""
+        }
+      },
+      "replies": {
+        "totalItems": "1",
+        "selfLink": "https://content-blogger.googleapis.com/v3/blogs/14706135/posts/4660924394819666471/comments"
+      },
+      "labels": [
+        "Bukolik",
+        "Freeride"
+      ],
+      "readerComments": "ALLOW",
+      "etag": "\"dGltZXN0YW1wOiAxNzA3NzcyNjA5NjEzCm9mZnNldDogMzYwMDAwMAo\""
+    }
+  ],
+  "etag": "\"MjAyNC0wMi0yMFQxOToxNjowOS44NDJa\""
+}

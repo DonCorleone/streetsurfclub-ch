@@ -1,0 +1,39 @@
+{
+  "kind": "blogger#postList",
+  "items": [
+    {
+      "kind": "blogger#post",
+      "id": "4660924394819666471",
+      "status": "DRAFT",
+      "blog": {
+        "id": "14706135"
+      },
+      "published": "2008-07-07T12:16:00+02:00",
+      "updated": "2024-02-12T22:16:49+01:00",
+      "url": "http://www.streetsurfclub.ch/2008/07/bukolik-freeride-einschreiben-session.html",
+      "selfLink": "https://content-blogger.googleapis.com/v3/blogs/14706135/posts/4660924394819666471",
+      "title": "Bukolik Freeride :: Einschreiben  - Session beginnt Morgen!",
+      "titleLink": "http://www.bukolik.ch/",
+      "content": "Achtung Achtung! Wer dabei sein will, am sechsten Bukolik Freeride, der muss morgen in aller früh (08:00 Uhr) seine Kreditkarte zücken und den Jungs dort ein paar Rappen rüberschieben. \u003cbr /\u003e\u003cbr /\u003e\u003ca onblur=\"try {parent.deselectBloggerImageGracefully();} catch(e) {}\" href=\"http://www.bukolik.ch/\"\u003e\u003cimg style=\"display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px;\" src=\"http://www.bukolik.ch/pages/2008/bukolik08_flyers3.jpg\" border=\"0\" alt=\"\" /\u003e\u003c/a\u003e\u003cbr /\u003e\u003cbr /\u003e\u003ca href=\"http://www.bukolik.ch/\"\u003eAlle Angaben zum Freeride gibt’s hier!\u003c/a\u003e Es wär natürlich grossartig wenn der StreetSurfClub einen Tag nach dem Firestarter geschlossen an den Genfersee reisen täte und dort alles zum Besten geben würde.\u003cbr /\u003e\u003cbr /\u003e\u003cspan style=\"font-weight:bold;\"\u003eAlso Looos!\u003c/span\u003e\u003cbr /\u003e07/07/08 By LiniKid",
+      "author": {
+        "id": "12064267187796888175",
+        "displayName": "StreetSurfClub",
+        "url": "https://www.blogger.com/profile/12064267187796888175",
+        "image": {
+          "url": ""
+        }
+      },
+      "replies": {
+        "totalItems": "1",
+        "selfLink": "https://content-blogger.googleapis.com/v3/blogs/14706135/posts/4660924394819666471/comments"
+      },
+      "labels": [
+        "Bukolik",
+        "Freeride"
+      ],
+      "readerComments": "ALLOW",
+      "etag": "\"dGltZXN0YW1wOiAxNzA3NzcyNjA5NjEzCm9mZnNldDogMzYwMDAwMAo\""
+    }
+  ],
+  "etag": "\"MjAyNC0wMi0yMFQxOToxNjowOS44NDJa\""
+}
