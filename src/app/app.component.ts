@@ -8,15 +8,17 @@ import {
 import {
   AsyncPipe, JsonPipe,
   Location,
-  LocationStrategy,
+  LocationStrategy, NgIf,
   PathLocationStrategy,
 } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import * as AOS from 'aos';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
-import { Blog, BloggerService } from './services/blogger.service';
+import {Blog, BloggerPage, BloggerService} from './services/blogger.service';
 import { EMPTY, Observable } from 'rxjs';
+import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
+import {SafeHtmlPipe} from "./pipes/safe-html-pipe";
 
 @Component({
   selector: 'app-root',
@@ -30,7 +32,7 @@ import { EMPTY, Observable } from 'rxjs';
     },
   ],
   standalone: true,
-  imports: [RouterOutlet, NgxScrollTopModule, SidebarComponent, AsyncPipe, JsonPipe],
+  imports: [RouterOutlet, NgxScrollTopModule, SidebarComponent, AsyncPipe, JsonPipe, NgIf, SafeHtmlPipe],
 })
 export class AppComponent implements OnInit {
   title = 'Canora - Angular 17 Tailwind AI Startup One Page Template';
@@ -38,10 +40,12 @@ export class AppComponent implements OnInit {
   location: any;
   routerSubscription: any;
 
-  blogs$: Observable<Blog> = EMPTY;
+  blogs$ = this.bloggerService.blogs$;
+  pages$ = this.bloggerService.pages$;
+  page$ = this.bloggerService.page$;
 
-  constructor(private bloggerService: BloggerService, private router: Router) {
-    this.blogs$ = this.bloggerService.blogs$;
+  constructor(private bloggerService: BloggerService, private router: Router, private sanitized: DomSanitizer) {
+
 
     AOS.init();
     if (
