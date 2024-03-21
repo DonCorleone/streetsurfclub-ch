@@ -1,6 +1,8 @@
-<article *ngIf="page$ | async as page" class="prose max-w-none dark:text-amber-50 dark:bg-amber-900" [innerHTML]="page?.content">
+<h1 class="text-slate-900 dark:text-slate-200 font-bold text-[28px] md:text-[38px] lg:text-[50px] 2xl:text-[56px]">{{ h1 }}</h1>
+<article *ngIf="page$ | async as page" class="prose max-w-none dark:text-amber-50 text-amber-900" [innerHTML]="page?.content">
 
 </article>
+
 <router-outlet></router-outlet>
 <ngx-scrolltop></ngx-scrolltop>
 <app-sidebar></app-sidebar>
