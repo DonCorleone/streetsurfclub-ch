@@ -15,11 +15,8 @@ import {filter} from 'rxjs/operators';
 import * as AOS from 'aos';
 import {NgxScrollTopModule} from 'ngx-scrolltop';
 import {SidebarComponent} from './common/sidebar/sidebar.component';
-import {BloggerPage, BloggerService} from './services/blogger.service';
+import {BloggerService} from './services/blogger.service';
 import {SafeHtmlPipe} from "./pipes/safe-html-pipe";
-import {Observable} from "rxjs/internal/Observable";
-import {EMPTY} from "rxjs/internal/observable/empty";
-import {map} from "rxjs/internal/operators/map";
 
 @Component({
   selector: 'app-root',
@@ -41,14 +38,7 @@ export class AppComponent implements OnInit {
   location: any;
   routerSubscription: any;
 
-  blogs$ = this.bloggerService.blogs$;
-  pages$ = this.bloggerService.pages$;
-  page$: Observable<BloggerPage> = EMPTY;
-  h1: any;
-
   constructor(private bloggerService: BloggerService, private router: Router) {
-
-
     AOS.init();
     if (
       window.matchMedia &&
@@ -69,16 +59,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.recallJsFuntions();
-
-    this.page$ = this.bloggerService.page$.pipe(
-      map((page) => {
-
-        let regex = /<h1.*?>(.*?)<\/h1>/;
-        let match = page.content.match(regex);
-        this.h1 = match ? match[1] : null;
-        return page;
-      })
-    );
   }
 
   recallJsFuntions() {
