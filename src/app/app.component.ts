@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, isDevMode, OnInit} from '@angular/core';
 import {
   Router,
   NavigationCancel,
@@ -11,13 +11,11 @@ import {
   LocationStrategy, NgIf,
   PathLocationStrategy,
 } from '@angular/common';
-import { filter } from 'rxjs/operators';
+import {filter} from 'rxjs/operators';
 import * as AOS from 'aos';
-import { NgxScrollTopModule } from 'ngx-scrolltop';
-import { SidebarComponent } from './common/sidebar/sidebar.component';
-import {Blog, BloggerPage, BloggerService} from './services/blogger.service';
-import { EMPTY, Observable } from 'rxjs';
-import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
+import {NgxScrollTopModule} from 'ngx-scrolltop';
+import {SidebarComponent} from './common/sidebar/sidebar.component';
+import {BloggerService} from './services/blogger.service';
 import {SafeHtmlPipe} from "./pipes/safe-html-pipe";
 
 @Component({
@@ -40,13 +38,7 @@ export class AppComponent implements OnInit {
   location: any;
   routerSubscription: any;
 
-  blogs$ = this.bloggerService.blogs$;
-  pages$ = this.bloggerService.pages$;
-  page$ = this.bloggerService.page$;
-
-  constructor(private bloggerService: BloggerService, private router: Router, private sanitized: DomSanitizer) {
-
-
+  constructor(private bloggerService: BloggerService, private router: Router) {
     AOS.init();
     if (
       window.matchMedia &&
@@ -67,6 +59,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.recallJsFuntions();
+    if (isDevMode()){
+      console.log('Development Mode');
+    }
   }
 
   recallJsFuntions() {

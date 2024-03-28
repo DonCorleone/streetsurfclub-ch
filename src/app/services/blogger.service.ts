@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import { Observable, catchError, from, map, of } from 'rxjs';
 
 export interface BloggerPage {
   kind: string;
@@ -59,4 +60,23 @@ export class BloggerService {
 
   constructor(private httpClient: HttpClient) {
   }
+  async getAllPages(): Promise<BloggerPage[]> {
+    const url = 'http://localhost:3000/pages';
+    const data = await fetch(url);
+    return await data.json() ?? [];
+  }
+
+
+
+  // call the promise getAllPages() and return the first page as an observable
+  getPage(): Observable<BloggerPage | null> {
+   return from(this.getAllPages()).pipe(
+      map(pages => pages[0]),
+      catchError(err => {
+        console.error(err);
+        return of(null);
+      })
+    );
+  }
+
 }
