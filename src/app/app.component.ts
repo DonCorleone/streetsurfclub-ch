@@ -61,6 +61,8 @@ export class AppComponent implements OnInit {
     this.recallJsFuntions();
     if (isDevMode()){
       console.log('Development Mode');
+    }else{
+      console.log('Production Mode');
     }
   }
 
