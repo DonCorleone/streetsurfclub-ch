@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, isDevMode} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import { Observable, catchError, from, map, of } from 'rxjs';
 
@@ -70,13 +70,18 @@ export class BloggerService {
 
   // call the promise getAllPages() and return the first page as an observable
   getPage(): Observable<BloggerPage | null> {
-   return from(this.getAllPages()).pipe(
-      map(pages => pages[0]),
-      catchError(err => {
-        console.error(err);
-        return of(null);
-      })
-    );
+    if (isDevMode()){
+      console.log('Development Mode');
+      return from(this.getAllPages()).pipe(
+        map(pages => pages[0]),
+        catchError(err => {
+          console.error(err);
+          return of(null);
+        })
+      );
+    }else{
+      console.log('Production Mode');
+      return this.httpClient.get<BloggerPage>('.netlify/functions/get-page');
+    }
   }
-
 }
