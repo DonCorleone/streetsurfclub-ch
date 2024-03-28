@@ -70,14 +70,13 @@ export class BloggerService {
 
   // call the promise getAllPages() and return the first page as an observable
   getPage(): Observable<BloggerPage | null> {
-    const page = from(this.getAllPages()).pipe(
+   return from(this.getAllPages()).pipe(
       map(pages => pages[0]),
       catchError(err => {
         console.error(err);
         return of(null);
       })
     );
-    return page;
   }
 
 }

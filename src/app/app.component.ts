@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, isDevMode, OnInit} from '@angular/core';
 import {
   Router,
   NavigationCancel,
@@ -59,6 +59,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.recallJsFuntions();
+    if (isDevMode()){
+      console.log('Development Mode');
+    }
   }
 
   recallJsFuntions() {
