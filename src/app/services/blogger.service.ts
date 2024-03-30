@@ -65,9 +65,7 @@ export class BloggerService {
     const data = await fetch(url);
     return await data.json() ?? [];
   }
-
-
-
+  
   // call the promise getAllPages() and return the first page as an observable
   getPage(): Observable<BloggerPage | null> {
     if (isDevMode()){
