@@ -29,6 +29,7 @@ export class BlogDetailsPageComponent implements OnInit {
           if (page) {
             // Do something with the blog details
             let decodedContent = decodeURIComponent(page.content.replace(/\\u/g, '%'));
+            console.log(decodedContent);
             let regex =
               /(<div>\s*<div style="text-align: center"?>\s*<a[^>]*>\s*<img[^>]*><\/a>\s*<\/div>\s*<br \/><b><br \/><\/b>\s*<\/div>)/;
             let match = decodedContent.match(regex);
