@@ -28,12 +28,13 @@ export class BlogDetailsPageComponent implements OnInit {
         map((page) => {
           if (page) {
             // Do something with the blog details
+            let decodedContent = decodeURIComponent(page.content.replace(/\\u/g, '%'));
             let regex =
               /(<div>\s*<div style="text-align: center"?>\s*<a[^>]*>\s*<img[^>]*><\/a>\s*<\/div>\s*<br \/><b><br \/><\/b>\s*<\/div>)/;
-            let match = page.content.match(regex);
+            let match = decodedContent.match(regex);
             let imgBlock = match ? match[1] : null;
 
-            this.content = page.content.replace(regex, '');
+            this.content = decodedContent.replace(regex, '');
 
             if (imgBlock) {
               let srcRegex = /<img[^>]+src="([^">]+)"/;
