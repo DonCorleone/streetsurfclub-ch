@@ -14,7 +14,7 @@
 <div class="py-[80px] md:py-[80px] lg:py-[100px] xl:py-[120px] 2xl:py-[150px]">
     <div class="container mx-auto px-[12px] 2xl:px-0">
         <div class="text-center rounded-[15px] mb-[25px] md:mb-[30px] lg:mb-[40px] xl:mb-[50px] 2xl:mb-[60px]" data-aos="fade-up" data-aos-duration="500">
-            <img src="assets/images/blogs/blog-details.jpg" class="rounded-[15px]" alt="blog-details-image">
+            <img [src]="headerImg" class="rounded-[15px]" alt="blog-details-image">
         </div>
         <div class="lg:max-w-[870px] mx-auto" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
             <ul class="text-[13px] md:text-[14px] lg:text-[15px] text-stone-500 dark:yellow-400 mb-[12px] lg:mb-[14px]">
@@ -43,7 +43,7 @@
                     200 Views
                 </li>
             </ul>
-            <article *ngIf="page$ | async as page" class="prose max-w-none dark:text-amber-50 text-amber-900" [innerHTML]="page?.content ? (page.content | safeHtml) : ''">
+            <article *ngIf="content" class="prose max-w-none dark:text-amber-50 text-amber-900" [innerHTML]="content | safeHtml">
 
             </article>
          </div>

@@ -57,6 +57,19 @@ export class SafeHtmlPipe implements PipeTransform {
       /<p.*?>/g,
       'text-[13px] md:text-[14px] lg:text-[15px] text-stone-500 dark:yellow-400 leading-[1.8] mb-[15px] md:mb-[20px] lg:mb-[25px] last:mb-0'
     );
+
+    // Add classes to images
+    const imgRegEx = /<img.*?>/g;
+    if (imgRegEx.test(value)) {
+
+      value = value.replace(imgRegEx, (img) => {
+        if (img.includes('class="')) {
+          return img;
+        }
+        return img.replace(/(<img\b[^>]*)(>)/g, '$1 class="rounded-[15px]"$2');
+      } );
+    }
+    
     return this.sanitized.bypassSecurityTrustHtml(value);
   }
 
