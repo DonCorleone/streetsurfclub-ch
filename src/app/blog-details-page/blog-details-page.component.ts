@@ -42,9 +42,8 @@ export class BlogDetailsPageComponent implements OnInit {
               let srcMatch = imgBlock.match(srcRegex);
               this.headerImg = srcMatch ? srcMatch[1] : null;
             }
-
             console.log(decodedContent);
-            let regexTwoImages = /(<div class="separator" style="clear: both;">\s*<a href="([^"]*)"[^>]*>[\s\S]*?<\/div>\s*<div class="separator" style="clear: both;">\s*<a href="([^"]*)"[^>]*>[\s\S]*?<\/div>)/;
+            let regexTwoImages = /(<div class="separator"[^>]*><a href="([^"]*)"[^>]*><img[^>]*><\/a><\/div>\s*<br \/>\s*<div class="separator"[^>]*><a href="([^"]*)"[^>]*><img[^>]*><\/a><\/div>)/;
             let matchTwoImages = decodedContent.match(regexTwoImages);
             let imgBlockTwoImages = matchTwoImages ? matchTwoImages[1] : null;
             
