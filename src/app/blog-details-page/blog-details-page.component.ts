@@ -7,6 +7,7 @@ import { BloggerPage, BloggerService } from '../services/blogger.service';
 import { EMPTY } from 'rxjs/internal/observable/empty';
 import { map, of, take } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-details-page',
@@ -15,14 +16,20 @@ import { Component, OnInit } from '@angular/core';
   imports: [NavbarComponent, FooterComponent, NgIf, AsyncPipe, SafeHtmlPipe],
 })
 export class BlogDetailsPageComponent implements OnInit {
-  content: string = '';
+  content = '';
   headerImg: string | null = null;
+  title = '';
 
-  constructor(private bloggerService: BloggerService) {}
+  constructor(private bloggerService: BloggerService, private activatedRoute: ActivatedRoute) {}
   ngOnInit(): void {
-    // Retrieve the blog details from the service
+    
+    const siteId = this.activatedRoute.snapshot.paramMap.get('id');
+    if (!siteId) {
+      return;
+    }
+
     this.bloggerService
-      .getPage()
+      .getSite(siteId)
       .pipe(
         take(1),
         map((page) => {
@@ -34,7 +41,6 @@ export class BlogDetailsPageComponent implements OnInit {
             let match = decodedContent.match(regexImage);
             let imgBlock = match ? match[1] : null;
             
-
             decodedContent = decodedContent.replace(regexImage, '');
 
             if (imgBlock) {
@@ -42,6 +48,7 @@ export class BlogDetailsPageComponent implements OnInit {
               let srcMatch = imgBlock.match(srcRegex);
               this.headerImg = srcMatch ? srcMatch[1] : null;
             }
+
             console.log(decodedContent);
             let regexTwoImages = /(<div class="separator"[^>]*><a href="([^"]*)"[^>]*><img[^>]*><\/a><\/div>\s*<br \/>\s*<div class="separator"[^>]*><a href="([^"]*)"[^>]*><img[^>]*><\/a><\/div>)/;
             let matchTwoImages = decodedContent.match(regexTwoImages);
@@ -63,6 +70,7 @@ export class BlogDetailsPageComponent implements OnInit {
             }
 
             this.content = decodedContent;
+            this.title = page.title;
           }
         })
       )
