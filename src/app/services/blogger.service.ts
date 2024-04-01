@@ -47,7 +47,7 @@ export class BloggerService {
       );
     }else{
       console.log('Production Mode');
-      return this.httpClient.get<Post>('.netlify/functions/get-post?postId=' + postId);
+      return this.httpClient.get<Post>('/get-post?postid=' + postId);
     }
   }
 
@@ -63,7 +63,7 @@ export class BloggerService {
       );
     }else{
       console.log('Production Mode');
-      return this.httpClient.get<Page>('.netlify/functions/get-page?pageId=' + pageId);
+      return this.httpClient.get<Page>('/get-page?pageid=' + pageId);
     }
   }
 
