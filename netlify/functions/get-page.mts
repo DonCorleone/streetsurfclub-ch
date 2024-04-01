@@ -1,9 +1,9 @@
-import {Context} from "@netlify/functions";
+import type { Context } from "@netlify/functions";
 
-export default async (request: Request, context: Context) => {
+export default async (req: Request, context: Context) => {
 
     const apiKey = process.env["GOOGLE_BLOGGER_API_KEY"];
-    const pageId = context.params?.["pageId"] || "defaultPostId";
+    const pageId = context.params?.["pageId"] || "defaultPageId";
 
     const res = await fetch(`https://www.googleapis.com/blogger/v3/blogs/14706135/pages/${pageId}?key=${apiKey}`, {
       method: "GET",
