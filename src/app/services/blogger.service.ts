@@ -47,7 +47,7 @@ export class BloggerService {
       );
     }else{
       console.log('Production Mode');
-      return this.httpClient.get<Post>('/get-post?postid=' + postId);
+      return this.httpClient.get<Post>('/get-post/' + postId);
     }
   }
 
@@ -63,7 +63,7 @@ export class BloggerService {
       );
     }else{
       console.log('Production Mode');
-      return this.httpClient.get<Page>('/get-page?pageid=' + pageId);
+      return this.httpClient.get<Page>('/get-page/' + pageId);
     }
   }
 
