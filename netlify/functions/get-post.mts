@@ -2,7 +2,6 @@ import type {Config, Context} from "@netlify/functions";
 
 export default async (req: Request, context: Context) => {
   const {postid} = context.params;
-
   const apiKey = process.env["GOOGLE_BLOGGER_API_KEY"];
 
   console.log('context: ' + JSON.stringify(context));
@@ -21,7 +20,4 @@ export default async (req: Request, context: Context) => {
       "content-type": "text/event-stream"
     }
   });
-};
-export const config: Config = {
-  path: "/get-post/:postid"
 };
