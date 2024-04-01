@@ -1,77 +1,45 @@
 import {Injectable, isDevMode} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import { Observable, catchError, from, map, of } from 'rxjs';
+import {Page} from "../models/pages";
+import {Post} from "../models/posts";
 
-export interface BloggerPage {
-  kind: string;
-  id: string;
-  blog: {
-    id: string;
-  };
-  published: string;
-  updated: string;
-  url: string;
-  selfLink: string;
-  title: string;
-  content: string;
-  author: {
-    id: string;
-    displayName: string;
-    url: string;
-    image: {
-      url: string;
-    };
-  };
-  etag: string;
-}
-
-export interface Blog {
-  kind: string;
-  id: string;
-  name: string;
-  description: string;
-  published: string;
-  updated: string;
-  url: string;
-  selfLink: string;
-  posts: {
-    totalItems: number;
-    selfLink: string;
-  };
-  pages: {
-    totalItems: number;
-    selfLink: string;
-  };
-  locale: {
-    language: string;
-    country: string;
-    variant: string;
-  };
-}
 
 @Injectable({
   providedIn: 'root',
 })
 export class BloggerService {
 
-  blogs$ = this.httpClient.get<Blog>('.netlify/functions/list-blog');
-  pages$ = this.httpClient.get<Blog>('.netlify/functions/list-pages');
-  page$ = this.httpClient.get<BloggerPage>('.netlify/functions/get-page');
-
   constructor(private httpClient: HttpClient) {
   }
-  async getAllPages(): Promise<BloggerPage[]> {
-    const url = 'http://localhost:3000/pages';
-    const data = await fetch(url);
-    return await data.json() ?? [];
+  private async getAllPages(): Promise<Page[]> {
+    const url = 'http://localhost:3000/pageList';
+    const response = await fetch(url);
+    if (response.ok) {
+      const data = await response.json();
+      return data.items ?? [];
+    } else {
+      return [];
+    }
   }
-  
-  // call the promise getAllPages() and return the first page as an observable
-  getPage(): Observable<BloggerPage | null> {
+
+  private async getAllPosts(): Promise<Post[]> {
+    const url = 'http://localhost:3000/postList';
+    const response = await fetch(url);
+    if (response.ok) {
+      const data = await response.json();
+      return data.items ?? [];
+    } else {
+      return [];
+    }
+  }
+
+  // call the promise getAllPages() and return the first page as an osbservable
+  getPost(postId: string): Observable<Post | null> {
     if (isDevMode()){
       console.log('Development Mode');
-      return from(this.getAllPages()).pipe(
-        map(pages => pages[0]),
+      return from(this.getAllPosts()).pipe(
+        map(posts => posts.find(post => post.id === postId) ?? null),
         catchError(err => {
           console.error(err);
           return of(null);
@@ -79,7 +47,53 @@ export class BloggerService {
       );
     }else{
       console.log('Production Mode');
-      return this.httpClient.get<BloggerPage>('.netlify/functions/get-page');
+      return this.httpClient.get<Post>('.netlify/functions/get-post?postId=' + postId);
+    }
+  }
+
+  getPage(pageId: string): Observable<Page | null> {
+    if (isDevMode()){
+      console.log('Development Mode');
+      return from(this.getAllPages()).pipe(
+        map(posts => posts.find(page => page.id === pageId) ?? null),
+        catchError(err => {
+          console.error(err);
+          return of(null);
+        })
+      );
+    }else{
+      console.log('Production Mode');
+      return this.httpClient.get<Page>('.netlify/functions/get-page?pageId=' + pageId);
+    }
+  }
+
+  getPages(): Observable<Page[]> {
+    if (isDevMode()){
+      console.log('Development Mode');
+      return from(this.getAllPages()).pipe(
+        catchError(err => {
+          console.error(err);
+          return of([]);
+        })
+      );
+    }else{
+      console.log('Production Mode');
+      return this.httpClient.get<Page[]>('.netlify/functions/list-pages');
+    }
+  }
+
+  getPosts(): Observable<Post[]> {
+    if (isDevMode()){
+      console.log('Development Mode');
+      return from(this.getAllPosts()).pipe(
+        catchError(err => {
+          console.error(err);
+          return of([]);
+        })
+      );
+    }else{
+      console.log('Production Mode');
+      return this.httpClient.get<Post[]>('.netlify/functions/list-posts');
     }
   }
 }

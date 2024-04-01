@@ -9,7 +9,7 @@ import {ErrorPageComponent} from "./error-page/error-page.component";
 export const routes: Routes = [
   {path: '', component: AiNoiseCancellingAppLandingComponent},
   {path: 'blog', component: BlogPageComponent},
-  {path: 'blog/blog-details/:id', component: BlogDetailsPageComponent},
+  {path: 'blog/blog-details/:type/:id', component: BlogDetailsPageComponent},
   // Here add new pages component
 
   {path: '**', component: ErrorPageComponent} // This line will remain down from the whole pages component list
