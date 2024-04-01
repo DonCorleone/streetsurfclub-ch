@@ -1,3 +1,9 @@
+export interface PageResonse {
+  kind: string
+  items: Page[]
+  etag: string
+}
+
 export interface Page {
   kind: string;
   id: string;

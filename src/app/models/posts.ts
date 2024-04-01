@@ -1,5 +1,11 @@
 import { Page } from "./pages"
 
+  export interface PostResonse {
+    kind: string
+    items: Post[]
+    etag: string
+  }
+
   export interface Post extends Page {
     content: string
     images: Image[]

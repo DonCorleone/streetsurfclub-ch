@@ -1,8 +1,8 @@
 import {Injectable, isDevMode} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import { Observable, catchError, from, map, of } from 'rxjs';
-import {Page} from "../models/pages";
-import {Post} from "../models/posts";
+import {Page, PageResonse} from "../models/pages";
+import {Post, PostResonse} from "../models/posts";
 
 
 @Injectable({
@@ -78,7 +78,12 @@ export class BloggerService {
       );
     }else{
       console.log('Production Mode');
-      return this.httpClient.get<Page[]>('.netlify/functions/list-pages');
+      return this.httpClient.get<PageResonse>('.netlify/functions/list-pages').pipe(
+        map(response => response.items ?? []),
+        catchError(err => {
+          console.error(err);
+          return of([]);
+        }));
     }
   }
 
@@ -93,7 +98,13 @@ export class BloggerService {
       );
     }else{
       console.log('Production Mode');
-      return this.httpClient.get<Post[]>('.netlify/functions/list-posts');
+      return this.httpClient.get<PostResonse>('.netlify/functions/list-posts').pipe(
+        map(response => response.items ?? []),
+        catchError(err => {
+          console.error(err);
+          return of([]);
+        }
+        ));
     }
   }
 }
