@@ -1,4 +1,4 @@
-export interface PageResonse {
+export interface PageResponse {
   kind: string
   items: Page[]
   etag: string
