@@ -36,11 +36,11 @@ export class BloggerService {
   }
 
   // call the promise getAllPages() and return the first page as an osbservable
-  getPost(postId: string): Observable<Post | null> {
+  getPost(postid: string): Observable<Post | null> {
     if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPosts()).pipe(
-        map(posts => posts.find(post => post.id === postId) ?? null),
+        map(posts => posts.find(post => post.id === postid) ?? null),
         catchError(err => {
           console.error(err);
           return of(null);
@@ -48,15 +48,15 @@ export class BloggerService {
       );
     } else {
       console.log('Production Mode');
-      return this.httpClient.get<Post>('.netlify/functions/get-post/' + postId);
+      return this.httpClient.get<Post>('.netlify/functions/get-post?postid=' + postid);
     }
   }
 
-  getPage(pageId: string): Observable<Page | null> {
+  getPage(pageid: string): Observable<Page | null> {
     if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPages()).pipe(
-        map(posts => posts.find(page => page.id === pageId) ?? null),
+        map(posts => posts.find(page => page.id === pageid) ?? null),
         catchError(err => {
           console.error(err);
           return of(null);
@@ -64,7 +64,7 @@ export class BloggerService {
       );
     } else {
       console.log('Production Mode');
-      return this.httpClient.get<Page>('.netlify/functions/get-page/' + pageId);
+      return this.httpClient.get<Page>('.netlify/functions/get-page?pageid=' + pageid);
     }
   }
 

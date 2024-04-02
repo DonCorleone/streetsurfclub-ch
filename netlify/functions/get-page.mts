@@ -10,9 +10,6 @@ export const handler: Handler = async (event, context) => {
       body: "Missing pageid",
     };
   }
-  console.log('context: ' + JSON.stringify(context));
-  console.log('event: ' + JSON.stringify(event));
-  console.log('apiKey: ' + apiKey);
 
   const res = await fetch(`https://www.googleapis.com/blogger/v3/blogs/14706135/pages/${pageid}?key=${apiKey}`, {
     method: "GET",
