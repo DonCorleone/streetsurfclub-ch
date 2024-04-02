@@ -1,6 +1,6 @@
 import {Injectable, isDevMode} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import { Observable, catchError, from, map, of } from 'rxjs';
+import {Observable, catchError, from, map, of} from 'rxjs';
 import {Page, PageResponse} from "../models/pages";
 import {Post, PostResponse} from "../models/posts";
 
@@ -12,6 +12,7 @@ export class BloggerService {
 
   constructor(private httpClient: HttpClient) {
   }
+
   private async getAllPages(): Promise<Page[]> {
     const url = 'http://localhost:3000/pageList';
     const response = await fetch(url);
@@ -36,7 +37,7 @@ export class BloggerService {
 
   // call the promise getAllPages() and return the first page as an osbservable
   getPost(postId: string): Observable<Post | null> {
-    if (isDevMode()){
+    if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPosts()).pipe(
         map(posts => posts.find(post => post.id === postId) ?? null),
@@ -45,14 +46,14 @@ export class BloggerService {
           return of(null);
         })
       );
-    }else{
+    } else {
       console.log('Production Mode');
-      return this.httpClient.get<Post>('.netlify/functions/get-post/' + postId);
+      return this.httpClient.get<Post>('.netlify/functions/get-post?postId=' + postId);
     }
   }
 
   getPage(pageId: string): Observable<Page | null> {
-    if (isDevMode()){
+    if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPages()).pipe(
         map(posts => posts.find(page => page.id === pageId) ?? null),
@@ -61,14 +62,14 @@ export class BloggerService {
           return of(null);
         })
       );
-    }else{
+    } else {
       console.log('Production Mode');
-      return this.httpClient.get<Page>('.netlify/functions/get-page/' + pageId);
+      return this.httpClient.get<Page>('.netlify/functions/get-page?pageId=' + pageId);
     }
   }
 
   getPages(): Observable<Page[]> {
-    if (isDevMode()){
+    if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPages()).pipe(
         catchError(err => {
@@ -76,7 +77,7 @@ export class BloggerService {
           return of([]);
         })
       );
-    }else{
+    } else {
       console.log('Production Mode');
       return this.httpClient.get<PageResponse>('.netlify/functions/list-pages').pipe(
         map(response => response.items ?? []),
@@ -88,7 +89,7 @@ export class BloggerService {
   }
 
   getPosts(): Observable<Post[]> {
-    if (isDevMode()){
+    if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPosts()).pipe(
         catchError(err => {
@@ -96,14 +97,14 @@ export class BloggerService {
           return of([]);
         })
       );
-    }else{
+    } else {
       console.log('Production Mode');
       return this.httpClient.get<PostResponse>('.netlify/functions/list-posts').pipe(
         map(response => response.items ?? []),
         catchError(err => {
-          console.error(err);
-          return of([]);
-        }
+            console.error(err);
+            return of([]);
+          }
         ));
     }
   }
