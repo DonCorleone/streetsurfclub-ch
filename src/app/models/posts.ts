@@ -1,6 +1,6 @@
 import { Page } from "./pages"
 
-  export interface PostResonse {
+  export interface PostResponse {
     kind: string
     items: Post[]
     etag: string
@@ -18,9 +18,8 @@ import { Page } from "./pages"
   export interface Image {
     url: string
   }
-  
+
   export interface Replies {
     totalItems: string
     selfLink: string
   }
-  
