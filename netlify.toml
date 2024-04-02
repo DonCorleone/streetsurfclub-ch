@@ -1,18 +1,4 @@
-[build]
-  command = "npm run build --prod"
-  functions = "netlify/functions"
-  publish = "dist/canora"
-
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-  cache-control = '''
-  max-age=0,
-  no-cache,
-  no-store,
-  must-revalidate'''
+from = "/*"
+to = "/index.html"
+status = 200
