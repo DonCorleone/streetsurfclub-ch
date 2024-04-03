@@ -1,22 +1,34 @@
-import { Component } from '@angular/core';
-import { NgIf } from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import {AsyncPipe, NgIf} from '@angular/common';
+import {BloggerService} from "../../services/blogger.service";
+import {Observable} from "rxjs";
+import {Post} from "../../models/posts";
 
 @Component({
-    selector: 'app-ancal-banner',
-    templateUrl: './ancal-banner.component.html',
-    styleUrls: ['./ancal-banner.component.scss'],
-    standalone: true,
-    imports: [NgIf]
+  selector: 'app-ancal-banner',
+  templateUrl: './ancal-banner.component.html',
+  styleUrls: ['./ancal-banner.component.scss'],
+  standalone: true,
+  imports: [NgIf, AsyncPipe]
 })
-export class AncalBannerComponent {
+export class AncalBannerComponent implements OnInit {
+  blog$: Observable<Post | null> = new Observable<Post | null>();
 
-    // Video Popup
-    isOpen = false;
-    openPopup(): void {
-        this.isOpen = true;
-    }
-    closePopup(): void {
-        this.isOpen = false;
-    }
+  constructor(private bloggerService: BloggerService) {
+  }
 
+  ngOnInit(): void {
+    this.blog$ = this.bloggerService.findPost('##Main#1##');
+  }
+
+  // Video Popup
+  isOpen = false;
+
+  openPopup(): void {
+    this.isOpen = true;
+  }
+
+  closePopup(): void {
+    this.isOpen = false;
+  }
 }

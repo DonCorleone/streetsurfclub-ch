@@ -52,6 +52,22 @@ export class BloggerService {
     }
   }
 
+  findPost(q: string): Observable<Post | null> {
+    if (isDevMode()) {
+      console.log('Development Mode');
+      return from(this.getAllPosts()).pipe(
+        map(posts => posts.find(post => post.content.includes(q)) ?? null),
+        catchError(err => {
+          console.error(err);
+          return of(null);
+        })
+      );
+    } else {
+      console.log('Production Mode');
+      return this.httpClient.get<Post>('.netlify/functions/find-post?q=' + q);
+    }
+  }
+
   getPage(pageid: string): Observable<Page | null> {
     if (isDevMode()) {
       console.log('Development Mode');
