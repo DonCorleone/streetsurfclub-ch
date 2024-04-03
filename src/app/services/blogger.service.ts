@@ -72,6 +72,7 @@ export class BloggerService {
     if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPages()).pipe(
+        map(pages => this.sortItems(pages)),
         catchError(err => {
           console.error(err);
           return of([]);
@@ -80,7 +81,7 @@ export class BloggerService {
     } else {
       console.log('Production Mode');
       return this.httpClient.get<PageResponse>('.netlify/functions/list-pages').pipe(
-        map(response => response.items ?? []),
+        map(response => response.items ? this.sortItems(response.items) : []),
         catchError(err => {
           console.error(err);
           return of([]);
@@ -88,6 +89,16 @@ export class BloggerService {
     }
   }
 
+  private sortItems(items: (Page | Post)[]): (Page | Post)[] {
+    return items.sort((a, b) => {
+      const pattern = /##SortOrder#(\d+)##/;
+      const matchA = pattern.exec(a.content);
+      const matchB = pattern.exec(b.content);
+      const sortOrderA = matchA ? parseInt(matchA[1], 10) : 0;
+      const sortOrderB = matchB ? parseInt(matchB[1], 10) : 0;
+      return sortOrderA - sortOrderB;
+    });
+  }
   getPosts(): Observable<Post[]> {
     if (isDevMode()) {
       console.log('Development Mode');

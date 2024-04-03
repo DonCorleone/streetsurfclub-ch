@@ -140,16 +140,16 @@
     "items": [
       {
         "kind": "blogger#page",
-        "id": "5469354041339198926",
+        "id": "2735012436612192965",
         "blog": {
           "id": "14706135"
         },
-        "published": "2024-03-16T16:09:00+01:00",
-        "updated": "2024-03-22T22:40:03+01:00",
-        "url": "http://www.streetsurfclub.ch/p/statuten.html",
-        "selfLink": "https://content-blogger.googleapis.com/v3/blogs/14706135/pages/5469354041339198926",
-        "title": "Statuten und Zahlungsverbindung",
-        "content": "<h1>Statuten StreetSurfClub</h1>\n<p>Stand: 01.02.2024</p><p>\n<a href=\"https://main--streetsurfclub.netlify.app/assets/pdf/Statuten Streetsurfclub.pdf\" target=\"_blank\">Statuten Streetsurfclub.pdf</a></p><p>&nbsp;</p><h2>Zahlungsverbindung&nbsp; <br /></h2><p><a href=\"https://pay.raisenow.io/ncvqx\" target=\"_blank\">Klike hier auf den Text um mit Twint zu bezahlen</a></p><p>Iban:&nbsp;<span class=\"mat-mdc-select-value-text ng-tns-c3393473648-64 ng-star-inserted\"><span class=\"mat-mdc-select-min-line ng-tns-c3393473648-64 ng-star-inserted\">CH98&nbsp;0077&nbsp;8222&nbsp;8614&nbsp;7200&nbsp;1 </span></span> </p><h2></h2>\n<img alt=\"\" border=\"0\" data-original-height=\"365\" data-original-width=\"800\" src=\"https://main--streetsurfclub.netlify.app/assets/images/blogs/TWINT_Individueller-Betrag_DE.png\" />",
+        "published": "2024-04-02T22:17:00+02:00",
+        "updated": "2024-04-03T21:33:28+02:00",
+        "url": "http://www.streetsurfclub.ch/p/vorstand.html",
+        "selfLink": "https://content-blogger.googleapis.com/v3/blogs/14706135/pages/2735012436612192965",
+        "title": "Vorstand",
+        "content": "<div style=\"display: none;\">##SortOrder#40##</div>\n<hr />\n<h1>Vorstand</h1>\n<p>Der Vorstand des StreetSurfClubs:</p>\n<img alt=\"\" border=\"0\" data-original-height=\"800\" data-original-width=\"545\" height=\"640\" src=\"https://main--streetsurfclub.netlify.app/assets/images/vorstand/Dominik Webseite.jpg\" width=\"437\" />\n<p>\n  Dominik Fischer<br />\n  <b>Präsident</b>\n</p>\n<hr />\n<img border=\"0\" data-original-height=\"800\" data-original-width=\"545\" height=\"640\" src=\"https://main--streetsurfclub.netlify.app/assets/images/vorstand/Ronny Webseite.jpg\" width=\"436\" />\n  <p>\n  Ronny Wettmer<br />\n  <b>Eventzeremonienleiter</b>\n</p>",
         "author": {
           "id": "12064267187796888175",
           "displayName": "StreetSurfClub",
@@ -158,7 +158,51 @@
             "url": "//3.bp.blogspot.com/-GYo5Rltahbg/ZfWeVKNjnGI/AAAAAAAAIB8/D_-LP52QLHw_1v83yUNWPdhNiow35k9mwCK4BGAYYCw/s35/logo-colored.jpg"
           }
         },
-        "etag": "\"dGltZXN0YW1wOiAxNzExMTQzNjAzNDAzCm9mZnNldDogMzYwMDAwMAo\""
+        "etag": "\"dGltZXN0YW1wOiAxNzEyMTcyODA4NTE4Cm9mZnNldDogNzIwMDAwMAo\""
+      },
+      {
+        "kind": "blogger#page",
+        "id": "8253588413417424800",
+        "blog": {
+          "id": "14706135"
+        },
+        "published": "2024-04-02T22:16:00+02:00",
+        "updated": "2024-04-03T21:33:50+02:00",
+        "url": "http://www.streetsurfclub.ch/p/zahlungsverbindung.html",
+        "selfLink": "https://content-blogger.googleapis.com/v3/blogs/14706135/pages/8253588413417424800",
+        "title": "Zahlungsverbindung",
+        "content": "<div style=\"display: none;\">##SortOrder#80##</div>\n<hr/>\n<h1>Zahlungsverbindung</h1><p><a href=\"https://pay.raisenow.io/ncvqx\" target=\"_blank\">Klike hier auf den Text um mit Twint zu bezahlen</a></p><p>Iban:&nbsp;<span class=\"mat-mdc-select-value-text ng-tns-c3393473648-64 ng-star-inserted\"><span class=\"mat-mdc-select-min-line ng-tns-c3393473648-64 ng-star-inserted\">CH98&nbsp;0077&nbsp;8222&nbsp;8614&nbsp;7200&nbsp;1 </span></span> </p><h2></h2>\n<img alt=\"\" border=\"0\" data-original-height=\"365\" data-original-width=\"800\" src=\"https://main--streetsurfclub.netlify.app/assets/images/blogs/TWINT_Individueller-Betrag_DE.png\" />",
+        "author": {
+          "id": "12064267187796888175",
+          "displayName": "StreetSurfClub",
+          "url": "https://www.blogger.com/profile/12064267187796888175",
+          "image": {
+            "url": "//3.bp.blogspot.com/-GYo5Rltahbg/ZfWeVKNjnGI/AAAAAAAAIB8/D_-LP52QLHw_1v83yUNWPdhNiow35k9mwCK4BGAYYCw/s35/logo-colored.jpg"
+          }
+        },
+        "etag": "\"dGltZXN0YW1wOiAxNzEyMTcyODMwMjg4Cm9mZnNldDogNzIwMDAwMAo\""
+      },
+      {
+        "kind": "blogger#page",
+        "id": "5469354041339198926",
+        "blog": {
+          "id": "14706135"
+        },
+        "published": "2024-03-16T16:09:00+01:00",
+        "updated": "2024-04-03T21:34:05+02:00",
+        "url": "http://www.streetsurfclub.ch/p/statuten.html",
+        "selfLink": "https://content-blogger.googleapis.com/v3/blogs/14706135/pages/5469354041339198926",
+        "title": "Statuten",
+        "content": "<div style=\"display: none;\">##SortOrder#70##</div>\n<hr />\n<h1>Statuten StreetSurfClub</h1>\n<p>Stand: 01.02.2024</p><p>\n<a href=\"https://main--streetsurfclub.netlify.app/assets/pdf/Statuten Streetsurfclub.pdf\" target=\"_blank\">Statuten Streetsurfclub.pdf</a></p>\n",
+        "author": {
+          "id": "12064267187796888175",
+          "displayName": "StreetSurfClub",
+          "url": "https://www.blogger.com/profile/12064267187796888175",
+          "image": {
+            "url": "//3.bp.blogspot.com/-GYo5Rltahbg/ZfWeVKNjnGI/AAAAAAAAIB8/D_-LP52QLHw_1v83yUNWPdhNiow35k9mwCK4BGAYYCw/s35/logo-colored.jpg"
+          }
+        },
+        "etag": "\"dGltZXN0YW1wOiAxNzEyMTcyODQ1NjYyCm9mZnNldDogNzIwMDAwMAo\""
       },
       {
         "kind": "blogger#page",
@@ -167,11 +211,11 @@
           "id": "14706135"
         },
         "published": "2024-03-16T15:15:00+01:00",
-        "updated": "2024-03-30T17:16:40+01:00",
+        "updated": "2024-04-03T21:34:23+02:00",
         "url": "http://www.streetsurfclub.ch/p/kontakt-und-vorstand.html",
         "selfLink": "https://content-blogger.googleapis.com/v3/blogs/14706135/pages/536357291002192427",
-        "title": "Kontakt und Vorstand",
-        "content": "<h1>Kontakt und Vorstand</h1>\n<p>Hast du Interesse auch ein Teil unserer Community zu werden oder hast du sonstigen Anliegen, kontaktiere uns doch via:&nbsp;</p><p>E-Mail: streetsurfclub@gmail.com </p><p>Instagram: streetsurfclub_luzern</p><p>\n<i>Facebook wird nicht mehr bewirtschaftet, bleibt jedoch als andenken an die frühere Zeit des Streetsurfsclub erhalten</i></p><p><i>&nbsp;</i>\n\n  </p><h2>Vorstand</h2>\n\n\n<img alt=\"\" border=\"0\" data-original-height=\"800\" data-original-width=\"545\" height=\"640\" src=\"https://main--streetsurfclub.netlify.app/assets/images/vorstand/Dominik Webseite.jpg\" width=\"437\" />\n<p>\n  Dominik Fischer<br />\n  <b>Präsident</b>\n</p>\n<hr />\n<img border=\"0\" data-original-height=\"800\" data-original-width=\"545\" height=\"640\" src=\"https://main--streetsurfclub.netlify.app/assets/images/vorstand/Ronny Webseite.jpg\" width=\"436\" />\n  <p>\n  Ronny Wettmer<br />\n  <b>Eventzeremonienleiter</b>\n</p>",
+        "title": "Kontakt",
+        "content": "<div style=\"display: none;\">##SortOrder#50##</div>\n<hr />\n<h1>Kontakt</h1>\n<p>Hast du Interesse auch ein Teil unserer Community zu werden oder hast du sonstigen Anliegen, kontaktiere uns doch via:&nbsp;</p><p>E-Mail: streetsurfclub@gmail.com </p><p>Instagram: streetsurfclub_luzern</p><p>\n<i>Facebook wird nicht mehr bewirtschaftet, bleibt jedoch als andenken an die frühere Zeit des Streetsurfsclub erhalten</i></p><p><i>&nbsp;</i>\n",
         "author": {
           "id": "12064267187796888175",
           "displayName": "StreetSurfClub",
@@ -180,7 +224,7 @@
             "url": "//3.bp.blogspot.com/-GYo5Rltahbg/ZfWeVKNjnGI/AAAAAAAAIB8/D_-LP52QLHw_1v83yUNWPdhNiow35k9mwCK4BGAYYCw/s35/logo-colored.jpg"
           }
         },
-        "etag": "\"dGltZXN0YW1wOiAxNzExODE1NDAwOTgxCm9mZnNldDogMzYwMDAwMAo\""
+        "etag": "\"dGltZXN0YW1wOiAxNzEyMTcyODYzNzc0Cm9mZnNldDogNzIwMDAwMAo\""
       },
       {
         "kind": "blogger#page",
@@ -189,11 +233,11 @@
           "id": "14706135"
         },
         "published": "2024-03-16T15:08:00+01:00",
-        "updated": "2024-03-30T17:15:47+01:00",
+        "updated": "2024-04-03T21:34:39+02:00",
         "url": "http://www.streetsurfclub.ch/p/geschichte.html",
         "selfLink": "https://content-blogger.googleapis.com/v3/blogs/14706135/pages/284582662635134805",
         "title": "Geschichte",
-        "content": "<h1>Geschichte des Streetsurfclub</h1>\n<p>Am 21. Juli 1999 wurde der Streetsurfclub gegründet. Er vereinigte die Luzerner Longboarder und schaffte eine Community, die unter anderem beim Holderchäppeli den Firestarter organisierte. Ein Skateevent, bei dem die Teilnehmer auf dem Rollbrett die Strasse hinunterrollen und mit Feuerwerk ausgerüstet eine wilde Show boten. Ab 2009 wurde es doch immer ruhiger im Verein und das Vereinsleben starb... Dank Linus, der sich um die Formalitäten über die stillen Jahre kümmerte, verendete der Verein nie komplett.</p>\n<p>Mit der Idee, die lokale Longboardcommunity zu fördern und einen Skatevent zu organisieren, übernahmen Dominik und Ronny den Verein im Januar 2024 und hauchten ihm wieder Leben ein.</p>",
+        "content": "<div style=\"display: none;\">##SortOrder#30##</div>\n<hr />\n<h1>Geschichte des Streetsurfclub</h1>\n<p>Am 21. Juli 1999 wurde der Streetsurfclub gegründet. Er vereinigte die Luzerner Longboarder und schaffte eine Community, die unter anderem beim Holderchäppeli den Firestarter organisierte. Ein Skateevent, bei dem die Teilnehmer auf dem Rollbrett die Strasse hinunterrollen und mit Feuerwerk ausgerüstet eine wilde Show boten. Ab 2009 wurde es doch immer ruhiger im Verein und das Vereinsleben starb... Dank Linus, der sich um die Formalitäten über die stillen Jahre kümmerte, verendete der Verein nie komplett.</p>\n<p>Mit der Idee, die lokale Longboardcommunity zu fördern und einen Skatevent zu organisieren, übernahmen Dominik und Ronny den Verein im Januar 2024 und hauchten ihm wieder Leben ein.</p>",
         "author": {
           "id": "12064267187796888175",
           "displayName": "StreetSurfClub",
@@ -202,7 +246,7 @@
             "url": "//3.bp.blogspot.com/-GYo5Rltahbg/ZfWeVKNjnGI/AAAAAAAAIB8/D_-LP52QLHw_1v83yUNWPdhNiow35k9mwCK4BGAYYCw/s35/logo-colored.jpg"
           }
         },
-        "etag": "\"dGltZXN0YW1wOiAxNzExODE1MzQ3MDk5Cm9mZnNldDogMzYwMDAwMAo\""
+        "etag": "\"dGltZXN0YW1wOiAxNzEyMTcyODc5NjE0Cm9mZnNldDogNzIwMDAwMAo\""
       },
       {
         "kind": "blogger#page",
@@ -211,11 +255,11 @@
           "id": "14706135"
         },
         "published": "2024-03-16T14:58:00+01:00",
-        "updated": "2024-03-30T17:33:00+01:00",
+        "updated": "2024-04-03T21:35:00+02:00",
         "url": "http://www.streetsurfclub.ch/p/longboarding.html",
         "selfLink": "https://content-blogger.googleapis.com/v3/blogs/14706135/pages/2745377099447965648",
         "title": "Longboarding",
-        "content": "<h1>Longboarding – die Kunst des Asphaltsurfens</h1>\n<p></p><div class=\"separator\" style=\"clear: both; text-align: center;\"><a href=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5-3kImxQo91Fx4LPY26OubPFLYfGvYchU6uwX-gzQU6xCvzECnRRDEKnBWwyD1M1KuOVX3kYaXxbPo5LhTh1DC9RtwsavpD0gtqRf_dW6Dbe5uly0q-cD43bRmXNWB2QkxTb_IBGjvFbBd3xAjUVYYu5RPx6sGdYBNR65wv8_ENdiRUk45Sbc/s3774/20220718_101820 (1).jpg\" imageanchor=\"1\" style=\"margin-left: 1em; margin-right: 1em;\"><img border=\"0\" data-original-height=\"2830\" data-original-width=\"3774\" height=\"300\" src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5-3kImxQo91Fx4LPY26OubPFLYfGvYchU6uwX-gzQU6xCvzECnRRDEKnBWwyD1M1KuOVX3kYaXxbPo5LhTh1DC9RtwsavpD0gtqRf_dW6Dbe5uly0q-cD43bRmXNWB2QkxTb_IBGjvFbBd3xAjUVYYu5RPx6sGdYBNR65wv8_ENdiRUk45Sbc/w400-h300/20220718_101820 (1).jpg\" width=\"400\" /></a></div><p></p><p>Die Vielseitigkeit des Sportes ist enorm. Nebst dem klassischen Cruisen, was viele Leute mit Longboarden verbinden, gibt es sechs Kategorien, die das Longboarden ausmachen, wobei die Übergänge meistens fliessend sind.</p><p>\n</p><blockquote>Downhill</blockquote> ist die Königsdisziplin im Longboardsport. Das Ziel ist es, möglichst schnell die Strasse herunter zu düsen. Dabei können Geschwindigkeiten bis über 100km/h erreicht werden. Mit sogenannten Slides wird das Tempo wenn nötig reduziert.\n<blockquote>Freeride</blockquote> ist die wahrscheinlich vielseitigste Kategorie. Auch hier werden Bergstrassen hinuntergefahren, jedoch steht die Geschwindigkeit im Hintergrund. Um das Tempo zu drosseln nutzt man gerne Standup-Slides. Langgezogene Carves oder kleine Kunststücke finden aber auch Platz in der Abfahrt. \n<blockquote>Freestyle</blockquote> ist sehr ähnlich zum herkömmlichen Skateboarden. Oft gesehene Tricks sind Ollies, Kickflips und Rail-Grinding, unterwegs auf der Strasse oder auch in Skateparks.\n<blockquote>Dancing</blockquote> - was bei den Profis so leicht aussieht, ist erstaunlich schwer. Atemberaubende Kunststücke und elegante Bewegungen werden kombiniert mit einem Rollbrett. Die Performer zeigen Pirouetten, komplexe Schrittfolgen und das kontrollierte Herumschleudern des Longboards.\n<blockquote>Carving</blockquote> erinnert ans Snowboarden. Das Gefühl mit einem biegsamen Brett in gleichmässigen Kurven die Strasse hinunter zu fahren, ist einfach unbeschreiblich schön.\n<blockquote>Pumping</blockquote><p> ist das Vorwärtsbewegen ohne sich dabei mit dem Fuss am Boden abzustossen. Entweder man tut dies in einem Pumptrack oder auf der normalen Strasse, mit einem Surfskate oder mit einem weichen Brett, das sogenannte Flexpumping.&nbsp;</p><p>&nbsp;</p><p>Die meisten Mitglieder unseres Vereines sind hauptsächlich in der Downhill- und Freeride Szene aktiv und erweitern gelegentlich ihren Horizont in den anderen Bereichen.\n</p><p></p><p></p>",
+        "content": "<div style=\"display: none;\">##SortOrder#20##</div>\n<hr />\n<h1>Longboarding – die Kunst des Asphaltsurfens</h1>\n<p></p><div class=\"separator\" style=\"clear: both; text-align: center;\"><a href=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5-3kImxQo91Fx4LPY26OubPFLYfGvYchU6uwX-gzQU6xCvzECnRRDEKnBWwyD1M1KuOVX3kYaXxbPo5LhTh1DC9RtwsavpD0gtqRf_dW6Dbe5uly0q-cD43bRmXNWB2QkxTb_IBGjvFbBd3xAjUVYYu5RPx6sGdYBNR65wv8_ENdiRUk45Sbc/s3774/20220718_101820 (1).jpg\" imageanchor=\"1\" style=\"margin-left: 1em; margin-right: 1em;\"><img border=\"0\" data-original-height=\"2830\" data-original-width=\"3774\" height=\"300\" src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5-3kImxQo91Fx4LPY26OubPFLYfGvYchU6uwX-gzQU6xCvzECnRRDEKnBWwyD1M1KuOVX3kYaXxbPo5LhTh1DC9RtwsavpD0gtqRf_dW6Dbe5uly0q-cD43bRmXNWB2QkxTb_IBGjvFbBd3xAjUVYYu5RPx6sGdYBNR65wv8_ENdiRUk45Sbc/w400-h300/20220718_101820 (1).jpg\" width=\"400\" /></a></div><p></p><p>Die Vielseitigkeit des Sportes ist enorm. Nebst dem klassischen Cruisen, was viele Leute mit Longboarden verbinden, gibt es sechs Kategorien, die das Longboarden ausmachen, wobei die Übergänge meistens fliessend sind.</p><p>\n</p><blockquote>Downhill</blockquote> ist die Königsdisziplin im Longboardsport. Das Ziel ist es, möglichst schnell die Strasse herunter zu düsen. Dabei können Geschwindigkeiten bis über 100km/h erreicht werden. Mit sogenannten Slides wird das Tempo wenn nötig reduziert.\n<blockquote>Freeride</blockquote> ist die wahrscheinlich vielseitigste Kategorie. Auch hier werden Bergstrassen hinuntergefahren, jedoch steht die Geschwindigkeit im Hintergrund. Um das Tempo zu drosseln nutzt man gerne Standup-Slides. Langgezogene Carves oder kleine Kunststücke finden aber auch Platz in der Abfahrt. \n<blockquote>Freestyle</blockquote> ist sehr ähnlich zum herkömmlichen Skateboarden. Oft gesehene Tricks sind Ollies, Kickflips und Rail-Grinding, unterwegs auf der Strasse oder auch in Skateparks.\n<blockquote>Dancing</blockquote> - was bei den Profis so leicht aussieht, ist erstaunlich schwer. Atemberaubende Kunststücke und elegante Bewegungen werden kombiniert mit einem Rollbrett. Die Performer zeigen Pirouetten, komplexe Schrittfolgen und das kontrollierte Herumschleudern des Longboards.\n<blockquote>Carving</blockquote> erinnert ans Snowboarden. Das Gefühl mit einem biegsamen Brett in gleichmässigen Kurven die Strasse hinunter zu fahren, ist einfach unbeschreiblich schön.\n<blockquote>Pumping</blockquote><p> ist das Vorwärtsbewegen ohne sich dabei mit dem Fuss am Boden abzustossen. Entweder man tut dies in einem Pumptrack oder auf der normalen Strasse, mit einem Surfskate oder mit einem weichen Brett, das sogenannte Flexpumping.&nbsp;</p><p>&nbsp;</p><p>Die meisten Mitglieder unseres Vereines sind hauptsächlich in der Downhill- und Freeride Szene aktiv und erweitern gelegentlich ihren Horizont in den anderen Bereichen.\n</p>\n",
         "author": {
           "id": "12064267187796888175",
           "displayName": "StreetSurfClub",
@@ -224,31 +268,10 @@
             "url": "//3.bp.blogspot.com/-GYo5Rltahbg/ZfWeVKNjnGI/AAAAAAAAIB8/D_-LP52QLHw_1v83yUNWPdhNiow35k9mwCK4BGAYYCw/s35/logo-colored.jpg"
           }
         },
-        "etag": "\"dGltZXN0YW1wOiAxNzExODE2MzgwNDczCm9mZnNldDogMzYwMDAwMAo\""
-      },
-      {
-        "kind": "blogger#page",
-        "id": "2753664981534892505",
-        "blog": {
-          "id": "14706135"
-        },
-        "published": "2024-02-19T23:03:00+01:00",
-        "updated": "2024-03-30T23:27:12+01:00",
-        "url": "http://www.streetsurfclub.ch/p/hallo-seite.html",
-        "selfLink": "https://content-blogger.googleapis.com/v3/blogs/14706135/pages/2753664981534892505",
-        "title": "Test Layout Seite",
-        "content": "<div><div style=\"text-align: center;\"><a href=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtKWyixbhqJutB39swyXT1JYojjv_cJRek15k-ONypQj-yaw8_lpvvULO4O_a33GwrWoKpYltMzMynlP_mNsMI9pr-AW7gVnldo8PJL-uEcxQB_vnns7xCh-DRvzZ0a0nqQBDkPNXnJ8H6iyU4WbF0iPn_3_whcwTXzi-ej0gRXR0Lcca6-ore/s1600/P5030082.JPG\"><img border=\"0\" data-original-height=\"1200\" data-original-width=\"1600\" src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtKWyixbhqJutB39swyXT1JYojjv_cJRek15k-ONypQj-yaw8_lpvvULO4O_a33GwrWoKpYltMzMynlP_mNsMI9pr-AW7gVnldo8PJL-uEcxQB_vnns7xCh-DRvzZ0a0nqQBDkPNXnJ8H6iyU4WbF0iPn_3_whcwTXzi-ej0gRXR0Lcca6-ore/s16000/P5030082.JPG\" /></a></div><br /><b><br /></b></div><b>live! Wasn hier los? Echt fett</b><div><b><br /></b></div><div><i>Kursiv immerhin</i></div><div><i><br /></i></div><div><u>unterstrichen</u></div><div><u><br /></u></div><div><u>✊</u></div><div><u><br /></u></div><blockquote style=\"border: none; margin: 0px 0px 0px 40px; padding: 0px;\"><div style=\"text-align: left;\"><span>Lorem ipsum brizzle for sure amet, shiz adipiscing fo shizzle mah nizzle fo rizzle, mah home g-dizzle. Nullizzle you son of a bizzle velizzle, dawg volutpizzle, suscipizzle bow wow wow, get down get down vizzle, arcu. Pellentesque eget tortizzle. Sed erizzle.&nbsp;</span></div></blockquote><div><span>Gizzle izzle dolor dapibizzle ma nizzle tempizzle tempizzle. Mauris break it down nibh izzle shizzlin dizzle. Nizzle izzle tortor. Its fo rizzle sizzle boofron ghetto. In ass mofo fo shizzle dictumst. Funky fresh dapibizzle. Phat tellus urna, gizzle boofron, mattizzle shizznit, gangsta vitae, nunc. Fo shizzle suscipizzle. Integizzle sempizzle the bizzle sizzle purus.</span></div><div><span><br /></span></div><div><div class=\"separator\" style=\"clear: both; text-align: center;\"><a href=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQrnJWN5y973K9m4aZ2fE0AJ_c0aUlDL6UEKvi13fRLiQtW5nSAw1L-zL1WEMxPrko0iko3JL16Mwu1gX8VEhGmcY9Fy29cyTIQQEMgLK2aaA04zj8DCkzVUjENlOZdfxY7YPM_FhnTIVM9q0VzICrCJQTNomfBy2JlFE-Vx8xC5V3Ov9YFiVI/s720/DSC_0001.JPG\" imageanchor=\"1\" style=\"margin-left: 1em; margin-right: 1em;\"><img border=\"0\" data-original-height=\"482\" data-original-width=\"720\" height=\"428\" src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQrnJWN5y973K9m4aZ2fE0AJ_c0aUlDL6UEKvi13fRLiQtW5nSAw1L-zL1WEMxPrko0iko3JL16Mwu1gX8VEhGmcY9Fy29cyTIQQEMgLK2aaA04zj8DCkzVUjENlOZdfxY7YPM_FhnTIVM9q0VzICrCJQTNomfBy2JlFE-Vx8xC5V3Ov9YFiVI/w640-h428/DSC_0001.JPG\" width=\"640\" /></a></div><br /><div class=\"separator\" style=\"clear: both; text-align: center;\"><a href=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBImrH68g5kBLPEyv6dSUfRF9cxpVMNeITdnM3t1CB2zqU7JTO_VFZZNXiH9K9YHvjRfHRQseTlKnKen12TqGq1cLMPDa_SaxWwjBijOHIDe51PyvVDU4W0PWUquJBHHcaVhFLXk-hl7eBz3JaVKd483C9K2VRQnoueucpRg1ydl3qxlwScCr6/s800/l298.jpg\" imageanchor=\"1\" style=\"margin-left: 1em; margin-right: 1em;\"><img border=\"0\" data-original-height=\"533\" data-original-width=\"800\" height=\"426\" src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBImrH68g5kBLPEyv6dSUfRF9cxpVMNeITdnM3t1CB2zqU7JTO_VFZZNXiH9K9YHvjRfHRQseTlKnKen12TqGq1cLMPDa_SaxWwjBijOHIDe51PyvVDU4W0PWUquJBHHcaVhFLXk-hl7eBz3JaVKd483C9K2VRQnoueucpRg1ydl3qxlwScCr6/w640-h426/l298.jpg\" width=\"640\" /></a></div><br /><span><br /></span></div>\n\n<p><span style=\"font-size: xx-small;\">Element: span, Style: font-size: xx-small;, Classes: no classes</span></p>\n<p><span style=\"font-size: x-small;\">Element: span, Style: font-size: x-small;, Classes: no classes</span></p>\n<p>Element: p, Style: no style, Classes: no classes</p>\n<p><span style=\"font-size: medium;\">Element: span, Style: font-size: medium;, Classes: no classes</span></p>\n<p><span style=\"font-size: large;\">Element: span, Style: font-size: large;, Classes: no classes</span></p>\n<p><span style=\"font-size: x-large;\">Element: span, Style: font-size: x-large;, Classes: no classes</span></p>\n<h1 style=\"text-align: left;\">Element: h1, Style: text-align: left;, Classes: no classes</h1>\n<h2 style=\"text-align: left;\">Element: h2, Style: text-align: left;, Classes: no classes</h2>\n<h3 style=\"text-align: left;\">Element: h3, Style: text-align: left;, Classes: no classes</h3>\n<h4 style=\"text-align: left;\">Element: h4, Style: text-align: left;, Classes: no classes</h4>\n<p>Element: p, Style: no style, Classes: no classes</p>\n<div style=\"text-align: left;\">Element: div, Style: text-align: left;, Classes: no classes</div>\n",
-        "author": {
-          "id": "12064267187796888175",
-          "displayName": "StreetSurfClub",
-          "url": "https://www.blogger.com/profile/12064267187796888175",
-          "image": {
-            "url": "//3.bp.blogspot.com/-GYo5Rltahbg/ZfWeVKNjnGI/AAAAAAAAIB8/D_-LP52QLHw_1v83yUNWPdhNiow35k9mwCK4BGAYYCw/s35/logo-colored.jpg"
-          }
-        },
-        "etag": "\"dGltZXN0YW1wOiAxNzExODM3NjMyNDg0Cm9mZnNldDogMzYwMDAwMAo\""
+        "etag": "\"dGltZXN0YW1wOiAxNzEyMTcyOTAwMjg1Cm9mZnNldDogNzIwMDAwMAo\""
       }
     ],
-    "etag": "\"MjAyNC0wMy0zMFQyMjoyNzoxMi40ODRa\""
+    "etag": "\"MjAyNC0wNC0wM1QxOTozNTowMC4yODVa\""
   }
+
 }
