@@ -65,7 +65,7 @@ export class BloggerService {
     } else {
       console.log('Production Mode');
       const encodedQ = encodeURIComponent(q);
-      return this.httpClient.get<Post>('.netlify/functions/find-post?q=' + encodedQ);
+      return this.httpClient.get<Post>('.netlify/functions/find-post?encodedQ=' + encodedQ);
     }
   }
 
