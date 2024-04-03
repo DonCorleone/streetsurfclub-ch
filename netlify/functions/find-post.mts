@@ -11,7 +11,7 @@ export const handler: Handler = async (event, context) => {
     };
   }
 
-  const res = await fetch(`https://www.googleapis.com/blogger/v3/blogs/14706135/posts/search?key=${apiKey}?q=${q}`, {
+  const res = await fetch(`https://www.googleapis.com/blogger/v3/blogs/14706135/posts/search?key=${apiKey}&q=${q}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
