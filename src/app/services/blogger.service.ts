@@ -64,7 +64,8 @@ export class BloggerService {
       );
     } else {
       console.log('Production Mode');
-      return this.httpClient.get<Post>('.netlify/functions/find-post?q=' + q);
+      const encodedQ = encodeURIComponent(q);
+      return this.httpClient.get<Post>('.netlify/functions/find-post?q=' + encodedQ);
     }
   }
 

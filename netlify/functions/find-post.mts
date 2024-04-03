@@ -3,15 +3,15 @@ import type {Config, Context, Handler} from "@netlify/functions";
 export const handler: Handler = async (event, context) => {
 
   const apiKey = process.env["GOOGLE_BLOGGER_API_KEY"];
-  const q= event.queryStringParameters?.["q"];
-  if (!q) {
+  const encodedQ= event.queryStringParameters?.["encodedQ"];
+  if (!encodedQ) {
     return {
       statusCode: 400,
-      body: "Missing q",
+      body: "Missing encodedQ",
     };
   }
 
-  const encodedQ = encodeURIComponent(q);
+
 
   const res = await fetch(`https://www.googleapis.com/blogger/v3/blogs/14706135/posts/search?key=${apiKey}&q=${encodedQ}`, {
     method: "GET",
