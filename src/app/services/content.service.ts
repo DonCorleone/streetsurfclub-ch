@@ -33,12 +33,12 @@ export class ContentService {
     if (page.kind === 'blogger#post') {
       const images = (page as Post).images;
       parsedContent.headerImg = images && images.length > 0 ? images[0].url : null;
-    }else{
-      if (imgBlock) {
-        let srcRegex = /<img[^>]+src="([^">]+)"/;
-        let srcMatch = imgBlock.match(srcRegex);
-        parsedContent.headerImg = srcMatch ? srcMatch[1] : null;
-      }
+    }
+
+    if (imgBlock && parsedContent.headerImg === null) {
+      let srcRegex = /<img[^>]+src="([^">]+)"/;
+      let srcMatch = imgBlock.match(srcRegex);
+      parsedContent.headerImg = srcMatch ? srcMatch[1] : null;
     }
 
     console.log(decodedContent);
