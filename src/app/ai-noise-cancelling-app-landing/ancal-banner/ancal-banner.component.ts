@@ -1,32 +1,33 @@
 import {Component, OnInit} from '@angular/core';
-import {AsyncPipe, NgIf} from '@angular/common';
+import {AsyncPipe, NgIf, NgOptimizedImage} from '@angular/common';
 import {BloggerService} from "../../services/blogger.service";
-import {map, Observable} from "rxjs";
-import {Post} from "../../models/posts";
+import {map, take} from "rxjs";
+import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
+import {ContentService} from "../../services/content.service";
+import {IContent} from "../../models/IContent";
 
 @Component({
   selector: 'app-ancal-banner',
   templateUrl: './ancal-banner.component.html',
   styleUrls: ['./ancal-banner.component.scss'],
   standalone: true,
-  imports: [NgIf, AsyncPipe]
+  imports: [NgIf, AsyncPipe, SafeHtmlPipe, NgOptimizedImage]
 })
 export class AncalBannerComponent implements OnInit {
-  blog$: Observable<Post | null> = new Observable<Post | null>();
+  parsedContent: IContent | null | undefined;
 
-  constructor(private bloggerService: BloggerService) {
+  constructor(private bloggerService: BloggerService, private contentService: ContentService) {
   }
 
   ngOnInit(): void {
-    this.blog$ = this.bloggerService.findPost('**Main**').pipe(
+    this.bloggerService.findPost('**Main**').pipe(
+      take(1),
       map(posts => {
-        if (posts && posts.length > 0) {
-          return posts[0];
-        } else {
-          return null;
+          if (posts && posts.length > 0) {
+            this.parsedContent = this.contentService.parseContent(posts[0]);
+          }
         }
-      }
-      ));
+      )).subscribe();
   }
 
   // Video Popup
