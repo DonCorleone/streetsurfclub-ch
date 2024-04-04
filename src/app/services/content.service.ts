@@ -26,7 +26,7 @@ export class ContentService {
       regexImage = /<img[^>]*>/; // Regular expression to match the first <img> tag
       match = decodedContent.match(regexImage);
     }
-    let imgBlock = match ? match[1] : null;
+    let imgBlock = match ? match[0] : null;
 
     decodedContent = decodedContent.replace(regexImage, '');
 
