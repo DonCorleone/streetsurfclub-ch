@@ -18,7 +18,7 @@ export class AncalBannerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.blog$ = this.bloggerService.findPost('##Main#1##').pipe(
+    this.blog$ = this.bloggerService.findPost('**Main**').pipe(
       map(posts => {
         if (posts && posts.length > 0) {
           return posts[0];
