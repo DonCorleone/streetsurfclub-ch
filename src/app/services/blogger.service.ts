@@ -52,11 +52,11 @@ export class BloggerService {
     }
   }
 
-  findPost(q: string): Observable<Post | null> {
+  findPost(q: string): Observable<Post[] | null> {
     if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPosts()).pipe(
-        map(posts => posts.find(post => post.content.includes(q)) ?? null),
+        map(posts => posts.filter(post => post.content.includes(q)) ?? null),
         catchError(err => {
           console.error(err);
           return of(null);
@@ -65,7 +65,12 @@ export class BloggerService {
     } else {
       console.log('Production Mode');
       const encodedQ = encodeURIComponent(q);
-      return this.httpClient.get<Post>('.netlify/functions/find-post?encodedQ=' + encodedQ);
+      return this.httpClient.get<PostResponse>('.netlify/functions/find-post?encodedQ=' + encodedQ).pipe(
+      map(response => response.items ?? []),
+        catchError(err => {
+          console.error(err);
+          return of([]);
+        }));
     }
   }
 
@@ -106,7 +111,7 @@ export class BloggerService {
     }
   }
 
-  private sortItems(items: (Page | Post)[]): (Page | Post)[] {
+  private sortItems(items: Page[]): Page[] {
     return items.sort((a, b) => {
       const pattern = /##SortOrder#(\d+)##/;
       const matchA = pattern.exec(a.content);

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AsyncPipe, NgIf} from '@angular/common';
 import {BloggerService} from "../../services/blogger.service";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {Post} from "../../models/posts";
 
 @Component({
@@ -18,7 +18,15 @@ export class AncalBannerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.blog$ = this.bloggerService.findPost('##Main#1##');
+    this.blog$ = this.bloggerService.findPost('##Main#1##').pipe(
+      map(posts => {
+        if (posts && posts.length > 0) {
+          return posts[0];
+        } else {
+          return null;
+        }
+      }
+      ));
   }
 
   // Video Popup
