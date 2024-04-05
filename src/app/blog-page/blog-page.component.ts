@@ -4,14 +4,14 @@ import {RouterLink} from '@angular/router';
 import {NavbarComponent} from '../common/navbar/navbar.component';
 import {BloggerService} from '../services/blogger.service';
 import {Observable} from "rxjs";
-import {AsyncPipe, DatePipe, NgForOf} from "@angular/common";
+import {AsyncPipe, DatePipe, NgForOf, NgIf} from "@angular/common";
 import {Post} from "../models/posts";
 
 @Component({
   selector: 'app-blog-page',
   templateUrl: './blog-page.component.html',
   standalone: true,
-  imports: [NavbarComponent, RouterLink, FooterComponent, AsyncPipe, NgForOf, DatePipe]
+  imports: [NavbarComponent, RouterLink, FooterComponent, AsyncPipe, NgForOf, DatePipe, NgIf]
 })
 export class BlogPageComponent {
 

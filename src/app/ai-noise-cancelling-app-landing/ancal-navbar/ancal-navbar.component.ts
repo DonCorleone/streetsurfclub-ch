@@ -5,6 +5,7 @@ import {BloggerService} from "../../services/blogger.service";
 import {Observable} from "rxjs";
 import {Page} from "../../models/pages";
 import {RouterLink} from "@angular/router";
+import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
 
 
 @Component({
@@ -12,7 +13,7 @@ import {RouterLink} from "@angular/router";
   templateUrl: './ancal-navbar.component.html',
   styleUrls: ['./ancal-navbar.component.scss'],
   standalone: true,
-  imports: [NgClass, NgIf, AsyncPipe, NgForOf, RouterLink],
+  imports: [NgClass, NgIf, AsyncPipe, NgForOf, RouterLink, SafeHtmlPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AncalNavbarComponent {

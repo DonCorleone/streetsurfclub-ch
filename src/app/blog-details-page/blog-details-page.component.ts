@@ -7,13 +7,14 @@ import {map, take} from 'rxjs';
 import {Component, Input, OnInit, input} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ContentService} from "../services/content.service";
+import {ParseHtmlPipe} from "../pipes/parse-html-pipe";
 
 
 @Component({
   selector: 'app-blog-details-page',
   templateUrl: './blog-details-page.component.html',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, NgIf, AsyncPipe, SafeHtmlPipe],
+  imports: [NavbarComponent, FooterComponent, NgIf, AsyncPipe, SafeHtmlPipe, ParseHtmlPipe],
 })
 export class BlogDetailsPageComponent implements OnInit {
 

@@ -16,7 +16,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[25px]">
             <div *ngFor="let page of (pages$ | async) as pages">
                 <div data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="'1==1 ?? 200'" >
-                    <a [routerLink]="'/blog/blog-details/post/' + page.id" class="rounded-[7px] block mb-[20px] md:mb-[25px] lg:mb-[28px]">
+                    <a *ngIf="page.images" [routerLink]="'/blog/blog-details/post/' + page.id" class="rounded-[7px] block mb-[20px] md:mb-[25px] lg:mb-[28px]">
                         <img [src]="page.images[0].url" class="rounded-[7px]" alt="blog-image">
                     </a>
                     <span class="leading-none block mb-[10px] md:mb-[12px] lg:mb-[13px] font-medium text-stone-500 dark:yellow-400 text-[13px] md:text-[14px] lg:text-[15px] xl:text-[17px]">
