@@ -15,6 +15,7 @@ export class ContentService {
     let parsedContent: IContent = {
       title: '',
       content: '',
+      lead: '',
       headerImg: null
     };
     // Do something with the blog details
@@ -50,19 +51,23 @@ export class ContentService {
       let replacement = `
         <div class="grid grid-cols-1 md:grid-cols-2 self-center gap-[25px] my-[20px] md:my-[25px] xl:my-[35px]">
           <div class="text-center">
-            <img src="${matchTwoImages ? matchTwoImages[2] : ''}" class="rounded-t-[20px] rounded-bl-[20px] rounded-br-[20px] md:rounded-br-[70px] lg:rounded-br-[90px]" alt="blog-details-image">
+            <img [src]="${matchTwoImages ? matchTwoImages[2] : ''}" class="rounded-t-[20px] rounded-bl-[20px] rounded-br-[20px] md:rounded-br-[70px] lg:rounded-br-[90px]" alt="blog-details-image">
           </div>
           <div class="text-center">
-            <img src="${matchTwoImages ? matchTwoImages[3] : ''}" class="rounded-b-[20px] rounded-tr-[20px] rounded-tl-[20px] md:rounded-tl-[90px] lg:rounded-tl-[70px]" alt="blog-details-image">
+            <img [src]="${matchTwoImages ? matchTwoImages[3] : ''}" class="rounded-b-[20px] rounded-tr-[20px] rounded-tl-[20px] md:rounded-tl-[90px] lg:rounded-tl-[70px]" alt="blog-details-image">
           </div>
         </div>
         `;
-
       decodedContent = decodedContent.replace(regexTwoImages, replacement);
     }
 
+    let regex = /<div style="display: none;">\*\*Lead\*(.*?)\*\*<\/div>/; // Regular expression to match the lead
+    let matchLead = page.content.match(regex); // Execute the regular expression
+    let lead = matchLead ? matchLead[1] : null; // If a match is found, extract the lead. Otherwise, lead is null.
+
     parsedContent.content = decodedContent;
     parsedContent.title = page.title;
+    parsedContent.lead = lead ? lead : '';
     return parsedContent;
   }
 }
