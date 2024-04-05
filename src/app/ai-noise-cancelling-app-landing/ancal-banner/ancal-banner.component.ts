@@ -23,11 +23,10 @@ export class AncalBannerComponent implements OnInit {
   ngOnInit(): void {
     this.bloggerService.findPost('**Main**').pipe(
       take(1),
-      map(posts => {
-          if (posts && posts.length > 0) {
-            this.parsedContent = this.contentService.parseContent(posts[0]);
-          }
-        }
+      map(post => {
+        if (post) {
+            this.parsedContent = this.contentService.parseContent(post);
+        }}
       )).subscribe();
   }
 

@@ -52,11 +52,11 @@ export class BloggerService {
     }
   }
 
-  findPost(q: string): Observable<Post[] | null> {
+  findPost(q: string): Observable<Post | null> {
     if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPosts()).pipe(
-        map(posts => posts.filter(post => post.content.includes(q)) ?? null),
+        map(posts => posts[0] ?? null),
         catchError(err => {
           console.error(err);
           return of(null);
@@ -66,10 +66,10 @@ export class BloggerService {
       console.log('Production Mode');
       const encodedQ = encodeURIComponent(q);
       return this.httpClient.get<PostResponse>('.netlify/functions/find-post?encodedQ=' + encodedQ).pipe(
-      map(response => response.items ?? []),
+      map(response => response.items ?  response.items[0] : null),
         catchError(err => {
           console.error(err);
-          return of([]);
+          return of(null);
         }));
     }
   }
