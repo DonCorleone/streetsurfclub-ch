@@ -19,23 +19,25 @@ export class ContentService {
       headerImg: null
     };
     let imgBlock = null;
-    if (page.content) {
-      let decodedContent = decodeURIComponent(page.content.replace(/\\u/g, '%'));
+    if (!page.content) {
+      return parsedContent;
+    }
+    let decodedContent = decodeURIComponent(page.content.replace(/\\u/g, '%'));
 
-      let regexImage = /(<div>\s*<div style="text-align: center;?"?>\s*<a href="[^"]*">\s*<img[^>]*><\/a>\s*<\/div>\s*<br \/><b><br \/><\/b>\s*<\/div>)/;
-      let match = decodedContent.match(regexImage);
-      if (!match) {
-        regexImage = /<img[^>]*>/; // Regular expression to match the first <img> tag
-        match = decodedContent.match(regexImage);
-      }
-      imgBlock = match ? match[0] : null;
-      decodedContent = decodedContent.replace(regexImage, '');
-      let regexTwoImages = /(<div class="separator"[^>]*><a href="([^"]*)"[^>]*><img[^>]*><\/a><\/div>\s*<br \/>\s*<div class="separator"[^>]*><a href="([^"]*)"[^>]*><img[^>]*><\/a><\/div>)/;
-      let matchTwoImages = decodedContent.match(regexTwoImages);
-      let imgBlockTwoImages = matchTwoImages ? matchTwoImages[1] : null;
+    let regexImage = /(<div>\s*<div style="text-align: center;?"?>\s*<a href="[^"]*">\s*<img[^>]*><\/a>\s*<\/div>\s*<br \/><b><br \/><\/b>\s*<\/div>)/;
+    let match = decodedContent.match(regexImage);
+    if (!match) {
+      regexImage = /<img[^>]*>/; // Regular expression to match the first <img> tag
+      match = decodedContent.match(regexImage);
+    }
+    imgBlock = match ? match[0] : null;
+    decodedContent = decodedContent.replace(regexImage, '');
+    let regexTwoImages = /(<div class="separator"[^>]*><a href="([^"]*)"[^>]*><img[^>]*><\/a><\/div>\s*<br \/>\s*<div class="separator"[^>]*><a href="([^"]*)"[^>]*><img[^>]*><\/a><\/div>)/;
+    let matchTwoImages = decodedContent.match(regexTwoImages);
+    let imgBlockTwoImages = matchTwoImages ? matchTwoImages[1] : null;
 
-      if (imgBlockTwoImages) {
-        let replacement = `
+    if (imgBlockTwoImages) {
+      let replacement = `
         <div class="grid grid-cols-1 md:grid-cols-2 self-center gap-[25px] my-[20px] md:my-[25px] xl:my-[35px]">
           <div class="text-center">
             <img [src]="${matchTwoImages ? matchTwoImages[2] : ''}" class="rounded-t-[20px] rounded-bl-[20px] rounded-br-[20px] md:rounded-br-[70px] lg:rounded-br-[90px]" alt="blog-details-image">
@@ -45,9 +47,7 @@ export class ContentService {
           </div>
         </div>
         `;
-        decodedContent = decodedContent.replace(regexTwoImages, replacement);
-        parsedContent.content = decodedContent;
-      }
+      decodedContent = decodedContent.replace(regexTwoImages, replacement);
     }
 
     if (page.kind === 'blogger#post') {
@@ -61,7 +61,6 @@ export class ContentService {
       parsedContent.headerImg = srcMatch ? srcMatch[1] : null;
     }
 
-
     const leadRegex = /lead=\"(.*?)\"/;
     const matchLead = page.title.match(leadRegex);
 
@@ -69,6 +68,7 @@ export class ContentService {
       parsedContent.lead = matchLead[1]
     }
 
+    parsedContent.content = decodedContent;
     parsedContent.title = page.title;
     return parsedContent;
   }

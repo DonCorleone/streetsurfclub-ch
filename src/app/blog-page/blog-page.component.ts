@@ -6,12 +6,13 @@ import {BloggerService} from '../services/blogger.service';
 import {Observable} from "rxjs";
 import {AsyncPipe, DatePipe, NgForOf, NgIf} from "@angular/common";
 import {Post} from "../models/posts";
+import {SafeHtmlPipe} from "../pipes/safe-html-pipe";
 
 @Component({
   selector: 'app-blog-page',
   templateUrl: './blog-page.component.html',
   standalone: true,
-  imports: [NavbarComponent, RouterLink, FooterComponent, AsyncPipe, NgForOf, DatePipe, NgIf]
+  imports: [NavbarComponent, RouterLink, FooterComponent, AsyncPipe, NgForOf, DatePipe, NgIf, SafeHtmlPipe]
 })
 export class BlogPageComponent {
 
