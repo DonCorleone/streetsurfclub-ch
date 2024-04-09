@@ -7,6 +7,7 @@ import {DarkmodeService} from "../../services/darkmode.service";
 @Component({
     selector: 'app-footer',
     templateUrl: './footer.component.html',
+    styleUrls: ['./footer.component.scss'],
     standalone: true,
   imports: [RouterLink, AsyncPipe]
 })
