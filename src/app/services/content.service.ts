@@ -13,6 +13,8 @@ export class ContentService {
     }
 
     let parsedContent: IContent = {
+      date: new Date(),
+      id: '',
       title: '',
       content: '',
       lead: '',
@@ -70,6 +72,8 @@ export class ContentService {
 
     parsedContent.content = decodedContent;
     parsedContent.title = page.title;
+    parsedContent.id = page.id;
+    parsedContent.date = new Date(page.published);
     return parsedContent;
   }
 }

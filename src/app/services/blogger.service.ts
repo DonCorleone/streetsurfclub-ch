@@ -10,8 +10,7 @@ import {Post, PostResponse} from "../models/posts";
 })
 export class BloggerService {
 
-  constructor(private httpClient: HttpClient) {
-  }
+  constructor(private httpClient: HttpClient) {}
 
   private async getAllPages(): Promise<Page[]> {
     const url = 'http://localhost:3000/pageList';
@@ -121,10 +120,14 @@ export class BloggerService {
       return sortOrderA - sortOrderB;
     });
   }
-  getPosts(): Observable<Post[]> {
+  getPosts(maxResults?: number): Observable<Post[]> {
     if (isDevMode()) {
       console.log('Development Mode');
+      if (!maxResults) {
+        maxResults = 50;
+      }
       return from(this.getAllPosts()).pipe(
+        map(posts => posts.slice(0, maxResults)),
         catchError(err => {
           console.error(err);
           return of([]);
@@ -132,7 +135,8 @@ export class BloggerService {
       );
     } else {
       console.log('Production Mode');
-      return this.httpClient.get<PostResponse>('.netlify/functions/list-posts').pipe(
+      const maxResultsPostfix = maxResults ? `?maxResults=${maxResults}` : '';
+      return this.httpClient.get<PostResponse>(`.netlify/functions/list-posts${maxResultsPostfix}`).pipe(
         map(response => response.items ?? []),
         catchError(err => {
             console.error(err);
