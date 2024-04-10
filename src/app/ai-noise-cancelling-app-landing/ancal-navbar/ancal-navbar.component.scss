@@ -1,13 +1,16 @@
 #img-logo {
-  width: 60vw;
+  width: 55vw;
   margin-top: -10px
 }
 #img-logo-icon {
-  width: 20vw;
+  width: 15vw;
   padding-bottom: 10px;
   height: 100%  ;
 }
 
+#img-logo-full {
+  max-height: 30vw;
+}
 nav.navbar {
   justify-content: space-around;
 }
@@ -55,9 +58,7 @@ nav.navbar {
 
 // Max width 767px
 @media only screen and (max-width: 767px) {
-  #img-logo {
-    width: 60vw;
-  }
+
 
   .navbar-area {
     .navbar {
@@ -95,12 +96,7 @@ nav.navbar {
 
 // Min width 768px to Max width 991px
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
-  #img-logo {
-    width: 65vw;
-  }
-
-  .navbar-area {
+    .navbar-area {
     .navbar {
       .navbar-collapse {
         @apply hidden;
@@ -132,4 +128,15 @@ nav.navbar {
     }
   }
 
+}
+// Min width 768px to Max width 991px
+@media only screen and (min-width: 1980px) {
+  #img-logo {
+    width: unset;
+    max-height: 15vh;
+  }
+  #img-logo-icon {
+    width: unset;
+    max-height: 15vh;
+  }
 }

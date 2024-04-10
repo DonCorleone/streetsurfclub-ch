@@ -1,16 +1,18 @@
 <div
-  class="navbar-area bg-white dark:bg-black py-[25px] md:py-[30px] 2xl:py-[45px]"
+  class="navbar-area bg-white dark:bg-black py-[10px] md:py-[20px] 2xl:py-[45px]"
   [ngClass]="{'isSticky sticky top-0 left-0 right-0 z-[991]': isSticky}"
 >
   <div
     class="mx-auto px-[12px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1920px] 2xl:px-[30px] 3xl:px-[120px]">
     <nav class="navbar relative lg:flex flex-wrap" [class.active]="menuOpen">
-      <div class="self-center">
+      <div class="self-center text-center ">
         <div
           class="inline-block cursor-pointer"
           (click)="scrollTo('home')"
         >
-          <img id="img-logo" [src]="(isDarkMode$ | async) ? 'assets/images/white-logo.png' : 'assets/images/logo.png'" class="inline"
+          <img id="img-logo" [src]="(isDarkMode$ | async) ? 'assets/images/white-logo.png' : 'assets/images/logo.png'" class="hidden lg:inline"
+               alt="logo">
+          <img id="img-logo-full" [src]="(isDarkMode$ | async) ? 'assets/images/logo-full-dark.png' : 'assets/images/logo-full.png'" class="inline lg:hidden"
                alt="logo">
         </div>
       </div>
@@ -23,7 +25,7 @@
                     <i class="ri-menu-line"></i>
                 </span>
       </button>
-      <img id="img-logo-icon" [src]="(isDarkMode$ | async) ? 'assets/images/logo-icon-dark.png' : 'assets/images/logo-icon.png'" class="inline"
+      <img id="img-logo-icon" [src]="(isDarkMode$ | async) ? 'assets/images/logo-icon-dark.png' : 'assets/images/logo-icon.png'" class="hidden lg:inline"
            alt="logo">
       <div class="navbar-collapse flex self-center grow basis-auto">
         <ul class="navbar-nav self-center flex-row lg:ml-[20px] xl:ml-[50px] 2xl:ml-[110px] lg:mt-[20px] xl:mt-[30px] 2xl:mt-[40px] lg:flex">
