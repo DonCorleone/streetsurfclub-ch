@@ -5,16 +5,18 @@ import {concatMap, EMPTY, from, map, Observable, of, switchMap, toArray} from "r
 import {ContentService} from "../../services/content.service";
 import {IContent} from "../../models/IContent";
 import {AsyncPipe, DatePipe, NgForOf, NgIf} from "@angular/common";
+import {ParseHtmlPipe} from "../../pipes/parse-html-pipe";
 
 @Component({
     selector: 'app-ancal-blog',
     templateUrl: './ancal-blog.component.html',
     standalone: true,
-  imports: [RouterLink, AsyncPipe, NgIf, NgForOf, DatePipe]
+  imports: [RouterLink, AsyncPipe, NgIf, NgForOf, DatePipe, ParseHtmlPipe]
 })
 export class AncalBlogComponent {
 
   content$: Observable<IContent[] | null>;
+  blog$ = this.bloggerService.getBlog()
 
   constructor(private bloggerService: BloggerService, private contentService: ContentService) {
 

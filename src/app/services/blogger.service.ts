@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable, catchError, from, map, of} from 'rxjs';
 import {Page, PageResponse} from "../models/pages";
 import {Post, PostResponse} from "../models/posts";
+import {BlogResponse} from "../models/blog";
 
 
 @Injectable({
@@ -12,6 +13,15 @@ export class BloggerService {
 
   constructor(private httpClient: HttpClient) {}
 
+  private async getBlogMock(): Promise<BlogResponse | null>  {
+    const url = 'http://localhost:3000/blog';
+    const response = await fetch(url);
+    if (response.ok) {
+      return await response.json();
+    } else {
+      return null;
+    }
+  }
   private async getAllPages(): Promise<Page[]> {
     const url = 'http://localhost:3000/pageList';
     const response = await fetch(url);
@@ -55,7 +65,17 @@ export class BloggerService {
     if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPosts()).pipe(
-        map(posts => posts[0] ?? null),
+        map(posts => {
+          if (!q) {
+            return null;
+          };
+          if (!posts || posts.length === 0) {
+            return null;
+          }
+
+          const post = posts.find(x => x.content?.indexOf(q) > 0);
+          return post ?? posts[0];
+        }),
         catchError(err => {
           console.error(err);
           return of(null);
@@ -73,6 +93,20 @@ export class BloggerService {
     }
   }
 
+  getBlog(): Observable<BlogResponse | null> {
+    if (isDevMode()) {
+      console.log('Development Mode');
+      return from(this.getBlogMock()).pipe(
+        catchError(err => {
+          console.error(err);
+          return of(null);
+        })
+      );
+    } else {
+      console.log('Production Mode');
+      return this.httpClient.get<BlogResponse>('.netlify/functions/get-blog');
+    }
+  }
   getPage(pageid: string): Observable<Page | null> {
     if (isDevMode()) {
       console.log('Development Mode');
