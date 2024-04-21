@@ -13,17 +13,17 @@
 <!-- Blog -->
 <div class="py-[80px] md:py-[80px] lg:py-[100px] xl:py-[120px] 2xl:py-[150px]">
     <div class="container mx-auto px-[12px] 2xl:px-0">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[25px]">
-            <div *ngFor="let page of (pages$ | async) as pages">
-                <div data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="'1==1 ?? 200'" >
-                    <a *ngIf="page.images" [routerLink]="'/blog/blog-details/post/' + page.id" class="rounded-[7px] block mb-[20px] md:mb-[25px] lg:mb-[28px]">
-                        <img [src]="page.images[0].url" class="rounded-[7px]" alt="blog-image">
+        <div *ngIf="contents$ |  async as contents" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[25px]">
+            <div *ngFor="let content of contents">
+                <div *ngIf="content" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="'1==1 ?? 200'" >
+                    <a *ngIf="content.headerImg" [routerLink]="'/blog/blog-details/post/' + content.id" class="rounded-[7px] block mb-[20px] md:mb-[25px] lg:mb-[28px]">
+                        <img [src]="content.headerImg" class="rounded-[7px]" alt="blog-image">
                     </a>
                     <span class="leading-none block mb-[10px] md:mb-[12px] lg:mb-[13px] font-medium text-stone-500 dark:yellow-400 text-[13px] md:text-[14px] lg:text-[15px] xl:text-[17px]">
-                        Seite
+                        {{ content.lead }}
                     </span>
                     <h3 class="font-bold text-[18px] md:text-[20px] lg:text-[22px] mb-[15px] lg:mb-[16px]">
-                        <a [routerLink]="'/blog/blog-details/post/' + page.id" [innerHtml]="page.title | safeHtml" class="transition-all leading-[1.4] text-slate-900 dark:text-slate-200 hover:underline">
+                        <a [routerLink]="'/blog/blog-details/post/' + content.id" [innerHtml]="content.title | safeHtml" class="transition-all leading-[1.4] text-slate-900 dark:text-slate-200 hover:underline">
 
                         </a>
                     </h3>
@@ -41,7 +41,7 @@
                                     </defs>
                                 </svg>
                             </span>
-                          {{ page.published | date: 'dd.MM.yyyy' }}
+                          {{ content.date | date: 'dd.MM.yyyy' }}
                         </li>
                         <li class="relative pl-[38px] leading-none inline-block mr-[20px] md:mr-[30px] last:mr-0">
                             <span class="absolute left-0 top-1/2 -translate-y-2/4 inline-block">
@@ -50,7 +50,7 @@
                                     <path d="M16 10.8633C13.1673 10.8633 10.8628 13.1678 10.8628 16.0005C10.8628 18.8333 13.1673 21.1375 16 21.1375C18.8328 21.1375 21.1373 18.833 21.1373 16.0005C21.1373 13.1678 18.8328 10.8633 16 10.8633ZM16 20.1375C13.7188 20.1375 11.8628 18.2818 11.8628 16.0005C11.8628 13.7193 13.7188 11.8633 16 11.8633C18.2812 11.8633 20.1373 13.7193 20.1373 16.0005C20.1373 18.2818 18.2812 20.1375 16 20.1375Z" fill="#666666"/>
                                 </svg>
                             </span>
-                          {{ page.author.displayName }}
+                          {{ content.author }}
                         </li>
                     </ul>
                 </div>
