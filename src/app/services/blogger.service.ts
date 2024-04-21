@@ -146,9 +146,9 @@ export class BloggerService {
 
   private sortItems(items: Page[]): Page[] {
     return items.sort((a, b) => {
-      const pattern = /##SortOrder#(\d+)##/;
-      const matchA = pattern.exec(a.content);
-      const matchB = pattern.exec(b.content);
+      const pattern = /sortorder="(\d+)"/;
+      const matchA = pattern.exec(a.title);
+      const matchB = pattern.exec(b.title);
       const sortOrderA = matchA ? parseInt(matchA[1], 10) : 0;
       const sortOrderB = matchB ? parseInt(matchB[1], 10) : 0;
       return sortOrderA - sortOrderB;
