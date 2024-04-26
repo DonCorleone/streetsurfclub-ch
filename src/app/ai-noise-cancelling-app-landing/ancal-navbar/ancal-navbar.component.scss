@@ -68,13 +68,14 @@ nav.navbar {
         max-height: 50vh;
         @apply bg-stone-100 dark:bg-stone-900;
         overflow: {
-          y: scroll;
           x: hidden;
         };
       }
 
       &.active {
         .navbar-toggler {
+          top: -31px;
+          right: -7px;
           .burger-menu {
             i {
               &::before {
@@ -111,6 +112,8 @@ nav.navbar {
 
       &.active {
         .navbar-toggler {
+          top: -31px;
+          right: -7px;
           .burger-menu {
             i {
               &::before {
