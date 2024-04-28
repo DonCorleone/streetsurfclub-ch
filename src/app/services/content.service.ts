@@ -31,21 +31,25 @@ export class ContentService {
       let decodedContent = decodeURIComponent(page.content.replace(/\\u/g, '%'));
       let regexImage = /(<div>\s*<div style="text-align: center;?"?>\s*<a href="[^"]*">\s*<img[^>]*><\/a>\s*<\/div>\s*<br \/><b><br \/><\/b>\s*<\/div>)/;
       let match = decodedContent.match(regexImage);
-      let indexOfMatch: number | undefined = 0;
+
       if (!match) {
         regexImage = /<img[^>]*>/; // Regular expression to match the first <img> tag
         match = decodedContent.match(regexImage);
       }
 
       if (match) {
-        indexOfMatch = match.index;
+        let indexOfMatch = match.index;
         let imgBlock = match[0];
         if (imgBlock && parsedContent.headerImg === null && indexOfMatch !== undefined && indexOfMatch < 10) {
           let srcRegex = /<img[^>]+src="([^">]+)"/;
           let srcMatch = imgBlock.match(srcRegex);
           parsedContent.headerImg = srcMatch ? srcMatch[1] : null;
-          decodedContent = decodedContent.replace(regexImage, '');
         }
+      }
+
+      // Replace the found image block in the content with an empty string, if headerimage is set and match is found
+      if (parsedContent.headerImg && match) {
+        decodedContent = decodedContent.replace(match[0], '');
       }
 
       let regexTwoImages = /(<div class="separator"[^>]*><a href="([^"]*)"[^>]*><img[^>]*><\/a><\/div>\s*<br \/>\s*<div class="separator"[^>]*><a href="([^"]*)"[^>]*><img[^>]*><\/a><\/div>)/;
