@@ -1,6 +1,6 @@
 import {FooterComponent} from '../common/footer/footer.component';
 import {NavbarComponent} from '../common/navbar/navbar.component';
-import {AsyncPipe, NgIf} from '@angular/common';
+import {AsyncPipe, NgIf, NgOptimizedImage} from '@angular/common';
 import {SafeHtmlPipe} from '../pipes/safe-html-pipe';
 import {BloggerService} from '../services/blogger.service';
 import {map, take} from 'rxjs';
@@ -14,7 +14,7 @@ import {ParseHtmlPipe} from "../pipes/parse-html-pipe";
   selector: 'app-blog-details-page',
   templateUrl: './blog-details-page.component.html',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, NgIf, AsyncPipe, SafeHtmlPipe, ParseHtmlPipe],
+  imports: [NavbarComponent, FooterComponent, NgIf, AsyncPipe, SafeHtmlPipe, ParseHtmlPipe, NgOptimizedImage],
 })
 export class BlogDetailsPageComponent implements OnInit {
 

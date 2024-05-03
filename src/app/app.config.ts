@@ -7,13 +7,14 @@ import {BrowserModule} from "@angular/platform-browser";
 import {CarouselModule} from "ngx-owl-carousel-o";
 import {NgxScrollTopModule} from "ngx-scrolltop";
 import {provideAnimations} from "@angular/platform-browser/animations";
-import { DatePipe, registerLocaleData } from '@angular/common';
+import { DatePipe, provideNetlifyLoader, registerLocaleData } from '@angular/common';
 
 import localeDE from '@angular/common/locales/de';
 registerLocaleData(localeDE);
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideNetlifyLoader('https://main--streetsurfclub.netlify.app'),
     provideRouter(routes),
     DatePipe, {
       provide: LOCALE_ID,
