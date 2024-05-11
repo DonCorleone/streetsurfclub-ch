@@ -46,7 +46,7 @@ export class BlogDetailsPageComponent implements OnInit {
             const parsedContent = this.contentService.parseContent(page);
             this.title = parsedContent?.title ?? '';
             this.content = parsedContent?.content ?? '';
-            this.headerImg = parsedContent?.headerImg ?? null;
+            this.headerImg = !parsedContent?.headerImg ? null : `${parsedContent.headerImg}`;
           }
         })
       )
