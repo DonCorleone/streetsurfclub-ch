@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import * as AOS from 'aos';
 import { AncalFooterComponent } from './ancal-footer/ancal-footer.component';
@@ -15,6 +15,9 @@ import { AncalBrandsComponent } from './ancal-brands/ancal-brands.component';
 import { AncalFeaturesComponent } from './ancal-features/ancal-features.component';
 import { AncalBannerComponent } from './ancal-banner/ancal-banner.component';
 import { AncalNavbarComponent } from './ancal-navbar/ancal-navbar.component';
+import {take} from "rxjs";
+import {Page} from "../models/pages";
+import {BloggerService} from "../services/blogger.service";
 
 @Component({
   selector: 'app-ai-noise-cancelling-app-landing',
@@ -37,12 +40,21 @@ import { AncalNavbarComponent } from './ancal-navbar/ancal-navbar.component';
     AncalFooterComponent,
   ],
 })
-export class AiNoiseCancellingAppLandingComponent {
+export class AiNoiseCancellingAppLandingComponent implements OnInit{
   title = 'AI Noise Cancelling App Landing - Canora';
+  pages: Page[] = [];
+  contact: Page | undefined;
 
-  constructor(private titleService: Title) {}
+  constructor(private titleService: Title, private bloggerService: BloggerService) {}
 
   ngOnInit() {
+    this.bloggerService.getPages().pipe(
+      take(1)
+    ).subscribe((pages: Page[]) => {
+      this.pages = pages;
+      this.contact = pages.find(page => page.title.indexOf('contact') > 0);
+    }
+    );
     this.titleService.setTitle(this.title);
   }
 }

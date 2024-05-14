@@ -1,12 +1,8 @@
-import {ChangeDetectionStrategy, Component, HostListener, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, HostListener, Input, OnInit} from '@angular/core';
 import {AsyncPipe, NgClass, NgForOf, NgIf} from '@angular/common';
 import {DarkmodeService} from "../../services/darkmode.service";
-import {BloggerService} from "../../services/blogger.service";
-import {Observable} from "rxjs";
-import {Page} from "../../models/pages";
 import {RouterLink} from "@angular/router";
 import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
-
 
 @Component({
   selector: 'app-ancal-navbar',
@@ -19,9 +15,7 @@ import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
 export class AncalNavbarComponent {
 
   isDarkMode$ = this.darkmodeService.isDarkMode$;
-  pages$: Observable<Page[]> = this.bloggerService.getPages();
-
-  constructor(private darkmodeService: DarkmodeService, private bloggerService: BloggerService) {
+  constructor(private darkmodeService: DarkmodeService) {
   }
 
   menuOpen = false;
@@ -79,6 +73,7 @@ export class AncalNavbarComponent {
 
   // Tabs
   currentTab = 'tab1';
+  @Input() pages!: any;
 
   switchTab(event: MouseEvent, tab: string) {
     event.preventDefault();

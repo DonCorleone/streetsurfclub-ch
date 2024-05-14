@@ -17,6 +17,8 @@ import {NgxScrollTopModule} from 'ngx-scrolltop';
 import {SidebarComponent} from './common/sidebar/sidebar.component';
 import {BloggerService} from './services/blogger.service';
 import {SafeHtmlPipe} from "./pipes/safe-html-pipe";
+import {Observable, take} from "rxjs";
+import {Page} from "./models/pages";
 
 @Component({
   selector: 'app-root',
@@ -37,8 +39,7 @@ export class AppComponent implements OnInit {
 
   location: any;
   routerSubscription: any;
-
-  constructor(private bloggerService: BloggerService, private router: Router) {
+  constructor(private router: Router) {
     AOS.init();
     if (
       window.matchMedia &&
@@ -58,6 +59,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.recallJsFuntions();
     if (isDevMode()){
       console.log('Development Mode');

@@ -4,7 +4,7 @@ import {AsyncPipe, DatePipe, NgIf, NgOptimizedImage} from '@angular/common';
 import {SafeHtmlPipe} from '../pipes/safe-html-pipe';
 import {BloggerService} from '../services/blogger.service';
 import {map, take} from 'rxjs';
-import {Component, Input, OnInit, input} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ContentService} from "../services/content.service";
 import {ParseHtmlPipe} from "../pipes/parse-html-pipe";

@@ -16,9 +16,8 @@
                             Features
                         </a>
                     </li>
-                    <li class="mb-[15px] last:mb-0">
-                        <a href="javascript:void(0);" class="inline-block text-stone-500 dark:yellow-400 transition-all hover:underline">
-                            Contact
+                    <li *ngIf="contact" class="mb-[15px] last:mb-0">
+                        <a [routerLink]="'/blog/blog-details/page/' + contact.id" [innerHtml]="contact.title | safeHtml" class="inline-block text-stone-500 dark:yellow-400 transition-all hover:underline" >
                         </a>
                     </li>
                 </ul>
