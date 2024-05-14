@@ -1,9 +1,8 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {Page} from "../../models/pages";
 import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
-import {AsyncPipe, NgIf} from "@angular/common";
+import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
 import {RouterLink} from "@angular/router";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-ancal-footer',
@@ -12,11 +11,13 @@ import {Observable} from "rxjs";
     SafeHtmlPipe,
     NgIf,
     RouterLink,
-    AsyncPipe
+    AsyncPipe,
+    NgForOf
   ],
   standalone: true,
 })
 export class AncalFooterComponent{
-  @Input() contact: Page | undefined;
+  @Input() quickLinks: Page[] = [];
+  features: any;
 
 }

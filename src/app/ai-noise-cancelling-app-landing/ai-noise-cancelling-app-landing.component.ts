@@ -43,7 +43,7 @@ import {BloggerService} from "../services/blogger.service";
 export class AiNoiseCancellingAppLandingComponent implements OnInit{
   title = 'AI Noise Cancelling App Landing - Canora';
   pages: Page[] = [];
-  contact: Page | undefined;
+  quickLinks: Page[] = [];
 
   constructor(private titleService: Title, private bloggerService: BloggerService) {}
 
@@ -52,9 +52,16 @@ export class AiNoiseCancellingAppLandingComponent implements OnInit{
       take(1)
     ).subscribe((pages: Page[]) => {
       this.pages = pages;
-      this.contact = pages.find(page => page.title.indexOf('contact') > 0);
+      this.quickLinks = this.getPagesByGroup('Quick Links');
     }
     );
     this.titleService.setTitle(this.title);
+  }
+
+  getPagesByGroup(group: string): Page[] {
+
+    // find pages where title contains attribute "group", the value should match the group parameter by regex
+    // "title": "<div style=\"display: none;\" lead=\"\" sortorder=\"50\" group=\"Supports\"></div>Kontakt",
+    return this.pages.filter(page => page.title.match(new RegExp(`group="${group}"`, 'g')));
   }
 }

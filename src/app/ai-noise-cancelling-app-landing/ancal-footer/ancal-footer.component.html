@@ -7,17 +7,12 @@
                 </h3>
                 <ul class="text-[13px] md:text-[14px] lg:text-[15px]">
                     <li class="mb-[15px] last:mb-0">
-                        <a href="javascript:void(0);" class="inline-block text-stone-500 dark:yellow-400 transition-all hover:underline">
+                        <a [routerLink]="'/'"  class="inline-block text-stone-500 dark:yellow-400 transition-all hover:underline">
                             Home
                         </a>
                     </li>
-                    <li class="mb-[15px] last:mb-0">
-                        <a href="javascript:void(0);" class="inline-block text-stone-500 dark:yellow-400 transition-all hover:underline">
-                            Features
-                        </a>
-                    </li>
-                    <li *ngIf="contact" class="mb-[15px] last:mb-0">
-                        <a [routerLink]="'/blog/blog-details/page/' + contact.id" [innerHtml]="contact.title | safeHtml" class="inline-block text-stone-500 dark:yellow-400 transition-all hover:underline" >
+                    <li *ngFor="let qiuckLink of quickLinks" class="mb-[15px] last:mb-0">
+                        <a [routerLink]="'/blog/blog-details/page/' + qiuckLink.id" [innerHtml]="qiuckLink.title | safeHtml" class="inline-block text-stone-500 dark:yellow-400 transition-all hover:underline" >
                         </a>
                     </li>
                 </ul>
