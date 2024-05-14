@@ -1,6 +1,6 @@
 import {FooterComponent} from '../common/footer/footer.component';
 import {NavbarComponent} from '../common/navbar/navbar.component';
-import {AsyncPipe, NgIf, NgOptimizedImage} from '@angular/common';
+import {AsyncPipe, DatePipe, NgIf, NgOptimizedImage} from '@angular/common';
 import {SafeHtmlPipe} from '../pipes/safe-html-pipe';
 import {BloggerService} from '../services/blogger.service';
 import {map, take} from 'rxjs';
@@ -14,13 +14,15 @@ import {ParseHtmlPipe} from "../pipes/parse-html-pipe";
   selector: 'app-blog-details-page',
   templateUrl: './blog-details-page.component.html',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, NgIf, AsyncPipe, SafeHtmlPipe, ParseHtmlPipe, NgOptimizedImage],
+  imports: [NavbarComponent, FooterComponent, NgIf, AsyncPipe, SafeHtmlPipe, ParseHtmlPipe, NgOptimizedImage, DatePipe],
 })
 export class BlogDetailsPageComponent implements OnInit {
 
   content = '';
   headerImg: string | null = null;
   title = '';
+  date: Date | string = '';
+  amountReplies = '0';
 
   constructor(private bloggerService: BloggerService, private activatedRoute: ActivatedRoute, private contentService: ContentService) {
   }
@@ -47,6 +49,8 @@ export class BlogDetailsPageComponent implements OnInit {
             this.title = parsedContent?.title ?? '';
             this.content = parsedContent?.content ?? '';
             this.headerImg = !parsedContent?.headerImg ? null : `${parsedContent.headerImg}`;
+            this.date = parsedContent?.date ?? '';
+            this.amountReplies = parsedContent?.amountReplies ?? '0';
           }
         })
       )

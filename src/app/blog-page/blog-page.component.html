@@ -18,7 +18,7 @@
                 <div *ngIf="content" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="'1==1 ?? 200'" >
                     <div class="h-96 flex items-center dark:bg-stone-800 rounded-[7px] block mb-[20px] md:mb-[25px] lg:mb-[28px]">
                       <a *ngIf="content.headerImg" [routerLink]="'/blog/blog-details/post/' + content.id" class="h- overflow-hidden">
-                        <img [src]="content.headerImg" alt="blog-image">
+                        <img [ngSrc]="content.headerImg" width="500" height="300" alt="blog-image">
                       </a>
                     </div>
                     <span class="leading-none block mb-[10px] md:mb-[12px] lg:mb-[13px] font-medium text-stone-500 dark:yellow-400 text-[13px] md:text-[14px] lg:text-[15px] xl:text-[17px]">

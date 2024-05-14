@@ -1,4 +1,5 @@
 export interface IContent {
+  amountReplies: string;
   author: string;
   date: Date;
   id: string;

@@ -20,12 +20,14 @@ export class ContentService {
       content: '',
       lead: '',
       headerImg: null,
+      amountReplies: '0',
     };
 
     if (page.kind === 'blogger#post') {
       const images = (page as Post).images;
       parsedContent.headerImg =
         images && images.length > 0 ? images[0].url : null;
+      parsedContent.amountReplies = (page as Post).replies?.totalItems;
     }
     if (page.content) {
       let decodedContent = decodeURIComponent(
@@ -90,7 +92,6 @@ export class ContentService {
         </div>`;
       }
       decodedContent = decodedContent.replace(firstImage, replacement);
-
       parsedContent.content = decodedContent;
     }
 
