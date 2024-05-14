@@ -44,6 +44,9 @@ export class AiNoiseCancellingAppLandingComponent implements OnInit{
   title = 'AI Noise Cancelling App Landing - Canora';
   pages: Page[] = [];
   quickLinks: Page[] = [];
+  resources: Page[] = [];
+  terms: Page[] = [];
+  supports: Page[] = [];
 
   constructor(private titleService: Title, private bloggerService: BloggerService) {}
 
@@ -53,6 +56,9 @@ export class AiNoiseCancellingAppLandingComponent implements OnInit{
     ).subscribe((pages: Page[]) => {
       this.pages = pages;
       this.quickLinks = this.getPagesByGroup('Quick Links');
+      this.resources = this.getPagesByGroup('Resources');
+      this.terms = this.getPagesByGroup('Terms');
+      this.supports = this.getPagesByGroup('Supports');
     }
     );
     this.titleService.setTitle(this.title);
