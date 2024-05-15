@@ -17,9 +17,9 @@ import {RouterLink} from "@angular/router";
   standalone: true,
 })
 export class AncalFooterComponent{
-  @Input() quickLinks: Page[] = [];
-  @Input() resources: Page[] = [];
-  @Input() terms: Page[] = [];
-  @Input() supports: Page[] = [];
+  @Input() quickLinks: Page[] | undefined = [];
+  @Input() resources: Page[] | undefined = [];
+  @Input() terms: Page[] | undefined = [];
+  @Input() supports: Page[] | undefined = [];
 
 }

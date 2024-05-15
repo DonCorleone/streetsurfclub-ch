@@ -42,11 +42,11 @@ import {BloggerService} from "../services/blogger.service";
 })
 export class AiNoiseCancellingAppLandingComponent implements OnInit{
   title = 'AI Noise Cancelling App Landing - Canora';
-  pages: Page[] = [];
-  quickLinks: Page[] = [];
-  resources: Page[] = [];
-  terms: Page[] = [];
-  supports: Page[] = [];
+  pages: Page[] | undefined = this.bloggerService.pages;
+  quickLinks: Page[] | undefined = this.bloggerService.quickLinks;
+  resources: Page[] | undefined = this.bloggerService.resources;
+  terms: Page[] | undefined = this.bloggerService.terms;
+  supports: Page[] | undefined = this.bloggerService.supports;
 
   constructor(private titleService: Title, private bloggerService: BloggerService) {}
 
@@ -54,20 +54,10 @@ export class AiNoiseCancellingAppLandingComponent implements OnInit{
     this.bloggerService.getPages().pipe(
       take(1)
     ).subscribe((pages: Page[]) => {
+
       this.pages = pages;
-      this.quickLinks = this.getPagesByGroup('Quick Links');
-      this.resources = this.getPagesByGroup('Resources');
-      this.terms = this.getPagesByGroup('Terms');
-      this.supports = this.getPagesByGroup('Supports');
     }
     );
     this.titleService.setTitle(this.title);
-  }
-
-  getPagesByGroup(group: string): Page[] {
-
-    // find pages where title contains attribute "group", the value should match the group parameter by regex
-    // "title": "<div style=\"display: none;\" lead=\"\" sortorder=\"50\" group=\"Supports\"></div>Kontakt",
-    return this.pages.filter(page => page.title.match(new RegExp(`group="${group}"`, 'g')));
   }
 }

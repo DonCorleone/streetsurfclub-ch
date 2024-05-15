@@ -1,6 +1,6 @@
 import {Injectable, isDevMode} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable, catchError, from, map, of} from 'rxjs';
+import {Observable, catchError, from, map, of, tap} from 'rxjs';
 import {Page, PageResponse} from "../models/pages";
 import {Post, PostResponse} from "../models/posts";
 import {BlogResponse} from "../models/blog";
@@ -10,6 +10,11 @@ import {BlogResponse} from "../models/blog";
   providedIn: 'root',
 })
 export class BloggerService {
+  pages: Page[] | undefined;
+  quickLinks: Page[] | undefined;
+  resources: Page[] | undefined;
+  terms: Page[] | undefined;
+  supports: Page[] | undefined;
 
   constructor(private httpClient: HttpClient) {}
 
@@ -124,6 +129,27 @@ export class BloggerService {
   }
 
   getPages(): Observable<Page[]> {
+    return this.getPagesByMOde().pipe(
+      tap(pages => {
+        console.log(pages);
+        this.pages = pages;
+        this.quickLinks = this.getPagesByGroup('Quick Links');
+        this.resources = this.getPagesByGroup('Resources');
+        this.terms = this.getPagesByGroup('Terms');
+        this.supports = this.getPagesByGroup('Supports');
+        return pages;
+      })
+    );
+  }
+
+  getPagesByGroup(group: string): Page[] | undefined {
+
+    // find pages where title contains attribute "group", the value should match the group parameter by regex
+    // "title": "<div style=\"display: none;\" lead=\"\" sortorder=\"50\" group=\"Supports\"></div>Kontakt",
+    return this.pages?.filter(page => page.title.match(new RegExp(`group="${group}"`, 'g')));
+  }
+
+  private getPagesByMOde(): Observable<Page[]> {
     if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPages()).pipe(
