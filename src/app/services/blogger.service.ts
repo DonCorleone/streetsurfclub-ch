@@ -125,7 +125,6 @@ export class BloggerService {
       return this.httpClient.get<BlogResponse>('.netlify/functions/get-blog');
     }
   }
-
   getPage(pageid: string): Observable<Page | null> {
     if (isDevMode()) {
       console.log('Development Mode');

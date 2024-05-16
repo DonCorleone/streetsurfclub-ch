@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Title} from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 import * as AOS from 'aos';
 import {AncalFooterComponent} from './ancal-footer/ancal-footer.component';
 import {AncalBlogComponent} from './ancal-blog/ancal-blog.component';
@@ -42,7 +42,7 @@ import {AsyncPipe} from "@angular/common";
     AsyncPipe,
   ],
 })
-export class AiNoiseCancellingAppLandingComponent implements OnInit {
+export class AiNoiseCancellingAppLandingComponent implements OnInit{
   title = 'AI Noise Cancelling App Landing - Canora';
 
   pages$ = this.bloggerService.pages$.pipe(
@@ -64,7 +64,23 @@ export class AiNoiseCancellingAppLandingComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.bloggerService.getPages().pipe(
+      take(1)
+    ).subscribe((pages: Page[]) => {
+      this.pages = pages;
+      this.quickLinks = this.getPagesByGroup('Quick Links');
+      this.resources = this.getPagesByGroup('Resources');
+      this.terms = this.getPagesByGroup('Terms');
+      this.supports = this.getPagesByGroup('Supports');
+    }
+    );
     this.titleService.setTitle(this.title);
+  }
 
+  getPagesByGroup(group: string): Page[] {
+
+    // find pages where title contains attribute "group", the value should match the group parameter by regex
+    // "title": "<div style=\"display: none;\" lead=\"\" sortorder=\"50\" group=\"Supports\"></div>Kontakt",
+    return this.pages.filter(page => page.title.match(new RegExp(`group="${group}"`, 'g')));
   }
 }
