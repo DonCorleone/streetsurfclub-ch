@@ -1,6 +1,6 @@
 import {Injectable, isDevMode} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable, catchError, from, map, of} from 'rxjs';
+import {BehaviorSubject, Observable, catchError, from, map, of, tap} from 'rxjs';
 import {Page, PageResponse} from "../models/pages";
 import {Post, PostResponse} from "../models/posts";
 import {BlogResponse} from "../models/blog";
@@ -11,7 +11,25 @@ import {BlogResponse} from "../models/blog";
 })
 export class BloggerService {
 
-  constructor(private httpClient: HttpClient) {}
+  quickLinks: Page[] | undefined;
+  resources: Page[] | undefined;
+  terms: Page[] | undefined;
+  supports: Page[] | undefined;
+
+  private pagesSubject = new BehaviorSubject<Page[]>([]);
+  public pages$ = this.pagesSubject.asObservable();
+
+  constructor(private httpClient: HttpClient) {
+    this.getPagesByMode().subscribe(pages => {
+
+/*      this.quickLinks = this.getPagesByGroup(pages,'Quick Links');
+      this.resources = this.getPagesByGroup(pages,'Resources');
+      this.terms = this.getPagesByGroup(pages, 'Terms');
+      this.supports = this.getPagesByGroup(pages,'Supports');*/
+
+      this.pagesSubject.next(pages);
+    });
+  }
 
   private async getBlogMock(): Promise<BlogResponse | null>  {
     const url = 'http://localhost:3000/blog';
@@ -107,6 +125,7 @@ export class BloggerService {
       return this.httpClient.get<BlogResponse>('.netlify/functions/get-blog');
     }
   }
+
   getPage(pageid: string): Observable<Page | null> {
     if (isDevMode()) {
       console.log('Development Mode');
@@ -123,7 +142,15 @@ export class BloggerService {
     }
   }
 
-  getPages(): Observable<Page[]> {
+
+  getPagesByGroup(pages: Page[], group: string): Page[] | undefined {
+
+    // find pages where title contains attribute "group", the value should match the group parameter by regex
+    // "title": "<div style=\"display: none;\" lead=\"\" sortorder=\"50\" group=\"Supports\"></div>Kontakt",
+    return pages?.filter(page => page.title.match(new RegExp(`group="${group}"`, 'g')));
+  }
+
+  private getPagesByMode(): Observable<Page[]> {
     if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPages()).pipe(
