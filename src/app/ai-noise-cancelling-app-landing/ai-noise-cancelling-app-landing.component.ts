@@ -15,7 +15,7 @@ import {AncalBrandsComponent} from './ancal-brands/ancal-brands.component';
 import {AncalFeaturesComponent} from './ancal-features/ancal-features.component';
 import {AncalBannerComponent} from './ancal-banner/ancal-banner.component';
 import {AncalNavbarComponent} from './ancal-navbar/ancal-navbar.component';
-import {map, take, tap} from "rxjs";
+import {map, Observable, take, tap} from "rxjs";
 import {Page} from "../models/pages";
 import {BloggerService} from "../services/blogger.service";
 import {AsyncPipe} from "@angular/common";
@@ -45,7 +45,7 @@ import {AsyncPipe} from "@angular/common";
 export class AiNoiseCancellingAppLandingComponent implements OnInit{
   title = 'AI Noise Cancelling App Landing - Canora';
 
-  pages$ = this.bloggerService.pages$.pipe(
+  pages$: Observable<Page[]> = this.bloggerService.pages$.pipe(
     tap(pages => {
         if (pages.length > 0) {
           this.quickLinks = this.bloggerService.quickLinks;
@@ -64,23 +64,6 @@ export class AiNoiseCancellingAppLandingComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.bloggerService.getPages().pipe(
-      take(1)
-    ).subscribe((pages: Page[]) => {
-      this.pages = pages;
-      this.quickLinks = this.getPagesByGroup('Quick Links');
-      this.resources = this.getPagesByGroup('Resources');
-      this.terms = this.getPagesByGroup('Terms');
-      this.supports = this.getPagesByGroup('Supports');
-    }
-    );
     this.titleService.setTitle(this.title);
-  }
-
-  getPagesByGroup(group: string): Page[] {
-
-    // find pages where title contains attribute "group", the value should match the group parameter by regex
-    // "title": "<div style=\"display: none;\" lead=\"\" sortorder=\"50\" group=\"Supports\"></div>Kontakt",
-    return this.pages.filter(page => page.title.match(new RegExp(`group="${group}"`, 'g')));
   }
 }
