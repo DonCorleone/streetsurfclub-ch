@@ -11,10 +11,10 @@ import {BlogResponse} from "../models/blog";
 })
 export class BloggerService {
 
-  quickLinks: Page[] | undefined;
-  resources: Page[] | undefined;
-  terms: Page[] | undefined;
-  supports: Page[] | undefined;
+  quickLinks: Page[] = [];
+  resources: Page[] = [];
+  terms: Page[] = [];
+  supports: Page[] = [];
 
   private pagesSubject = new BehaviorSubject<Page[]>([]);
   public pages$ = this.pagesSubject.asObservable();
@@ -142,11 +142,11 @@ export class BloggerService {
   }
 
 
-  getPagesByGroup(pages: Page[], group: string): Page[] | undefined {
+  getPagesByGroup(pages: Page[], group: string): Page[]  {
 
     // find pages where title contains attribute "group", the value should match the group parameter by regex
     // "title": "<div style=\"display: none;\" lead=\"\" sortorder=\"50\" group=\"Supports\"></div>Kontakt",
-    return pages?.filter(page => page.title.match(new RegExp(`group="${group}"`, 'g')));
+    return pages?.filter(page => page.title.match(new RegExp(`group="${group}"`, 'g'))) ?? [];
   }
 
   private getPagesByMode(): Observable<Page[]> {

@@ -55,10 +55,10 @@ export class AiNoiseCancellingAppLandingComponent implements OnInit{
         }
       }
     ));
-  supports: Page[] | undefined;
-  terms: Page[] | undefined;
-  resources: Page[] | undefined;
-  quickLinks: Page[] | undefined;
+  supports: Page[] = [];
+  terms: Page[] = [];
+  resources: Page[] = [];
+  quickLinks: Page[] = [];
 
   constructor(private titleService: Title, private bloggerService: BloggerService) {
   }
