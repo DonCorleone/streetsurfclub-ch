@@ -22,10 +22,10 @@ export class BloggerService {
   constructor(private httpClient: HttpClient) {
     this.getPagesByMode().subscribe(pages => {
 
-/*      this.quickLinks = this.getPagesByGroup(pages,'Quick Links');
+      this.quickLinks = this.getPagesByGroup(pages,'Quick Links');
       this.resources = this.getPagesByGroup(pages,'Resources');
       this.terms = this.getPagesByGroup(pages, 'Terms');
-      this.supports = this.getPagesByGroup(pages,'Supports');*/
+      this.supports = this.getPagesByGroup(pages,'Supports');
 
       this.pagesSubject.next(pages);
     });
