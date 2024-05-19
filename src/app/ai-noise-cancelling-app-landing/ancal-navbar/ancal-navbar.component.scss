@@ -59,6 +59,7 @@ nav.navbar {
 
 
   .navbar-area {
+    @apply bg-white dark:bg-neutral-900;
     .navbar {
       .navbar-collapse {
         @apply hidden;
@@ -96,6 +97,7 @@ nav.navbar {
 // Min width 768px to Max width 991px
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .navbar-area {
+      @apply bg-white dark:bg-neutral-900;
     .navbar {
       .navbar-collapse {
         @apply hidden;
