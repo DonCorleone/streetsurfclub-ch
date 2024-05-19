@@ -1,6 +1,6 @@
 import {Injectable, isDevMode} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {BehaviorSubject, Observable, catchError, from, map, of, tap} from 'rxjs';
+import {BehaviorSubject, Observable, catchError, from, map, of, tap, EMPTY} from 'rxjs';
 import {Page, PageResponse} from "../models/pages";
 import {Post, PostResponse} from "../models/posts";
 import {BlogResponse} from "../models/blog";
@@ -16,6 +16,9 @@ export class BloggerService {
   terms: Page[] = [];
   supports: Page[] = [];
 
+  private blogSubject = new BehaviorSubject<BlogResponse>({} as BlogResponse);
+  public blog$ = this.blogSubject.asObservable();
+
   private pagesSubject = new BehaviorSubject<Page[]>([]);
   public pages$ = this.pagesSubject.asObservable();
 
@@ -28,6 +31,10 @@ export class BloggerService {
       this.supports = this.getPagesByGroup(pages,'Supports');
 
       this.pagesSubject.next(pages);
+    });
+
+    this.getBlog().subscribe(blog => {
+      this.blogSubject.next(blog ?? {} as BlogResponse);
     });
   }
 
@@ -111,7 +118,7 @@ export class BloggerService {
     }
   }
 
-  getBlog(): Observable<BlogResponse | null> {
+  private getBlog(): Observable<BlogResponse | null> {
     if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getBlogMock()).pipe(

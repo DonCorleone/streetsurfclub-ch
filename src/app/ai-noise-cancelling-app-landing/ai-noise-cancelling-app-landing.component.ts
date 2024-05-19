@@ -15,10 +15,11 @@ import {AncalBrandsComponent} from './ancal-brands/ancal-brands.component';
 import {AncalFeaturesComponent} from './ancal-features/ancal-features.component';
 import {AncalBannerComponent} from './ancal-banner/ancal-banner.component';
 import {AncalNavbarComponent} from './ancal-navbar/ancal-navbar.component';
-import {map, Observable, take, tap} from "rxjs";
+import {BehaviorSubject, map, Observable, ObservableInput, Subject, take, takeUntil, tap} from "rxjs";
 import {Page} from "../models/pages";
 import {BloggerService} from "../services/blogger.service";
 import {AsyncPipe} from "@angular/common";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 
 @Component({
   selector: 'app-ai-noise-cancelling-app-landing',
@@ -42,9 +43,7 @@ import {AsyncPipe} from "@angular/common";
     AsyncPipe,
   ],
 })
-export class AiNoiseCancellingAppLandingComponent implements OnInit{
-  title = 'AI Noise Cancelling App Landing - Canora';
-
+export class AiNoiseCancellingAppLandingComponent {
   pages$: Observable<Page[]> = this.bloggerService.pages$.pipe(
     tap(pages => {
         if (pages.length > 0) {
@@ -61,9 +60,10 @@ export class AiNoiseCancellingAppLandingComponent implements OnInit{
   quickLinks: Page[] = [];
 
   constructor(private titleService: Title, private bloggerService: BloggerService) {
-  }
-
-  ngOnInit() {
-    this.titleService.setTitle(this.title);
+    this.bloggerService.blog$
+      .pipe(takeUntilDestroyed()).subscribe(blog => {
+        this.titleService.setTitle(blog.name);
+      }
+    );
   }
 }

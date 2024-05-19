@@ -16,7 +16,7 @@ import {ParseHtmlPipe} from "../../pipes/parse-html-pipe";
 export class AncalBlogComponent {
 
   content$: Observable<IContent[] | null>;
-  blog$ = this.bloggerService.getBlog()
+  blog$ = this.bloggerService.blog$;
 
   constructor(private bloggerService: BloggerService, private contentService: ContentService) {
 
