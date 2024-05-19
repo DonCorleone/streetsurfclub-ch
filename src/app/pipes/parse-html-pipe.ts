@@ -52,7 +52,7 @@ export class ParseHtmlPipe extends SafeHtmlPipe {
       value,
       '<blockquote',
       /<blockquote.*?>/g,
-      'text-slate-900 dark:text-slate-200 bg-stone-100 dark:bg-stone-900 my-[20px] md:my-[25px] xl:my-[30px] bg-[#f7f5f0] rounded-[15px] p-[20px] md:p-[30px] md:pl-[130px] lg:p-[40px] lg:pl-[145px] xl:p-[50px] xl:pl-[155px] relative border-l-0'
+      'text-slate-900 dark:text-slate-200 bg-stone-100 dark:bg-stone-800 my-[20px] md:my-[25px] xl:my-[30px] bg-[#f7f5f0] rounded-[15px] p-[20px] md:p-[30px] md:pl-[130px] lg:p-[40px] lg:pl-[145px] xl:p-[50px] xl:pl-[155px] relative border-l-0'
     );
     value = this.addClass(
       value,

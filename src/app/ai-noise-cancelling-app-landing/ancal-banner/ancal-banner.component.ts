@@ -24,9 +24,10 @@ export class AncalBannerComponent implements OnInit {
     this.bloggerService.findPost('**Main**').pipe(
       take(1),
       map(post => {
-        if (post) {
+          if (post) {
             this.parsedContent = this.contentService.parseContent(post);
-        }}
+          }
+        }
       )).subscribe();
   }
 
