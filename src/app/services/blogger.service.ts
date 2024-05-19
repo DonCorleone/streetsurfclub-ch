@@ -22,6 +22,9 @@ export class BloggerService {
   private pagesSubject = new BehaviorSubject<Page[]>([]);
   public pages$ = this.pagesSubject.asObservable();
 
+  private postsSubject = new BehaviorSubject<Post[]>([]);
+  public posts$ = this.postsSubject.asObservable();
+
   constructor(private httpClient: HttpClient) {
     this.getPagesByMode().subscribe(pages => {
 
@@ -35,6 +38,10 @@ export class BloggerService {
 
     this.getBlog().subscribe(blog => {
       this.blogSubject.next(blog ?? {} as BlogResponse);
+    });
+
+    this.getPosts(2).subscribe(posts => {
+      this.postsSubject.next(posts);
     });
   }
 
@@ -187,7 +194,7 @@ export class BloggerService {
       return sortOrderA - sortOrderB;
     });
   }
-  getPosts(maxResults?: number): Observable<Post[]> {
+  private getPosts(maxResults?: number): Observable<Post[]> {
     if (isDevMode()) {
       console.log('Development Mode');
       if (!maxResults) {
