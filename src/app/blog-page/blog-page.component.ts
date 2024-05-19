@@ -20,7 +20,8 @@ export class BlogPageComponent {
   contents$: Observable<(IContent | null)[]>;
 
   constructor(private bloggerService: BloggerService, contentService: ContentService) {
-    this.contents$ = this.bloggerService.posts$.pipe(
+    // this.pages$ =
+    this.contents$ = this.bloggerService.getPosts().pipe(
       take(1),
       map(posts => posts.map(post => {
         return contentService.parseContent(post);
