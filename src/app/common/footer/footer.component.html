@@ -1,7 +1,7 @@
 <footer class="pt-[60px] md:pt-[80px] lg:pt-[100px] xl:pt-[120px] 2xl:pt-[150px] bg-slate-900 dark:bg-rose-800">
   <div class="container mx-auto px-[12px] 2xl:px-0">
     <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-[25px]">
-      <div data-aos="fade-in" data-aos-duration="500">
+      <div class="justify-self-center md:justify-self-start" data-aos="fade-in" data-aos-duration="500">
         <a routerLink="/" class="inline-block">
           <img [src]="(isDarkMode$ | async) ? 'assets/images/white-logo.png' : 'assets/images/logo-full-dark.png'"
                alt="white-logo">
@@ -73,25 +73,21 @@
     <div
       class="border-t border-indigo-950 dark:border-indigo-50 py-[25px] md:py-[30px] lg:py-[40px] mt-[60px] md:mt-[80px] lg:mt-[100px] xl:mt-[120px] 2xl:mt-[140px]">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-[15px] md:gap-[25px]">
-        <div class="self-center text-center md:text-left">
-          <p class="text-[13px] md:text-[14px] lg:text-[15px] text-stone-300 dark:text-stone-900 leading-[1.8]">
-            Template © Canora by <a href="https://hibootstrap.com/"
-                                            class="inline text-white transition-all hover:underline" target="_blank">HiBootstrap</a>
-          </p>
-        </div>
         <div class="self-center">
-          <div class="flex justify-center md:justify-end gap-[10px]">
+          <div class="flex justify-center md:justify-end ">
+          <div class="flex flex-col md:flex-row">
             <span
-              class="inline-block self-center text-[13px] md:text-[14px] lg:text-[15px] text-stone-300 dark:text-stone-300">
-                Follow us on:
+              class="inline-block self-center mb-3 md:mb-0 md:mr-4 text-[13px] md:text-[14px] lg:text-[15px] text-stone-300 dark:text-stone-300">
+              Follow us on:
             </span>
-            <span
-              class="inline-block self-center text-[13px] md:text-[14px] lg:text-[15px] text-indigo-300 dark:text-slate-200">
-               <a href="https://www.facebook.com/StreetSurfClub/" target="_blank">
-                Facebook
-              </a>
 
-            </span>
+            <div class="flex gap-2">
+              <span
+                class="inline-block self-center text-[13px] md:text-[14px] lg:text-[15px] text-indigo-300 dark:text-slate-200">
+             <a href="https://www.facebook.com/StreetSurfClub/" target="_blank">
+              Facebook
+            </a>
+          </span>
             <a href="https://www.facebook.com/StreetSurfClub/" target="_blank"
                class="inline-block self-center w-[30px] h-[30px] bg-cyan-300 dark:bg-yellow-600 rounded-full text-center leading-[26px] transition-all hover:bg-amber-200 hover:dark:bg-indigo-300">
               <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="17" height="17" viewBox="0 0 17 17"
@@ -145,10 +141,10 @@
             <!-- Instagram -->
             <span
               class="inline-block self-center text-[13px] md:text-[14px] lg:text-[15px] text-indigo-300 dark:text-slate-200">
-              <a href="https://www.instagram.com/Streetsurfclub_luzern/" target="_blank">
-                Instagram
-              </a>
-            </span>
+            <a href="https://www.instagram.com/Streetsurfclub_luzern/" target="_blank">
+              Instagram
+            </a>
+          </span>
             <a href="https://www.instagram.com/Streetsurfclub_luzern/" target="_blank"
                class="inline-block self-center w-[30px] h-[30px] bg-cyan-300 dark:bg-yellow-600 rounded-full text-center leading-[26px] transition-all hover:bg-amber-200 hover:dark:bg-indigo-300">
 
@@ -167,6 +163,16 @@
               </svg>
             </a>
           </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="self-center text-center md:text-left">
+          <p class="text-[13px] md:text-[14px] lg:text-[15px] text-stone-300 dark:text-stone-900 leading-[1.8]">
+            Template © Canora by <a href="https://angular.hibootstrap.com/canora/"
+                                    class="inline text-white transition-all hover:underline"
+                                    target="_blank">HiBootstrap</a>
+          </p>
         </div>
       </div>
     </div>
