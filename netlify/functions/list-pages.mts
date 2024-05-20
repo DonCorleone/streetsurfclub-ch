@@ -1,7 +1,8 @@
 export default async () => {
 
     const apiKey = process.env["GOOGLE_BLOGGER_API_KEY"];
-    const res = await fetch(`https://www.googleapis.com/blogger/v3/blogs/14706135/pages?key=${apiKey}&fetchBodies=false`, {
+    const blogId = process.env["GOOGLE_BLOGGER_ID"];
+    const res = await fetch(`https://www.googleapis.com/blogger/v3/blogs/${blogId}/pages?key=${apiKey}&fetchBodies=false`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
