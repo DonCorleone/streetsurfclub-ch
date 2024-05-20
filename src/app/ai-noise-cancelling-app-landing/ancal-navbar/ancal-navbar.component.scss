@@ -13,7 +13,7 @@ nav.navbar {
   justify-content: space-around;
 }
 
-.navbar-nav {
+/*.navbar-nav {
   .nav-item {
     .nav-link {
       &:hover {
@@ -31,7 +31,7 @@ nav.navbar {
       }
     }
   }
-}
+}*/
 
 .isSticky {
   @apply py-[20px];
