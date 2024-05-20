@@ -3,6 +3,9 @@ import {AsyncPipe, NgClass, NgForOf, NgIf} from '@angular/common';
 import {DarkmodeService} from "../../services/darkmode.service";
 import {RouterLink} from "@angular/router";
 import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
+import {Observable, tap} from "rxjs";
+import {Page} from "../../models/pages";
+import {BloggerService} from "../../services/blogger.service";
 
 @Component({
   selector: 'app-ancal-navbar',
@@ -14,8 +17,10 @@ import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
 })
 export class AncalNavbarComponent {
 
+  pages$: Observable<Page[]> = this.bloggerService.pages$;
+
   isDarkMode$ = this.darkmodeService.isDarkMode$;
-  constructor(private darkmodeService: DarkmodeService) {
+  constructor(private darkmodeService: DarkmodeService, private bloggerService: BloggerService) {
   }
 
   menuOpen = false;
@@ -73,7 +78,6 @@ export class AncalNavbarComponent {
 
   // Tabs
   currentTab = 'tab1';
-  @Input() pages!: any;
 
   switchTab(event: MouseEvent, tab: string) {
     event.preventDefault();

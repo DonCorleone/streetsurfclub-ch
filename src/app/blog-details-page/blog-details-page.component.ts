@@ -8,13 +8,14 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ContentService} from "../services/content.service";
 import {ParseHtmlPipe} from "../pipes/parse-html-pipe";
+import {AncalNavbarComponent} from "../ai-noise-cancelling-app-landing/ancal-navbar/ancal-navbar.component";
 
 
 @Component({
   selector: 'app-blog-details-page',
   templateUrl: './blog-details-page.component.html',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, NgIf, AsyncPipe, SafeHtmlPipe, ParseHtmlPipe, NgOptimizedImage, DatePipe],
+    imports: [NavbarComponent, FooterComponent, NgIf, AsyncPipe, SafeHtmlPipe, ParseHtmlPipe, NgOptimizedImage, DatePipe, AncalNavbarComponent],
 })
 export class BlogDetailsPageComponent implements OnInit {
 

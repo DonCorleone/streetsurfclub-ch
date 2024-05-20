@@ -15,8 +15,6 @@ import {AncalBrandsComponent} from './ancal-brands/ancal-brands.component';
 import {AncalFeaturesComponent} from './ancal-features/ancal-features.component';
 import {AncalBannerComponent} from './ancal-banner/ancal-banner.component';
 import {AncalNavbarComponent} from './ancal-navbar/ancal-navbar.component';
-import {BehaviorSubject, map, Observable, ObservableInput, Subject, take, takeUntil, tap} from "rxjs";
-import {Page} from "../models/pages";
 import {BloggerService} from "../services/blogger.service";
 import {AsyncPipe} from "@angular/common";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
@@ -44,21 +42,6 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
   ],
 })
 export class AiNoiseCancellingAppLandingComponent {
-  pages$: Observable<Page[]> = this.bloggerService.pages$.pipe(
-    tap(pages => {
-        if (pages.length > 0) {
-          this.quickLinks = this.bloggerService.quickLinks;
-          this.resources = this.bloggerService.resources;
-          this.terms = this.bloggerService.terms;
-          this.supports = this.bloggerService.supports;
-        }
-      }
-    ));
-  supports: Page[] = [];
-  terms: Page[] = [];
-  resources: Page[] = [];
-  quickLinks: Page[] = [];
-
   constructor(private titleService: Title, private bloggerService: BloggerService) {
     this.bloggerService.blog$
       .pipe(takeUntilDestroyed()).subscribe(blog => {

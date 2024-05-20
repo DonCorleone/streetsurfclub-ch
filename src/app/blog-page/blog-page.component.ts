@@ -9,12 +9,13 @@ import {Post} from "../models/posts";
 import {SafeHtmlPipe} from "../pipes/safe-html-pipe";
 import {ContentService} from "../services/content.service";
 import {IContent} from "../models/IContent";
+import {AncalNavbarComponent} from "../ai-noise-cancelling-app-landing/ancal-navbar/ancal-navbar.component";
 
 @Component({
   selector: 'app-blog-page',
   templateUrl: './blog-page.component.html',
   standalone: true,
-  imports: [NavbarComponent, RouterLink, FooterComponent, AsyncPipe, NgForOf, DatePipe, NgIf, SafeHtmlPipe, NgOptimizedImage]
+  imports: [NavbarComponent, RouterLink, FooterComponent, AsyncPipe, NgForOf, DatePipe, NgIf, SafeHtmlPipe, NgOptimizedImage, AncalNavbarComponent]
 })
 export class BlogPageComponent {
   contents$: Observable<(IContent | null)[]>;
