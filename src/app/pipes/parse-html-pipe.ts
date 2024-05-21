@@ -12,6 +12,9 @@ export class ParseHtmlPipe extends SafeHtmlPipe {
   }
 
   override transform(value: string): SafeHtml {
+    if (!value) {
+      return '';
+    }
     value = this.addClass(
       value,
       '<h1',
