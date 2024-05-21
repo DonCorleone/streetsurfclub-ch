@@ -20,7 +20,7 @@ export class AncalBlogComponent {
 
   constructor(private bloggerService: BloggerService, private contentService: ContentService) {
 
-    this.content$ = this.bloggerService.getPosts(2).pipe(
+    this.content$ = this.bloggerService.getPosts(-1).pipe(
       switchMap(posts => {
         return from(posts).pipe(
           concatMap(post => {

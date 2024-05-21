@@ -5,6 +5,9 @@ export const handler: Handler = async (event, context) => {
   const apiKey = process.env["GOOGLE_BLOGGER_API_KEY"];
   const blogId = process.env["GOOGLE_BLOGGER_ID"];
   let maxResults = event.queryStringParameters?.["maxResults"];
+  if (maxResults == "-1"){
+    maxResults = process.env["BLOG_MAX_RESULTS"];
+  }
   if (!maxResults) {
     maxResults = "50";
   }
