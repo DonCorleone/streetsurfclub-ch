@@ -7,9 +7,8 @@
             class="font-bold text-slate-900 dark:text-slate-200 text-[24px] md:text-[30px] lg:text-[34px] leading-[1.3] mb-[12px] md:mb-[12px] lg:mb-[15px] xl:mb-[20px]">
             News
           </h2>
-          <p
+          <p [innerHtml]="blog.description | parseHtml"
             class="text-[13px] md:text-[14px] lg:text-[15px] text-stone-500 dark:yellow-400 leading-[1.8] 2xl:max-w-[425px]">
-            {{ blog.description }}
           </p>
           <a routerLink="/blog"
              class="inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-slate-900 dark:text-slate-200 font-semibold rounded-[7px] bg-amber-200 dark:bg-indigo-300 px-[30px] md:px-[35px] lg:px-[40px] py-[14px] md:py-[15px] lg:py-[16px] mt-[15px] md:mt-[20px] lg:mt-[35px] xl:mt-[45px] transition-all hover:bg-cyan-300 dark:bg-yellow-600">
