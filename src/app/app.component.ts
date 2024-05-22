@@ -35,7 +35,7 @@ import {Page} from "./models/pages";
   imports: [RouterOutlet, NgxScrollTopModule, SidebarComponent, AsyncPipe, JsonPipe, NgIf, SafeHtmlPipe],
 })
 export class AppComponent implements OnInit {
-  title = 'Canora - Angular 17 Tailwind AI Startup One Page Template';
+  title = 'ToDo Title';
 
   location: any;
   routerSubscription: any;

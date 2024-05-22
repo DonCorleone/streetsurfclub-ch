@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import {Meta, Title} from '@angular/platform-browser';
 import * as AOS from 'aos';
 import {AncalFooterComponent} from './ancal-footer/ancal-footer.component';
 import {AncalBlogComponent} from './ancal-blog/ancal-blog.component';
@@ -42,10 +42,13 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
   ],
 })
 export class AiNoiseCancellingAppLandingComponent {
-  constructor(private titleService: Title, private bloggerService: BloggerService) {
+  constructor(private titleService: Title, private bloggerService: BloggerService, private meta: Meta  ) {
     this.bloggerService.blog$
       .pipe(takeUntilDestroyed()).subscribe(blog => {
         this.titleService.setTitle(blog.name);
+        this.meta.updateTag(
+          { name: 'description', content: `${blog.name} - ${blog.description}` },
+          'name=description');
       }
     );
   }
