@@ -15,7 +15,7 @@ import {AncalNavbarComponent} from "../ai-noise-cancelling-app-landing/ancal-nav
   selector: 'app-blog-details-page',
   templateUrl: './blog-details-page.component.html',
   standalone: true,
-    imports: [NavbarComponent, FooterComponent, NgIf, AsyncPipe, SafeHtmlPipe, ParseHtmlPipe, NgOptimizedImage, DatePipe, AncalNavbarComponent],
+  imports: [NavbarComponent, FooterComponent, NgIf, AsyncPipe, SafeHtmlPipe, ParseHtmlPipe, NgOptimizedImage, DatePipe, AncalNavbarComponent],
 })
 export class BlogDetailsPageComponent implements OnInit {
 

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Meta, Title} from '@angular/platform-browser';
-import * as AOS from 'aos';
+import {map, take} from "rxjs";
 import {AncalFooterComponent} from './ancal-footer/ancal-footer.component';
 import {AncalBlogComponent} from './ancal-blog/ancal-blog.component';
 import {AncalFaqComponent} from './ancal-faq/ancal-faq.component';
@@ -51,5 +51,11 @@ export class AiNoiseCancellingAppLandingComponent {
           'name=description');
       }
     );
+
+    this.bloggerService.getComments().pipe(
+      take(1),
+      map(y => console.log(JSON.stringify(y)))
+    ).subscribe((comments) => {
+    });
   }
 }
