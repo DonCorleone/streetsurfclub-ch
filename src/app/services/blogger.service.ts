@@ -71,7 +71,7 @@ export class BloggerService {
 
   // call the promise getAllPages() and return the first page as an osbservable
   getPost(postid: string): Observable<Post | null> {
-    if (isDevMode()) {
+/*    if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPosts()).pipe(
         map(posts => posts.find(post => post.id === postid) ?? null),
@@ -80,14 +80,14 @@ export class BloggerService {
           return of(null);
         })
       );
-    } else {
+    } else {*/
       console.log('Production Mode');
       return this.httpClient.get<Post>('.netlify/functions/get-post?postid=' + postid);
-    }
+/*    }*/
   }
 
   findPost(q: string): Observable<Post | null> {
-    if (isDevMode()) {
+/*    if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPosts()).pipe(
         map(posts => {
@@ -106,7 +106,7 @@ export class BloggerService {
           return of(null);
         })
       );
-    } else {
+    } else {*/
       console.log('Production Mode');
       const encodedQ = encodeURIComponent(q);
       return this.httpClient.get<PostResponse>('.netlify/functions/find-post?encodedQ=' + encodedQ).pipe(
@@ -115,11 +115,11 @@ export class BloggerService {
           console.error(err);
           return of(null);
         }));
-    }
+   /* } */
   }
 
   private getBlog(): Observable<BlogResponse | null> {
-    if (isDevMode()) {
+/*    if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getBlogMock()).pipe(
         catchError(err => {
@@ -127,13 +127,13 @@ export class BloggerService {
           return of(null);
         })
       );
-    } else {
+    } else {*/
       console.log('Production Mode');
       return this.httpClient.get<BlogResponse>('.netlify/functions/get-blog');
-    }
+/*    }*/
   }
   getPage(pageid: string): Observable<Page | null> {
-    if (isDevMode()) {
+/*    if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPages()).pipe(
         map(posts => posts.find(page => page.id === pageid) ?? null),
@@ -142,10 +142,10 @@ export class BloggerService {
           return of(null);
         })
       );
-    } else {
+    } else {*/
       console.log('Production Mode');
       return this.httpClient.get<Page>('.netlify/functions/get-page?pageid=' + pageid);
-    }
+/*    }*/
   }
 
 
@@ -157,7 +157,7 @@ export class BloggerService {
   }
 
   private getPagesByMode(): Observable<Page[]> {
-    if (isDevMode()) {
+/*    if (isDevMode()) {
       console.log('Development Mode');
       return from(this.getAllPages()).pipe(
         map(pages => this.sortItems(pages)),
@@ -166,7 +166,7 @@ export class BloggerService {
           return of([]);
         })
       );
-    } else {
+    } else {*/
       console.log('Production Mode');
       return this.httpClient.get<PageResponse>('.netlify/functions/list-pages').pipe(
         map(response => response.items ? this.sortItems(response.items) : []),
@@ -174,7 +174,7 @@ export class BloggerService {
           console.error(err);
           return of([]);
         }));
-    }
+/*    }*/
   }
 
   private sortItems(items: Page[]): Page[] {
@@ -188,7 +188,7 @@ export class BloggerService {
     });
   }
   getPosts(maxResults?: number): Observable<Post[]> {
-    if (isDevMode()) {
+/*    if (isDevMode()) {
       console.log('Development Mode');
       if (!maxResults) {
         maxResults = 50;
@@ -200,7 +200,7 @@ export class BloggerService {
           return of([]);
         })
       );
-    } else {
+    } else {*/
       console.log('Production Mode');
       const maxResultsPostfix = maxResults ? `?maxResults=${maxResults}` : '';
       return this.httpClient.get<PostResponse>(`.netlify/functions/list-posts${maxResultsPostfix}`).pipe(
@@ -210,6 +210,31 @@ export class BloggerService {
             return of([]);
           }
         ));
-    }
+/*    }*/
+  }
+
+  getComments(): Observable<any[]> {
+    /*    if (isDevMode()) {
+          console.log('Development Mode');
+          if (!maxResults) {
+            maxResults = 50;
+          }
+          return from(this.getAllPosts()).pipe(
+            map(posts => posts.slice(0, maxResults)),
+            catchError(err => {
+              console.error(err);
+              return of([]);
+            })
+          );
+        } else {
+    console.log('Production Mode');*/
+    return this.httpClient.get<any>(`.netlify/functions/list-comments`).pipe(
+      map(response => response.items ?? []),
+      catchError(err => {
+          console.error(err);
+          return of([]);
+        }
+      ));
+    /*    }*/
   }
 }
