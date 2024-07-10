@@ -16,7 +16,7 @@
         <div *ngIf="contents$ |  async as contents" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[25px]">
             <div *ngFor="let content of contents">
                 <div *ngIf="content" data-aos="fade-up" data-aos-duration="500" [attr.data-aos-delay]="'1==1 ?? 200'" >
-                    <div class="h-96 flex items-center dark:bg-stone-800 rounded-[7px] block mb-[20px] md:mb-[25px] lg:mb-[28px]">
+                    <div class="md:h-96 flex items-center dark:bg-stone-800 rounded-[7px] block mb-[20px] md:mb-[25px] lg:mb-[28px]">
                       <a *ngIf="content.headerImg" [routerLink]="'/blog/blog-details/post/' + content.id" class="h- overflow-hidden">
                         <img [ngSrc]="content.headerImg" width="500" height="300" alt="blog-image">
                       </a>
