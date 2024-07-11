@@ -1,5 +1,5 @@
 import {Injectable, isDevMode} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {BehaviorSubject, Observable, catchError, from, map, of, tap, EMPTY} from 'rxjs';
 import {Page, PageResponse} from "../models/pages";
 import {Post, PostResponse} from "../models/posts";
@@ -202,8 +202,18 @@ export class BloggerService {
       );
     } else {*/
       console.log('Production Mode');
-      const maxResultsPostfix = maxResults ? `?maxResults=${maxResults}` : '';
-      return this.httpClient.get<PostResponse>(`.netlify/functions/list-posts${maxResultsPostfix}`).pipe(
+
+      // evaluate if running on a mobile device
+      // add a query parameter declaring if running on a mobile device
+      let params = new HttpParams();
+      if (window.innerWidth < 768) {
+        params = params.set('mobile', 'true');
+      }
+      if (maxResults) {
+        params = params.set('maxResults', maxResults.toString());
+      }
+
+      return this.httpClient.get<PostResponse>(`.netlify/functions/list-posts`, { params }).pipe(
         map(response => response.items ?? []),
         catchError(err => {
             console.error(err);

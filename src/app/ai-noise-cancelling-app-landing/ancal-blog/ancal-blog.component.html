@@ -11,14 +11,14 @@
             class="text-[13px] md:text-[14px] lg:text-[15px] text-stone-500 prose-a:underline dark:yellow-400 leading-[1.8] 2xl:max-w-[425px]">
           </p>
           <a routerLink="/blog"
-             class="inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-slate-900 dark:text-slate-200 font-semibold rounded-[7px] bg-amber-200 dark:bg-indigo-300 px-[30px] md:px-[35px] lg:px-[40px] py-[14px] md:py-[15px] lg:py-[16px] mt-[15px] md:mt-[20px] lg:mt-[35px] xl:mt-[45px] transition-all hover:bg-cyan-300 dark:bg-yellow-600">
+             class="hidden md:inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-slate-900 dark:text-slate-200 font-semibold rounded-[7px] bg-amber-200 dark:bg-indigo-300 px-[30px] md:px-[35px] lg:px-[40px] py-[14px] md:py-[15px] lg:py-[16px] mt-[15px] md:mt-[20px] lg:mt-[35px] xl:mt-[45px] transition-all hover:bg-cyan-300 dark:bg-yellow-600">
             Alle Anzeigen
           </a>
         </div>
       </div>
       <div *ngIf="content$ | async as posts" class="lg:col-span-2 self-center">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-[25px]">
-          <div *ngFor="let post of posts" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+          <div *ngFor="let post of posts" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200" class="pt-10 md:pt-5">
             <a [routerLink]="'/blog/blog-details/post/' + post.id"
                class="rounded-[7px] block mb-[20px] md:mb-[25px] lg:mb-[28px]">
               <img [src]="post.headerImg" class="rounded-[7px]" alt="blog-image">
@@ -60,6 +60,10 @@
             </ul>
           </div>
         </div>
+        <a routerLink="/blog"
+           class="block md:hidden text-center text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-slate-900 dark:text-slate-200 font-semibold rounded-[7px] bg-amber-200 dark:bg-indigo-300 px-[30px] md:px-[35px] lg:px-[40px] py-[14px] md:py-[15px] lg:py-[16px] mt-[15px] md:mt-[20px] lg:mt-[35px] xl:mt-[45px] transition-all hover:bg-cyan-300 dark:bg-yellow-600">
+          Alle Anzeigen
+        </a>
       </div>
     </div>
   </div>
