@@ -4,9 +4,14 @@ export const handler: Handler = async (event, context) => {
 
   const apiKey = process.env["GOOGLE_BLOGGER_API_KEY"];
   const blogId = process.env["GOOGLE_BLOGGER_ID"];
+  let mobile = event.queryStringParameters?.["mobile"];
   let maxResults = event.queryStringParameters?.["maxResults"];
   if (maxResults == "-1"){
-    maxResults = process.env["BLOG_MAX_RESULTS"];
+    if (mobile == "true") {
+      maxResults = process.env["BLOG_MAX_RESULTS_MOBILE"];
+    } else {
+      maxResults = process.env["BLOG_MAX_RESULTS"];
+    }
   }
   if (!maxResults) {
     maxResults = "50";
