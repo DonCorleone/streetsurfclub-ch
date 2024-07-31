@@ -119,6 +119,6 @@ export class ContentService {
     return parsedContent;
   }
   getSafeUrl(url: string) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url + '&fit=cover&w=50&h=50');
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }
