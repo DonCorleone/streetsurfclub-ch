@@ -101,6 +101,21 @@ export class ContentService {
         replacement += `
         </div>`;
       }
+
+      // Insert "https://streetsurfclub.netlify.app/.netlify/images?url=" in all src attributes of images before "https://blogger.googleusercontent.com/img/"
+      // and following attributes: "width="1280" height="768" priority and a class-attribute class="h-192 object-cover rounded-[15px]" after the src attribute
+
+      const regex = /<img[^>]+src="([^">]+)"/g;
+
+      while ((match = regex.exec(decodedContent))) {
+        const src = match[1];
+        if (src.includes ('https://blogger.googleusercontent.com/img/')) {
+          const newSrc = `https://streetsurfclub.netlify.app/.netlify/images?url=${src}"` + " width=\"1280\" height=\"768\" priority class=\"h-192 object-cover rounded-[15px]\"";
+          decodedContent = decodedContent.replace(src, newSrc);
+        }
+      }
+
+
       decodedContent = decodedContent.replace(firstImage, replacement);
       parsedContent.content = decodedContent;
     }
