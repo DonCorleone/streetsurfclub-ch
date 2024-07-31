@@ -1,3 +1,5 @@
+import {SafeUrl} from "@angular/platform-browser";
+
 export interface IContent {
   amountReplies: string;
   author: string;
@@ -6,5 +8,5 @@ export interface IContent {
   title: string;
   lead: string;
   content: string;
-  headerImg: string | null;
+  headerImg: SafeUrl;
 }

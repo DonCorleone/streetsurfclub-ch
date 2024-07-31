@@ -2,11 +2,16 @@ import { Injectable } from '@angular/core';
 import { Page } from '../models/pages';
 import { IContent } from '../models/IContent';
 import { Post } from '../models/posts';
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContentService {
+
+  constructor(private sanitizer: DomSanitizer) {
+
+  }
   parseContent(page: Page): IContent | null {
     if (!page) {
       return null;
@@ -19,14 +24,17 @@ export class ContentService {
       title: '',
       content: '',
       lead: '',
-      headerImg: null,
+      headerImg: '',
       amountReplies: '0',
     };
 
     if (page.kind === 'blogger#post') {
       const images = (page as Post).images;
-      parsedContent.headerImg =
-        images && images.length > 0 ? images[0].url : null;
+
+      if ( images && images.length > 0){
+        parsedContent.headerImg = this.getSafeUrl(images[0].url);
+      }
+
       parsedContent.amountReplies = (page as Post).replies?.totalItems;
     }
     if (page.content) {
@@ -53,7 +61,9 @@ export class ContentService {
         ) {
           let srcRegex = /<img[^>]+src="([^">]+)"/;
           let srcMatch = imgBlock.match(srcRegex);
-          parsedContent.headerImg = srcMatch ? srcMatch[1] : null;
+          if (srcMatch) {
+            parsedContent.headerImg = this.getSafeUrl(srcMatch[1]);
+          }
         }
       }
 
@@ -107,5 +117,8 @@ export class ContentService {
     parsedContent.date = new Date(page.published);
     parsedContent.author = page.author?.displayName;
     return parsedContent;
+  }
+  getSafeUrl(url: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url + '&fit=cover&w=50&h=50');
   }
 }

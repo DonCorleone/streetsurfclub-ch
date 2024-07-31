@@ -9,6 +9,7 @@ import {ActivatedRoute} from '@angular/router';
 import {ContentService} from "../services/content.service";
 import {ParseHtmlPipe} from "../pipes/parse-html-pipe";
 import {AncalNavbarComponent} from "../ai-noise-cancelling-app-landing/ancal-navbar/ancal-navbar.component";
+import {SafeUrl} from "@angular/platform-browser";
 
 
 @Component({
@@ -20,7 +21,7 @@ import {AncalNavbarComponent} from "../ai-noise-cancelling-app-landing/ancal-nav
 export class BlogDetailsPageComponent implements OnInit {
 
   content = '';
-  headerImg: string | null = null;
+  headerImg: SafeUrl = '';
   title = '';
   date: Date | string = '';
   amountReplies = '0';
@@ -49,7 +50,7 @@ export class BlogDetailsPageComponent implements OnInit {
             const parsedContent = this.contentService.parseContent(page);
             this.title = parsedContent?.title ?? '';
             this.content = parsedContent?.content ?? '';
-            this.headerImg = !parsedContent?.headerImg ? null : `${parsedContent.headerImg}`;
+            this.headerImg = parsedContent?.headerImg ?? '';
             this.date = parsedContent?.date ?? '';
             this.amountReplies = parsedContent?.amountReplies ?? '0';
           }

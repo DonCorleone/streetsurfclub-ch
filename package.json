@@ -20,6 +20,7 @@
     "@angular/router": "^17.2.4",
     "@netlify/functions": "^2.6.0",
     "aos": "^2.3.4",
+    "googleapis": "^140.0.1",
     "ngx-owl-carousel-o": "^17.0.0",
     "ngx-scrolltop": "^7.0.0",
     "remixicon": "^4.0.0",
