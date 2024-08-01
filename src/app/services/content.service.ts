@@ -30,7 +30,6 @@ export class ContentService {
 
     if (page.kind === 'blogger#post') {
       const images = (page as Post).images;
-
       if ( images && images.length > 0){
         parsedContent.headerImg = this.getSafeUrl(images[0].url);
       }
@@ -90,8 +89,8 @@ export class ContentService {
           replacement += `
           <div class="text-center">
             <img [src]="${
-              srcMatch ? srcMatch[0] : ''
-            }" class="rounded-t-[20px] rounded-bl-[20px] rounded-br-[20px] md:rounded-br-[70px] lg:rounded-br-[90px]" alt="blog-details-image"/>
+            srcMatch ? srcMatch[0] : ''
+          }" class="rounded-t-[20px] rounded-bl-[20px] rounded-br-[20px] md:rounded-br-[70px] lg:rounded-br-[90px]" alt="blog-details-image"/>
           </div>`;
 
           if (imgBlock !== firstImage) {
@@ -101,26 +100,6 @@ export class ContentService {
         replacement += `
         </div>`;
       }
-
-      // Insert "https://streetsurfclub.netlify.app/.netlify/images?url=" in all src attributes of images before "https://blogger.googleusercontent.com/img/"
-      // and following attributes: "width="1280" height="768" priority and a class-attribute class="h-192 object-cover rounded-[15px]" after the src attribute and change the attribute to ngSrc
-      let regexImgSrc = /<img[^>]+src="([^">]+)"\s*\/?>/g;
-      let matchImgSrc = decodedContent.match(regexImgSrc);
-      if (matchImgSrc) {
-        for (let i = 0; i < matchImgSrc.length; i++) {
-          let imgBlock = matchImgSrc[i];
-          let srcRegex = /<img[^>]+src="([^">]+)"/;
-          let srcMatch = imgBlock.match(srcRegex);
-          if (srcMatch) {
-            let src = srcMatch[1];
-            if (src.includes('https://blogger.googleusercontent.com/img/')) {
-              let replacement = `<img ngSrc="https://streetsurfclub.netlify.app/.netlify/images?url=${src}&fit=cover&w=1280&h=768&position=center" width="1280" height="768" priority class="h-192 object-cover rounded-[15px]" alt="blog-details-image"/>`;
-              decodedContent = decodedContent.replace(imgBlock, replacement);
-            }
-          }
-        }
-      }
-
       decodedContent = decodedContent.replace(firstImage, replacement);
       parsedContent.content = decodedContent;
     }
