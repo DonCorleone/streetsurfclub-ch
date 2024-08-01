@@ -40,8 +40,7 @@ export class ContentService {
       let decodedContent = decodeURIComponent(
         page.content.replace(/\\u/g, '%')
       );
-      let regexImage =
-        /(<div>\s*<div style="text-align: center;?"?>\s*<a href="[^"]*">\s*<img[^>]*><\/a>\s*<\/div>\s*<br \/><b><br \/><\/b>\s*<\/div>)/;
+      let regexImage = /<img[^>]+src="([^">]+)"\s*\/?>/g;
       let match = decodedContent.match(regexImage);
 
       if (!match) {

@@ -53,8 +53,8 @@
             </div>
         </div-->
       </div>
-      <div class="self-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
-        <img [src]="parsedContent?.headerImg" class="inline" alt="banner-image">
+      <div *ngIf="headerImg" class="self-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+        <img [ngSrc]="headerImg"  width="1280" height="768" priority class="h-192 object-cover inline" alt="banner-image">
       </div>
     </div>
   </div>
