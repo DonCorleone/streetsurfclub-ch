@@ -114,7 +114,7 @@ export class ContentService {
           if (srcMatch) {
             let src = srcMatch[1];
             if (src.includes('https://blogger.googleusercontent.com/img/')) {
-              let replacement = `<img [ngSrc]="'/.netlify/images?url=${src}&fit=cover&w=1280&h=768&position=center'" width="1280" height="768" priority class="h-192 object-cover rounded-[15px]" alt="blog-details-image"/>`;
+              let replacement = `<img ngSrc="https://streetsurfclub.netlify.app/.netlify/images?url=${src}&fit=cover&w=1280&h=768&position=center" width="1280" height="768" priority class="h-192 object-cover rounded-[15px]" alt="blog-details-image"/>`;
               decodedContent = decodedContent.replace(imgBlock, replacement);
             }
           }
