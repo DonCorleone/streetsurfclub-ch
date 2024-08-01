@@ -103,18 +103,23 @@ export class ContentService {
       }
 
       // Insert "https://streetsurfclub.netlify.app/.netlify/images?url=" in all src attributes of images before "https://blogger.googleusercontent.com/img/"
-      // and following attributes: "width="1280" height="768" priority and a class-attribute class="h-192 object-cover rounded-[15px]" after the src attribute
-
-      const regex = /<img[^>]+src="([^">]+)"/g;
-
-      while ((match = regex.exec(decodedContent))) {
-        const src = match[1];
-        if (src.includes ('https://blogger.googleusercontent.com/img/')) {
-          const newSrc = `https://streetsurfclub.netlify.app/.netlify/images?url=${src}"` + " width=\"1280\" height=\"768\" priority class=\"h-192 object-cover rounded-[15px]\"";
-          decodedContent = decodedContent.replace(src, newSrc);
+      // and following attributes: "width="1280" height="768" priority and a class-attribute class="h-192 object-cover rounded-[15px]" after the src attribute and change the attribute to ngSrc
+      let regexImgSrc = /<img[^>]+src="([^">]+)"\s*\/?>/g;
+      let matchImgSrc = decodedContent.match(regexImgSrc);
+      if (matchImgSrc) {
+        for (let i = 0; i < matchImgSrc.length; i++) {
+          let imgBlock = matchImgSrc[i];
+          let srcRegex = /<img[^>]+src="([^">]+)"/;
+          let srcMatch = imgBlock.match(srcRegex);
+          if (srcMatch) {
+            let src = srcMatch[1];
+            if (src.includes('https://blogger.googleusercontent.com/img/')) {
+              let replacement = `<img [ngSrc]="'/.netlify/images?url=${src}&fit=cover&w=1280&h=768&position=center'" width="1280" height="768" priority class="h-192 object-cover rounded-[15px]" alt="blog-details-image"/>`;
+              decodedContent = decodedContent.replace(imgBlock, replacement);
+            }
+          }
         }
       }
-
 
       decodedContent = decodedContent.replace(firstImage, replacement);
       parsedContent.content = decodedContent;
