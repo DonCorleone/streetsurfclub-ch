@@ -8,7 +8,6 @@ import {DomSanitizer} from "@angular/platform-browser";
   providedIn: 'root',
 })
 export class ContentService {
-
   constructor(private sanitizer: DomSanitizer) {
 
   }
@@ -30,17 +29,16 @@ export class ContentService {
 
     if (page.kind === 'blogger#post') {
       const images = (page as Post).images;
-      if ( images && images.length > 0){
-        parsedContent.headerImg = this.getSafeUrl(images[0].url);
-      }
-
+      parsedContent.headerImg =
+        images && images.length > 0 ? this.getSafeUrl(images[0].url) : '';
       parsedContent.amountReplies = (page as Post).replies?.totalItems;
     }
     if (page.content) {
       let decodedContent = decodeURIComponent(
         page.content.replace(/\\u/g, '%')
       );
-      let regexImage = /<img[^>]+src="([^">]+)"\s*\/?>/g;
+      let regexImage =
+        /(<div>\s*<div style="text-align: center;?"?>\s*<a href="[^"]*">\s*<img[^>]*><\/a>\s*<\/div>\s*<br \/><b><br \/><\/b>\s*<\/div>)/;
       let match = decodedContent.match(regexImage);
 
       if (!match) {
@@ -53,7 +51,7 @@ export class ContentService {
         let imgBlock = match[0];
         if (
           imgBlock &&
-          parsedContent.headerImg === null &&
+          parsedContent.headerImg == '' &&
           indexOfMatch !== undefined &&
           indexOfMatch < 10
         ) {
@@ -61,12 +59,14 @@ export class ContentService {
           let srcMatch = imgBlock.match(srcRegex);
           if (srcMatch) {
             parsedContent.headerImg = this.getSafeUrl(srcMatch[1]);
+          }else {
+            parsedContent.headerImg = '';
           }
         }
       }
 
       // Replace the found image block in the content with an empty string, if headerimage is set and match is found
-      if (parsedContent.headerImg && match) {
+      if (parsedContent.headerImg !== '' && match) {
         decodedContent = decodedContent.replace(match[0], '');
       }
 

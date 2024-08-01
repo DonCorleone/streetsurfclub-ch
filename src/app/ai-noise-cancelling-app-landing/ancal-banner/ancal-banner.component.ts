@@ -6,7 +6,6 @@ import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
 import {ContentService} from "../../services/content.service";
 import {IContent} from "../../models/IContent";
 import {ParseHtmlPipe} from "../../pipes/parse-html-pipe";
-import {SafeUrl} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-ancal-banner',
@@ -17,7 +16,6 @@ import {SafeUrl} from "@angular/platform-browser";
 })
 export class AncalBannerComponent implements OnInit {
   parsedContent: IContent | null | undefined;
-  headerImg: SafeUrl = '';
 
   constructor(private bloggerService: BloggerService, private contentService: ContentService) {
   }
@@ -28,7 +26,6 @@ export class AncalBannerComponent implements OnInit {
       map(post => {
           if (post) {
             this.parsedContent = this.contentService.parseContent(post);
-            this.headerImg = this.parsedContent?.headerImg ?? '';
           }
         }
       )).subscribe();
