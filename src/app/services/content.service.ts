@@ -79,9 +79,11 @@ export class ContentService {
           let srcMatch = imgBlock.match(srcRegex);
           replacement += `
           <div class="text-center">
-            <img [src]="${
+          <a href="${srcMatch ? srcMatch[1] : ''}" target="_blank">
+              <img [src]="${
               srcMatch ? srcMatch[0] : ''
             }" class="rounded-t-[20px] rounded-bl-[20px] rounded-br-[20px] md:rounded-br-[70px] lg:rounded-br-[90px]" alt="blog-details-image"/>
+          </a>
           </div>`;
 
           if (imgBlock !== firstImage) {
