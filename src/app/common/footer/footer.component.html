@@ -14,13 +14,13 @@
         <ul class="text-[13px] md:text-[14px] lg:text-[15px]">
           <li class="mb-[15px] last:mb-0">
             <a [routerLink]="'/'"
-               class="inline-block text-stone-300 dark:text-stone-900 transition-all hover:text-cyan-300 dark:text-yellow-600">
+               class="inline-block text-stone-300 transition-all hover:text-cyan-300 dark:text-yellow-600">
               Home
             </a>
           </li>
           <li *ngFor="let quickLink of quickLinks" class="mb-[15px] last:mb-0">
-            <a [routerLink]="'/blog/blog-details/page/' + quickLink.id" [innerHtml]="quickLink.title | safeHtml"
-               class="inline-block text-stone-300 dark:text-stone-900 transition-all hover:text-cyan-300 dark:text-yellow-600">
+            <a [href]="'/blog/blog-details/page/' + quickLink.id" [innerHtml]="quickLink.title | safeHtml"
+               class="inline-block text-stone-300 transition-all hover:text-cyan-300 dark:text-yellow-600">
             </a>
           </li>
         </ul>
@@ -32,13 +32,13 @@
         <ul class="text-[13px] md:text-[14px] lg:text-[15px]">
           <li class="mb-[15px] last:mb-0">
             <a [routerLink]="'/blog'"
-               class="inline-block text-stone-300 dark:text-stone-900 transition-all hover:text-cyan-300 dark:text-yellow-600">
+               class="inline-block text-stone-300 transition-all hover:text-cyan-300 dark:text-yellow-600">
               Blog
             </a>
           </li>
           <li *ngFor="let resource of resources" class="mb-[15px] last:mb-0">
             <a [routerLink]="'/blog/blog-details/page/' + resource.id" [innerHtml]="resource.title | safeHtml"
-               class="inline-block text-stone-300 dark:text-stone-900 transition-all hover:text-cyan-300 dark:text-yellow-600">
+               class="inline-block text-stone-300 transition-all hover:text-cyan-300 dark:text-yellow-600">
             </a>
           </li>
         </ul>
@@ -50,8 +50,8 @@
         </h3>
         <ul class="text-[13px] md:text-[14px] lg:text-[15px]">
           <li *ngFor="let term of terms" class="mb-[15px] last:mb-0">
-            <a [routerLink]="'/blog/blog-details/page/' + term.id" [innerHtml]="term.title | safeHtml"
-               class="inline-block text-stone-300 dark:text-stone-900 transition-all hover:text-cyan-300 dark:text-yellow-600">
+            <a [href]="'/blog/blog-details/page/' + term.id" [innerHtml]="term.title | safeHtml"
+               class="inline-block text-stone-300  transition-all hover:text-cyan-300 dark:text-yellow-600">
             </a>
           </li>
         </ul>
@@ -63,8 +63,8 @@
         </h3>
         <ul class="text-[13px] md:text-[14px] lg:text-[15px]">
           <li *ngFor="let support of supports" class="mb-[15px] last:mb-0">
-            <a [routerLink]="'/blog/blog-details/page/' + support.id" [innerHtml]="support.title | safeHtml"
-               class="inline-block text-stone-300 dark:text-stone-900 transition-all hover:text-cyan-300 dark:text-yellow-600">
+            <a [href]="'/blog/blog-details/page/' + support.id" [innerHtml]="support.title | safeHtml"
+               class="inline-block text-stone-300 transition-all hover:text-cyan-300 dark:text-yellow-600">
             </a>
           </li>
         </ul>
