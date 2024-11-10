@@ -14,7 +14,7 @@ export const handler: Handler = async (event, context) => {
     }
   }
   if (!maxResults) {
-    maxResults = "50";
+    maxResults = "300";
   }
   const res = await fetch(`https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts?key=${apiKey}&fetchImages=true&fetchBodies=false&maxResults=${maxResults}`, {
     method: "GET",
