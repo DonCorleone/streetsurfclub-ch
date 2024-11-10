@@ -6,5 +6,6 @@
 
 - [ ] Kannst du das Menu-Ikon immer eingeblendet lassen, damit, wenn man auf einer Page ist, nicht zuerst ins Homemenu muss bevor man die Page wechseln kann.
 - [ ] Wenn man den Link der Webseite teilt, sollte bloss Longboard-Verein Luzern stehen
-- [ ] Auf der Startseite findet man beim Ikon "Alle News anzeigen" noch den Hinweis auf den Dienstagscruise. Ich denke der ist überflüssig. Falls du diesen entfernen würdest und es dann scheisse aussieht, wenn bloss noch der Instalink steht, kannst du diesen auch entfernen oder sonst eine hübsche lösung finden?
+  > Wie meinst Du teilen? Und wo teilst du das?
+- [x] Auf der Startseite findet man beim Ikon "Alle News anzeigen" noch den Hinweis auf den Dienstagscruise. Ich denke der ist überflüssig. Falls du diesen entfernen würdest und es dann scheisse aussieht, wenn bloss noch der Instalink steht, kannst du diesen auch entfernen oder sonst eine hübsche lösung finden?
 - [x] Das Problem mit dem blauen Text im Darkmode konnte ich lösen, indem ich es einfach nochmals geschriben und per "Einfügen ohne Formatieren" reinkopiert habe.
