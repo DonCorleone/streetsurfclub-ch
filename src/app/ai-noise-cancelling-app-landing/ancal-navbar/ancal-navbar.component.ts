@@ -32,15 +32,6 @@ export class AncalNavbarComponent {
   // Section to Section Scroll
   activeSection: string | null = null;
 
-  scrollTo(sectionId: string): void {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView(true);
-
-      this.toggleMenu();
-    }
-  }
-
   // Navbar Sticky
   isSticky: boolean = false;
 

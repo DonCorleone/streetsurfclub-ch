@@ -1,14 +1,14 @@
-<div
-  class="flex flex-row items-center justify-center gap-6 md:gap-8 lg:gap-10 xl:gap-14 2xl:gap-18"
-  (click)="scrollTo('home')"
->
-  <img id="img-logo" [src]="(isDarkMode$ | async) ? 'assets/images/white-logo.png' : 'assets/images/logo.png'" class="hidden lg:inline mt10-"
-       alt="logo">
-  <img id="img-logo-full" [src]="(isDarkMode$ | async) ? 'assets/images/logo-full-dark.png' : 'assets/images/logo-full.png'" class="inline lg:hidden"
-       alt="logo">
-  <img id="img-logo-icon" [src]="(isDarkMode$ | async) ? 'assets/images/logo-icon-dark.png' : 'assets/images/logo-icon.png'" class="hidden lg:inline py-3 md:py-4 lg:py-5 xl:py-6 2xl:py-7"
-       alt="logo">
-</div>
+<a [routerLink]="'/'">
+  <div class="flex flex-row items-center justify-center gap-6 md:gap-8 lg:gap-10 xl:gap-14 2xl:gap-18"
+  >
+    <img id="img-logo" [src]="(isDarkMode$ | async) ? 'assets/images/white-logo.png' : 'assets/images/logo.png'" class="hidden lg:inline mt10-"
+         alt="logo">
+    <img id="img-logo-full" [src]="(isDarkMode$ | async) ? 'assets/images/logo-full-dark.png' : 'assets/images/logo-full.png'" class="inline lg:hidden"
+         alt="logo">
+    <img id="img-logo-icon" [src]="(isDarkMode$ | async) ? 'assets/images/logo-icon-dark.png' : 'assets/images/logo-icon.png'" class="hidden lg:inline py-3 md:py-4 lg:py-5 xl:py-6 2xl:py-7"
+         alt="logo">
+  </div>
+</a>
 <div
   class="navbar-area py-[10px] md:py-[20px] 2xl:py-[45px] bg-stone-100 dark:bg-stone-800"
   [ngClass]="{'isSticky sticky top-0 left-0 right-0 z-[991]': isSticky}"
