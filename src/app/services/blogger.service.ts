@@ -222,29 +222,4 @@ export class BloggerService {
         ));
 /*    }*/
   }
-
-  getComments(): Observable<any[]> {
-    /*    if (isDevMode()) {
-          console.log('Development Mode');
-          if (!maxResults) {
-            maxResults = 50;
-          }
-          return from(this.getAllPosts()).pipe(
-            map(posts => posts.slice(0, maxResults)),
-            catchError(err => {
-              console.error(err);
-              return of([]);
-            })
-          );
-        } else {
-    console.log('Production Mode');*/
-    return this.httpClient.get<any>(`.netlify/functions/list-comments`).pipe(
-      map(response => response.items ?? []),
-      catchError(err => {
-          console.error(err);
-          return of([]);
-        }
-      ));
-    /*    }*/
-  }
 }

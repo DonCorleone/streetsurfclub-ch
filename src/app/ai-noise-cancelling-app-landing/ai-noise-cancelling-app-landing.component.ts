@@ -51,11 +51,5 @@ export class AiNoiseCancellingAppLandingComponent {
           'name=description');
       }
     );
-
-    this.bloggerService.getComments().pipe(
-      take(1),
-      map(y => console.log(JSON.stringify(y)))
-    ).subscribe((comments) => {
-    });
   }
 }
