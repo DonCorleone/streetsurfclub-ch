@@ -24,22 +24,28 @@ export class BlogDetailsPageComponent implements OnInit {
   title = '';
   date: Date | string = '';
   amountReplies = '0';
-
+  type: 'post' | 'page' | null = null;
   constructor(private bloggerService: BloggerService, private activatedRoute: ActivatedRoute, private contentService: ContentService) {
   }
 
   ngOnInit(): void {
+    const typeParam = this.activatedRoute.snapshot.paramMap.get('type');
+    if (typeParam === 'post' || typeParam === 'page') {
+      this.type = typeParam;
+    } else {
+      this.type = null;
+    }
 
-    const type = this.activatedRoute.snapshot.paramMap.get('type');
-    if (!type) {
+    if (!this.type) {
       return;
     }
+
     const siteId = this.activatedRoute.snapshot.paramMap.get('id');
     if (!siteId) {
       return;
     }
 
-    (type === 'post'
+    (this.type === 'post'
       ? this.bloggerService.getPost(siteId)
       : this.bloggerService.getPage(siteId))
       .pipe(

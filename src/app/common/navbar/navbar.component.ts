@@ -1,4 +1,4 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, Input} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {AsyncPipe, NgClass} from '@angular/common';
 import {DarkmodeService} from "../../services/darkmode.service";
@@ -15,6 +15,7 @@ export class NavbarComponent {
   // Navbar Sticky
   isSticky: boolean = false;
   isDarkMode$ = this.darkmodeService.isDarkMode$;
+  @Input() type!: "post" | "page" | null;
 
   constructor(private darkmodeService: DarkmodeService) {
   }
@@ -28,5 +29,4 @@ export class NavbarComponent {
       this.isSticky = false;
     }
   }
-
 }
