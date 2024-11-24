@@ -1,7 +1,9 @@
-export default async () => {
+import type { Context } from "@netlify/edge-functions";
 
-    const apiKey = process.env["GOOGLE_BLOGGER_API_KEY"];
-    const blogId = process.env["GOOGLE_BLOGGER_ID"];
+export default async (request: Request, context: Context) => {
+
+    const apiKey = Netlify.env.get("GOOGLE_BLOGGER_API_KEY");
+    const blogId = Netlify.env.get("GOOGLE_BLOGGER_ID");
     const res = await fetch(`https://www.googleapis.com/blogger/v3/blogs/${blogId}/pages?key=${apiKey}&fetchBodies=false`, {
       method: "GET",
       headers: {
@@ -15,3 +17,4 @@ export default async () => {
       }
     });
   };
+  export const config = { path: "/list-pages" };

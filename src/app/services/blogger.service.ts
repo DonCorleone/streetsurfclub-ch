@@ -82,7 +82,7 @@ export class BloggerService {
       );
     } else {*/
       console.log('Production Mode');
-      return this.httpClient.get<Post>('.netlify/functions/get-post?postid=' + postid);
+      return this.httpClient.get<Post>('get-post?postid=' + postid);
 /*    }*/
   }
 
@@ -109,7 +109,7 @@ export class BloggerService {
     } else {*/
       console.log('Production Mode');
       const encodedQ = encodeURIComponent(q);
-      return this.httpClient.get<PostResponse>('.netlify/functions/find-post?encodedQ=' + encodedQ).pipe(
+      return this.httpClient.get<PostResponse>('find-post?encodedQ=' + encodedQ).pipe(
       map(response => response.items ?  response.items[0] : null),
         catchError(err => {
           console.error(err);
@@ -129,7 +129,7 @@ export class BloggerService {
       );
     } else {*/
       console.log('Production Mode');
-      return this.httpClient.get<BlogResponse>('.netlify/functions/get-blog');
+      return this.httpClient.get<BlogResponse>('get-blog');
 /*    }*/
   }
   getPage(pageid: string): Observable<Page | null> {
@@ -144,7 +144,7 @@ export class BloggerService {
       );
     } else {*/
       console.log('Production Mode');
-      return this.httpClient.get<Page>('.netlify/functions/get-page?pageid=' + pageid);
+      return this.httpClient.get<Page>('get-page?pageid=' + pageid);
 /*    }*/
   }
 
@@ -168,7 +168,7 @@ export class BloggerService {
       );
     } else {*/
       console.log('Production Mode');
-      return this.httpClient.get<PageResponse>('.netlify/functions/list-pages').pipe(
+      return this.httpClient.get<PageResponse>('list-pages').pipe(
         map(response => response.items ? this.sortItems(response.items) : []),
         catchError(err => {
           console.error(err);
@@ -213,7 +213,7 @@ export class BloggerService {
         params = params.set('maxResults', maxResults.toString());
       }
 
-      return this.httpClient.get<PostResponse>(`.netlify/functions/list-posts`, { params }).pipe(
+      return this.httpClient.get<PostResponse>(`list-posts`, { params }).pipe(
         map(response => response.items ?? []),
         catchError(err => {
             console.error(err);
