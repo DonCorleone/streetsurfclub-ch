@@ -1,6 +1,16 @@
 import type { Context } from "@netlify/edge-functions";
 
 export default async (request: Request, context: Context) => {
+    // Handle CORS preflight requests
+    if (request.method === "OPTIONS") {
+      return new Response(null, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      });
+    }
 
     const apiKey = Netlify.env.get("GOOGLE_BLOGGER_API_KEY");
     const blogId = Netlify.env.get("GOOGLE_BLOGGER_ID");
@@ -13,7 +23,10 @@ export default async (request: Request, context: Context) => {
 
     return new Response(res.body, {
       headers: {
-        "content-type": "text/event-stream"
+        "content-type": "text/event-stream",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
       }
     });
   };

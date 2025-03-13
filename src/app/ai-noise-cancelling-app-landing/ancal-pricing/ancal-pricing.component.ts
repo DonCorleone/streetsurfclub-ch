@@ -5,7 +5,6 @@ import { NgClass, NgIf } from '@angular/common';
     selector: 'app-ancal-pricing',
     templateUrl: './ancal-pricing.component.html',
     styleUrls: ['./ancal-pricing.component.scss'],
-    standalone: true,
     imports: [NgClass, NgIf]
 })
 export class AncalPricingComponent {

@@ -1,6 +1,6 @@
 import {FooterComponent} from '../common/footer/footer.component';
 import {NavbarComponent} from '../common/navbar/navbar.component';
-import {AsyncPipe, DatePipe, NgIf, NgOptimizedImage} from '@angular/common';
+import {DatePipe, NgIf, NgOptimizedImage} from '@angular/common';
 import {SafeHtmlPipe} from '../pipes/safe-html-pipe';
 import {BloggerService} from '../services/blogger.service';
 import {map, take} from 'rxjs';
@@ -8,14 +8,12 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ContentService} from "../services/content.service";
 import {ParseHtmlPipe} from "../pipes/parse-html-pipe";
-import {AncalNavbarComponent} from "../ai-noise-cancelling-app-landing/ancal-navbar/ancal-navbar.component";
 
 
 @Component({
-  selector: 'app-blog-details-page',
-  templateUrl: './blog-details-page.component.html',
-  standalone: true,
-  imports: [NavbarComponent, FooterComponent, NgIf, AsyncPipe, SafeHtmlPipe, ParseHtmlPipe, NgOptimizedImage, DatePipe, AncalNavbarComponent],
+    selector: 'app-blog-details-page',
+    templateUrl: './blog-details-page.component.html',
+    imports: [NavbarComponent, FooterComponent, NgIf, SafeHtmlPipe, ParseHtmlPipe, NgOptimizedImage, DatePipe]
 })
 export class BlogDetailsPageComponent implements OnInit {
 

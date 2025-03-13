@@ -9,11 +9,10 @@ import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
-  standalone: true,
-  imports: [RouterLink, AsyncPipe, NgIf, NgForOf, SafeHtmlPipe]
+    selector: 'app-footer',
+    templateUrl: './footer.component.html',
+    styleUrls: ['./footer.component.scss'],
+    imports: [RouterLink, AsyncPipe, NgIf, NgForOf, SafeHtmlPipe]
 })
 export class FooterComponent {
   isDarkMode$ = this.darkmodeService.isDarkMode$;

@@ -6,7 +6,6 @@ import { NavbarComponent } from '../common/navbar/navbar.component';
 @Component({
     selector: 'app-error-page',
     templateUrl: './error-page.component.html',
-    standalone: true,
     imports: [NavbarComponent, RouterLink, FooterComponent]
 })
 export class ErrorPageComponent {

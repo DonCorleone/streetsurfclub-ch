@@ -10,8 +10,7 @@ import {ParseHtmlPipe} from "../../pipes/parse-html-pipe";
 @Component({
     selector: 'app-ancal-blog',
     templateUrl: './ancal-blog.component.html',
-    standalone: true,
-  imports: [RouterLink, AsyncPipe, NgIf, NgForOf, DatePipe, ParseHtmlPipe]
+    imports: [RouterLink, AsyncPipe, NgIf, NgForOf, DatePipe, ParseHtmlPipe]
 })
 export class AncalBlogComponent {
 
