@@ -4,8 +4,6 @@ import {provideRouter} from '@angular/router';
 import {routes} from './app.routes';
 import {provideHttpClient, withFetch} from "@angular/common/http";
 import {BrowserModule} from "@angular/platform-browser";
-import {CarouselModule} from "ngx-owl-carousel-o";
-import {NgxScrollTopModule} from "ngx-scrolltop";
 import {provideAnimations} from "@angular/platform-browser/animations";
 import { DatePipe, provideNetlifyLoader, registerLocaleData } from '@angular/common';
 
@@ -21,7 +19,7 @@ export const appConfig: ApplicationConfig = {
       provide: LOCALE_ID,
       useValue: 'de-CH'
     },
-    importProvidersFrom(BrowserModule, CarouselModule, NgxScrollTopModule),
+    importProvidersFrom(BrowserModule),
 
     provideAnimations()
   ]

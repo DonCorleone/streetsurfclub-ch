@@ -5,7 +5,6 @@ import { NgClass, NgIf } from '@angular/common';
     selector: 'app-ancal-test-canora',
     templateUrl: './ancal-test-canora.component.html',
     styleUrls: ['./ancal-test-canora.component.scss'],
-    standalone: true,
     imports: [NgClass, NgIf]
 })
 export class AncalTestCanoraComponent {

@@ -8,12 +8,11 @@ import {Page} from "../../models/pages";
 import {BloggerService} from "../../services/blogger.service";
 
 @Component({
-  selector: 'app-ancal-navbar',
-  templateUrl: './ancal-navbar.component.html',
-  styleUrls: ['./ancal-navbar.component.scss'],
-  standalone: true,
-  imports: [NgClass, NgIf, AsyncPipe, NgForOf, RouterLink, SafeHtmlPipe],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-ancal-navbar',
+    templateUrl: './ancal-navbar.component.html',
+    styleUrls: ['./ancal-navbar.component.scss'],
+    imports: [NgClass, NgIf, AsyncPipe, NgForOf, RouterLink, SafeHtmlPipe],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AncalNavbarComponent {
 

@@ -5,7 +5,6 @@ import { NgClass } from '@angular/common';
     selector: 'app-ancal-faq',
     templateUrl: './ancal-faq.component.html',
     styleUrls: ['./ancal-faq.component.scss'],
-    standalone: true,
     imports: [NgClass]
 })
 export class AncalFaqComponent {

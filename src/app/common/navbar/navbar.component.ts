@@ -4,11 +4,10 @@ import {AsyncPipe, NgClass} from '@angular/common';
 import {DarkmodeService} from "../../services/darkmode.service";
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
-  standalone: true,
-  imports: [NgClass, RouterLink, AsyncPipe]
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.scss'],
+    imports: [NgClass, RouterLink, AsyncPipe]
 })
 export class NavbarComponent {
 

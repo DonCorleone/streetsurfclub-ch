@@ -6,33 +6,26 @@ import {
   RouterOutlet,
 } from '@angular/router';
 import {
-  AsyncPipe, JsonPipe,
+  
   Location,
-  LocationStrategy, NgIf,
+  LocationStrategy, 
   PathLocationStrategy,
 } from '@angular/common';
 import {filter} from 'rxjs/operators';
 import * as AOS from 'aos';
-import {NgxScrollTopModule} from 'ngx-scrolltop';
-import {SidebarComponent} from './common/sidebar/sidebar.component';
-import {BloggerService} from './services/blogger.service';
-import {SafeHtmlPipe} from "./pipes/safe-html-pipe";
-import {Observable, take} from "rxjs";
-import {Page} from "./models/pages";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [
-    Location,
-    {
-      provide: LocationStrategy,
-      useClass: PathLocationStrategy,
-    },
-  ],
-  standalone: true,
-  imports: [RouterOutlet, NgxScrollTopModule, SidebarComponent, AsyncPipe, JsonPipe, NgIf, SafeHtmlPipe],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    providers: [
+        Location,
+        {
+            provide: LocationStrategy,
+            useClass: PathLocationStrategy,
+        },
+    ],
+    imports: [RouterOutlet],
 })
 export class AppComponent implements OnInit {
   title = 'ToDo Title';
