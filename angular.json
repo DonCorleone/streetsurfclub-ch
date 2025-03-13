@@ -68,11 +68,15 @@
                                 }
                             ],
                             "aot": true,
-                            "vendorChunk": false,
-                            "buildOptimizer": true,
                             "sourceMap": false,
                             "namedChunks": false,
                             "extractLicenses": true
+                        },
+                        "development": {
+                            "optimization": false,
+                            "extractLicenses": false,
+                            "sourceMap": true,
+                            "namedChunks": true
                         }
                     }
                 },
