@@ -2,13 +2,13 @@
     content: "\ea12";
     font-weight: normal;
     font-family: "remixicon";
-  }
-  .accordion .accordion-header.open::before {
+}
+.accordion .accordion-header.open::before {
     content: "\f1ae";
-  }
-  .accordion .accordion-content {
-    @apply hidden;
-  }
-  .accordion .accordion-content.open {
-    @apply block;
-  }
+}
+.accordion .accordion-content {
+    display: none; /* Equivalent to @apply hidden */
+}
+.accordion .accordion-content.open {
+    display: block; /* Equivalent to @apply block */
+}

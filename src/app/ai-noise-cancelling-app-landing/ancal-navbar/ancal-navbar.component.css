@@ -35,9 +35,10 @@ nav.navbar {
   }
 }*/
 .isSticky {
-  @apply py-[20px];
+  padding-top: 20px;
+  padding-bottom: 20px;
   box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
-  animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+  animation: fadeInDown 500ms ease-in-out;
 }
 
 .overlay-popup {
@@ -57,14 +58,16 @@ nav.navbar {
 /* Max width 767px */
 @media only screen and (max-width: 767px) {
   .navbar-area {
-    @apply bg-white dark:bg-neutral-900;
+    background-color: white;
+    color: #1a202c; /* Equivalent to dark:bg-neutral-900 */
   }
   .navbar-area .navbar .navbar-collapse {
-    @apply hidden;
-    @apply p-[23px];
-    @apply mt-[25px];
+    display: none;
+    padding: 23px;
+    margin-top: 25px;
     max-height: 50vh;
-    @apply bg-stone-100 dark:bg-stone-800;
+    background-color: #f5f5f4; /* Equivalent to bg-stone-100 */
+    color: #292524; /* Equivalent to dark:bg-stone-800 */
     overflow-x: hidden;
   }
   .navbar-area .navbar.active .navbar-toggler {
@@ -75,20 +78,22 @@ nav.navbar {
     content: "\eb98";
   }
   .navbar-area .navbar.active .navbar-collapse {
-    @apply block;
+    display: block;
   }
 }
 /* Min width 768px to Max width 991px */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .navbar-area {
-    @apply bg-white dark:bg-neutral-900;
+    background-color: white;
+    color: #1a202c; /* Equivalent to dark:bg-neutral-900 */
   }
   .navbar-area .navbar .navbar-collapse {
-    @apply hidden;
-    @apply p-[25px];
-    @apply mt-[30px];
+    display: none;
+    padding: 25px;
+    margin-top: 30px;
     max-height: 50vh;
-    @apply bg-stone-100 dark:bg-stone-800;
+    background-color: #f5f5f4; /* Equivalent to bg-stone-100 */
+    color: #292524; /* Equivalent to dark:bg-stone-800 */
     overflow-y: scroll;
     overflow-x: hidden;
   }
@@ -100,10 +105,10 @@ nav.navbar {
     content: "\eb98";
   }
   .navbar-area .navbar.active .navbar-collapse {
-    @apply block;
+    display: block;
   }
 }
-/* Min width 768px to Max width 991px */
+/* Min width 1980px */
 @media only screen and (min-width: 1980px) {
   #img-logo {
     width: unset;

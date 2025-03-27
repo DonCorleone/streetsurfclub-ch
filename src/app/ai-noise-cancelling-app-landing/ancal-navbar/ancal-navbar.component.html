@@ -11,7 +11,7 @@
 </a>
 <div
   class="navbar-area py-[10px] md:py-[20px] 2xl:py-[45px] bg-stone-100 dark:bg-stone-800"
-  [ngClass]="{'isSticky sticky top-0 left-0 right-0 z-[991]': isSticky}"
+  [ngClass]="{'isSticky sticky top-0 left-0 right-0 z-991': isSticky}"
 >
   <div
     class="mx-auto px-[12px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1920px] 2xl:px-[30px] 3xl:px-[120px]">
@@ -36,10 +36,10 @@
             [routerLink]="'/blog'"
           >
             <span
-              class="nav-link text-slate-900 dark:text-slate-300 relative z-[1]  cursor-pointer">
+              class="nav-link text-slate-900 dark:text-slate-300 relative z-1  cursor-pointer">
               Neues
 <!--              <img src="assets/images/shapes/shape4.png"
-                   class="hidden lg:inline-block absolute left-0 right-0 top-1/2 -translate-y-2/4 -z-[1] transition-all opacity-0 ml-auto mr-auto mt-[2px]"
+                   class="hidden lg:inline-block absolute left-0 right-0 top-1/2 -translate-y-2/4 -z-1 transition-all opacity-0 ml-auto mr-auto mt-[2px]"
                    alt="image">-->
             </span>
           </li>
@@ -48,10 +48,10 @@
               [routerLink]="'/blog/blog-details/page/' + page.id"
           >
             <span [innerHtml]="page.title | safeHtml"
-                  class="nav-link text-slate-900 dark:text-slate-300 relative z-[1] cursor-pointer">
+                  class="nav-link text-slate-900 dark:text-slate-300 relative z-1 cursor-pointer">
 
 <!--              <img src="assets/images/shapes/shape4.png"
-                   class="hidden lg:inline-block absolute left-0 right-0 top-1/2 -translate-y-2/4 -z-[1] transition-all opacity-0 ml-auto mr-auto mt-[2px]"
+                   class="hidden lg:inline-block absolute left-0 right-0 top-1/2 -translate-y-2/4 -z-1 transition-all opacity-0 ml-auto mr-auto mt-[2px]"
                    alt="image">-->
             </span>
           </li>
@@ -80,7 +80,7 @@
 
 <!-- Contact Popup -->
 <div
-  class="overlay-popup fixed top-0 bottom-0 left-0 right-0 flex items-center z-[9992] px-[10px]"
+  class="overlay-popup fixed top-0 bottom-0 left-0 right-0 flex items-center z-9992 px-[10px]"
   *ngIf="isOpen"
 >
   <div
@@ -116,7 +116,7 @@
 
 <!-- Signin/Signup Popup -->
 <div
-  class="overlay-popup fixed top-0 bottom-0 left-0 right-0 flex items-center z-[9992] px-[10px]"
+  class="overlay-popup fixed top-0 bottom-0 left-0 right-0 flex items-center z-9992 px-[10px]"
   *ngIf="isSigninSignupOpen"
 >
   <div
@@ -170,7 +170,7 @@
           Sign in with Google
         </button>
         <div
-          class="relative leading-none z-[1] my-[15px] md:my-[20px] lg:my-[25px] text-center before:absolute before:left-0 before:right-0 before:top-1/2 before:-translate-y-2/4 before:h-[1px] before:bg-zinc-100 dark:bg-red-100 before:-z-[1]">
+          class="relative leading-none z-1 my-[15px] md:my-[20px] lg:my-[25px] text-center before:absolute before:left-0 before:right-0 before:top-1/2 before:-translate-y-2/4 before:h-[1px] before:bg-zinc-100 dark:bg-red-100 before:-z-1">
                     <span
                       class="inline-block bg-white dark:bg-black px-[15px] text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px]">
                         OR
@@ -217,7 +217,7 @@
           Sign in with Google
         </button>
         <div
-          class="relative leading-none z-[1] my-[15px] md:my-[20px] lg:my-[25px] text-center before:absolute before:left-0 before:right-0 before:top-1/2 before:-translate-y-2/4 before:h-[1px] before:bg-zinc-100 dark:bg-red-100 before:-z-[1]">
+          class="relative leading-none z-1 my-[15px] md:my-[20px] lg:my-[25px] text-center before:absolute before:left-0 before:right-0 before:top-1/2 before:-translate-y-2/4 before:h-[1px] before:bg-zinc-100 dark:bg-red-100 before:-z-1">
                     <span
                       class="inline-block bg-white dark:bg-black px-[15px] text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px]">
                         OR

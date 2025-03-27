@@ -1,22 +1,8 @@
-.tabs {
-    li {
-        &::after {
-            @apply opacity-0;
-            @apply transition-all;
-        }
-        &:first-child {
-            &.active {
-                &::after {
-                    @apply opacity-100;
-                }
-            }
-        }
-        &:last-child {
-            &.active {
-                &::after {
-                    @apply opacity-100;
-                }
-            }
-        }
-    }
+.tabs li::after {
+    opacity: 0; /* Equivalent to @apply opacity-0 */
+    transition: all 0.3s ease; /* Equivalent to @apply transition-all */
+}
+.tabs li:first-child.active::after,
+.tabs li:last-child.active::after {
+    opacity: 1; /* Equivalent to @apply opacity-100 */
 }
