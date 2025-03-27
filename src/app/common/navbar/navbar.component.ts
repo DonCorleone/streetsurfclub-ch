@@ -6,7 +6,7 @@ import {DarkmodeService} from "../../services/darkmode.service";
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.scss'],
+    styleUrls: ['./navbar.component.css'],
     imports: [NgClass, RouterLink, AsyncPipe]
 })
 export class NavbarComponent {

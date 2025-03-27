@@ -33,7 +33,7 @@
                         "styles": [
                             "node_modules/remixicon/fonts/remixicon.css",
                             "node_modules/aos/dist/aos.css",
-                            "src/styles.scss"
+                            "src/styles.css"
                         ],
                         "scripts": [],
                         "browser": "src/main.ts"
@@ -112,7 +112,7 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "src/styles.scss"
+                            "src/styles.css"
                         ],
                         "scripts": []
                     }

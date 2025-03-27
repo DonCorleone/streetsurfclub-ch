@@ -1,0 +1,14 @@
+.accordion .accordion-header::before {
+    content: "\ea12";
+    font-weight: normal;
+    font-family: "remixicon";
+  }
+  .accordion .accordion-header.open::before {
+    content: "\f1ae";
+  }
+  .accordion .accordion-content {
+    @apply hidden;
+  }
+  .accordion .accordion-content.open {
+    @apply block;
+  }

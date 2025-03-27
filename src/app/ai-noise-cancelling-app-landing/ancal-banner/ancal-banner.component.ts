@@ -10,7 +10,7 @@ import {ParseHtmlPipe} from "../../pipes/parse-html-pipe";
 @Component({
     selector: 'app-ancal-banner',
     templateUrl: './ancal-banner.component.html',
-    styleUrls: ['./ancal-banner.component.scss'],
+    styleUrls: ['./ancal-banner.component.css'],
     imports: [NgIf, SafeHtmlPipe, ParseHtmlPipe]
 })
 export class AncalBannerComponent implements OnInit {

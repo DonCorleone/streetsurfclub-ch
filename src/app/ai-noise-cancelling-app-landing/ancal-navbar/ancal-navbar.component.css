@@ -1,0 +1,116 @@
+#img-logo {
+  width: 55vw;
+}
+
+#img-logo-icon {
+  width: 15vw;
+  height: 100%;
+}
+
+#img-logo-full {
+  max-height: 30vw;
+}
+
+nav.navbar {
+  justify-content: space-around;
+}
+
+/*.navbar-nav {
+  .nav-item {
+    .nav-link {
+      &:hover {
+        img {
+          @apply opacity-100;
+        }
+      }
+    }
+
+    &.active {
+      .nav-link {
+        img {
+          @apply opacity-100;
+        }
+      }
+    }
+  }
+}*/
+.isSticky {
+  @apply py-[20px];
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+  animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+}
+
+.overlay-popup {
+  background-color: rgba(59, 61, 80, 0.5);
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+  .navbar-area {
+    @apply bg-white dark:bg-neutral-900;
+  }
+  .navbar-area .navbar .navbar-collapse {
+    @apply hidden;
+    @apply p-[23px];
+    @apply mt-[25px];
+    max-height: 50vh;
+    @apply bg-stone-100 dark:bg-stone-800;
+    overflow-x: hidden;
+  }
+  .navbar-area .navbar.active .navbar-toggler {
+    top: -31px;
+    right: -7px;
+  }
+  .navbar-area .navbar.active .navbar-toggler .burger-menu i::before {
+    content: "\eb98";
+  }
+  .navbar-area .navbar.active .navbar-collapse {
+    @apply block;
+  }
+}
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar-area {
+    @apply bg-white dark:bg-neutral-900;
+  }
+  .navbar-area .navbar .navbar-collapse {
+    @apply hidden;
+    @apply p-[25px];
+    @apply mt-[30px];
+    max-height: 50vh;
+    @apply bg-stone-100 dark:bg-stone-800;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .navbar-area .navbar.active .navbar-toggler {
+    top: -31px;
+    right: -7px;
+  }
+  .navbar-area .navbar.active .navbar-toggler .burger-menu i::before {
+    content: "\eb98";
+  }
+  .navbar-area .navbar.active .navbar-collapse {
+    @apply block;
+  }
+}
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 1980px) {
+  #img-logo {
+    width: unset;
+    max-height: 15vh;
+  }
+  #img-logo-icon {
+    width: unset;
+    max-height: 15vh;
+  }
+}

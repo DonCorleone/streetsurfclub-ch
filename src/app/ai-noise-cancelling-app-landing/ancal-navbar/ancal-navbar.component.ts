@@ -10,7 +10,7 @@ import {BloggerService} from "../../services/blogger.service";
 @Component({
     selector: 'app-ancal-navbar',
     templateUrl: './ancal-navbar.component.html',
-    styleUrls: ['./ancal-navbar.component.scss'],
+    styleUrls: ['./ancal-navbar.component.css'],
     imports: [NgClass, NgIf, AsyncPipe, NgForOf, RouterLink, SafeHtmlPipe],
     changeDetection: ChangeDetectionStrategy.OnPush
 })

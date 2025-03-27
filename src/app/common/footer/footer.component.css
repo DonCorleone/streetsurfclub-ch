@@ -2,14 +2,14 @@ img {
   width: 80vh;
 }
 
-// Max width 767px
+/* Max width 767px */
 @media only screen and (max-width: 767px) {
   img {
     width: 80vw;
   }
 }
 
-// Min width 768px to Max width 991px
+/* Min width 768px to Max width 991px */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   img {
     width: 80vw;
