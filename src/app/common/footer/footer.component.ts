@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
+import { AsyncPipe } from "@angular/common";
 import {Observable, ObservableInput, takeUntil, tap} from "rxjs";
 import {DarkmodeService} from "../../services/darkmode.service";
 import {Page} from "../../models/pages";
@@ -11,10 +11,13 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 @Component({
     selector: 'app-footer',
     templateUrl: './footer.component.html',
-    styleUrls: ['./footer.component.scss'],
-    imports: [RouterLink, AsyncPipe, NgIf, NgForOf, SafeHtmlPipe]
+    styleUrls: ['./footer.component.css'],
+    imports: [RouterLink, AsyncPipe, SafeHtmlPipe]
 })
 export class FooterComponent {
+  private darkmodeService = inject(DarkmodeService);
+  private bloggerService = inject(BloggerService);
+
   isDarkMode$ = this.darkmodeService.isDarkMode$;
 
   private destroy$: ObservableInput<any> = new Observable();
@@ -23,7 +26,7 @@ export class FooterComponent {
   terms: Page[] = [];
   supports: Page[] = [];
 
-  constructor(private darkmodeService: DarkmodeService, private bloggerService: BloggerService) {
+  constructor() {
     this.bloggerService.pages$.pipe(
       takeUntilDestroyed(),
     ).subscribe(pages => {

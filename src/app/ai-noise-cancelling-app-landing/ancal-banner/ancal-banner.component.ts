@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {NgIf} from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
+
 import {BloggerService} from "../../services/blogger.service";
 import {map, take} from "rxjs";
 import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
@@ -10,14 +10,14 @@ import {ParseHtmlPipe} from "../../pipes/parse-html-pipe";
 @Component({
     selector: 'app-ancal-banner',
     templateUrl: './ancal-banner.component.html',
-    styleUrls: ['./ancal-banner.component.scss'],
-    imports: [NgIf, SafeHtmlPipe, ParseHtmlPipe]
+    styleUrls: ['./ancal-banner.component.css'],
+    imports: [SafeHtmlPipe, ParseHtmlPipe]
 })
 export class AncalBannerComponent implements OnInit {
-  parsedContent: IContent | null | undefined;
+  private bloggerService = inject(BloggerService);
+  private contentService = inject(ContentService);
 
-  constructor(private bloggerService: BloggerService, private contentService: ContentService) {
-  }
+  parsedContent: IContent | null | undefined;
 
   ngOnInit(): void {
     this.bloggerService.findPost('**Main**').pipe(

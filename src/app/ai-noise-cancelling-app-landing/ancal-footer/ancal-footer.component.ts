@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {Page} from "../../models/pages";
 import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
-import {NgForOf, NgIf} from "@angular/common";
+
 import {RouterLink} from "@angular/router";
 import {BloggerService} from "../../services/blogger.service";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
@@ -10,20 +10,20 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
     selector: 'app-ancal-footer',
     templateUrl: './ancal-footer.component.html',
     imports: [
-        SafeHtmlPipe,
-        NgIf,
-        RouterLink,
-        NgForOf
-    ]
+    SafeHtmlPipe,
+    RouterLink
+]
 })
 export class AncalFooterComponent {
+  private bloggerService = inject(BloggerService);
+
 
   supports: Page[] = [];
   terms: Page[] = [];
   resources: Page[] = [];
   quickLinks: Page[] = [];
 
-  constructor(private bloggerService: BloggerService) {
+  constructor() {
     this.bloggerService.pages$.pipe(
       takeUntilDestroyed()
     ).subscribe(pages => {

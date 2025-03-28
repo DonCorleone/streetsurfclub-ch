@@ -1,0 +1,34 @@
+/* Converted SCSS nesting and removed Tailwind @apply */
+.sidebar-btn button {
+    transition: padding-right 0.3s ease 0s;
+    box-shadow: rgb(0, 0, 0, .15) 0px 0px 10px;
+}
+.sidebar-btn button span {
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+.sidebar-demos-popup {
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+.sidebar-demos-popup .inner-demos {
+    width: calc(100% + 20px);
+}
+.sidebar-demos-popup .inner-demos .demos-list {
+    box-shadow: rgb(23, 53, 102, .50) 0 15px 50px 0;
+}
+.sidebar-demos-popup .inner-demos .demos-list .filter-shadow {
+    filter: drop-shadow(0px 2px 20px rgba(0, 0, 0, 0.1));
+}
+.sidebar-demos-popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+@media only screen and (max-width : 767px) {
+    .sidebar-demos-popup .inner-demos {
+        width: 100%;
+        margin-right: 0;
+    }
+}

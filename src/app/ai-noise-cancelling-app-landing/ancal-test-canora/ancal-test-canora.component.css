@@ -1,0 +1,12 @@
+ul li button.active {
+    background-color: #22d3ee; /* Equivalent to bg-cyan-300 */
+    background-color: #facc15; /* Equivalent to dark:bg-yellow-600 */
+}
+.tabs li::after {
+    opacity: 0; /* Equivalent to @apply opacity-0 */
+    transition: all 0.3s ease; /* Equivalent to @apply transition-all */
+}
+.tabs li:first-child.active::after,
+.tabs li:last-child.active::after {
+    opacity: 1; /* Equivalent to @apply opacity-100 */
+}

@@ -1,4 +1,4 @@
-import {Component, isDevMode, OnInit} from '@angular/core';
+import { Component, isDevMode, OnInit, inject } from '@angular/core';
 import {
   Router,
   NavigationCancel,
@@ -6,18 +6,18 @@ import {
   RouterOutlet,
 } from '@angular/router';
 import {
-  
   Location,
   LocationStrategy, 
   PathLocationStrategy,
 } from '@angular/common';
 import {filter} from 'rxjs/operators';
-import * as AOS from 'aos';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
+    styleUrls: ['./app.component.css'],
     providers: [
         Location,
         {
@@ -28,12 +28,21 @@ import * as AOS from 'aos';
     imports: [RouterOutlet],
 })
 export class AppComponent implements OnInit {
+  private router = inject(Router);
+
   title = 'ToDo Title';
 
   location: any;
   routerSubscription: any;
-  constructor(private router: Router) {
-    AOS.init();
+
+  constructor() {
+    // Initialize AOS
+    AOS.init({
+      // You can add global settings here
+      once: true, // whether animation should happen only once - while scrolling down
+      duration: 800, // values from 0 to 3000, with step 50ms
+    });
+
     if (
       window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -52,7 +61,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.recallJsFuntions();
     if (isDevMode()){
       console.log('Development Mode');

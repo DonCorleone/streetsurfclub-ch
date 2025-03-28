@@ -1,4 +1,4 @@
-import { Component, ErrorHandler } from '@angular/core';
+import { Component, ErrorHandler, inject } from '@angular/core';
 import { AncalFooterComponent } from './ancal-footer/ancal-footer.component';
 import { AncalBlogComponent } from './ancal-blog/ancal-blog.component';
 import { AncalBannerComponent } from './ancal-banner/ancal-banner.component';
@@ -22,11 +22,11 @@ import { EMPTY } from 'rxjs';
     ]
 })
 export class AiNoiseCancellingAppLandingComponent {
-  constructor(
-    private readonly bloggerService: BloggerService,
-    private readonly metaService: MetaService,
-    private readonly errorHandler: ErrorHandler
-  ) {
+  private readonly bloggerService = inject(BloggerService);
+  private readonly metaService = inject(MetaService);
+  private readonly errorHandler = inject(ErrorHandler);
+
+  constructor() {
     this.bloggerService.blog$
       .pipe(
         takeUntilDestroyed(),
