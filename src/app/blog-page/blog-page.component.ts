@@ -22,7 +22,6 @@ export class BlogPageComponent {
   constructor() {
     const contentService = inject(ContentService);
 
-    // this.pages$ =
     this.contents$ = this.bloggerService.getPosts().pipe(
       take(1),
       map(posts => posts.map(post => {

@@ -4,13 +4,17 @@ import { Blog } from '../interfaces/blog.interface';
 
 const DEFAULT_LOCALE = 'en_US';
 
+const META_TAGS = {
+  name: ['description', 'keywords', 'author', 'twitter:card', 'twitter:title', 'twitter:description', 'twitter:image'],
+  property: ['og:title', 'og:description', 'og:type', 'og:image', 'og:url', 'og:locale']
+} as const;
+
 @Injectable({
   providedIn: 'root'
 })
 export class MetaService {
   private readonly titleService = inject(Title);
   private readonly meta = inject(Meta);
-
 
   updateMetaForBlog(blog: Blog): void {
     try {
@@ -38,7 +42,6 @@ export class MetaService {
 
       nameTags.forEach(tag => this.meta.updateTag(tag));
       propertyTags.forEach(tag => this.meta.updateTag(tag));
-      
     } catch (error) {
       console.error('Error updating meta tags:', error);
       throw new Error('Failed to update meta tags');
@@ -46,9 +49,8 @@ export class MetaService {
   }
 
   private clearMetaTags(): void {
-    ['description', 'keywords', 'author', 'twitter:card', 'twitter:title', 
-     'twitter:description', 'twitter:image', 'og:title', 'og:description', 
-     'og:type', 'og:image', 'og:url', 'og:locale']
-      .forEach(tag => this.meta.removeTag(tag.startsWith('og:') ? `property='${tag}'` : `name='${tag}'`));
+    [...META_TAGS.name.map(tag => `name='${tag}'`),
+     ...META_TAGS.property.map(tag => `property='${tag}'`)]
+      .forEach(selector => this.meta.removeTag(selector));
   }
 }

@@ -6,13 +6,13 @@ import {
   RouterOutlet,
 } from '@angular/router';
 import {
-  
   Location,
   LocationStrategy, 
   PathLocationStrategy,
 } from '@angular/common';
 import {filter} from 'rxjs/operators';
-import * as AOS from 'aos';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
     selector: 'app-root',
@@ -34,8 +34,15 @@ export class AppComponent implements OnInit {
 
   location: any;
   routerSubscription: any;
+
   constructor() {
-    AOS.init();
+    // Initialize AOS
+    AOS.init({
+      // You can add global settings here
+      once: true, // whether animation should happen only once - while scrolling down
+      duration: 800, // values from 0 to 3000, with step 50ms
+    });
+
     if (
       window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -54,7 +61,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.recallJsFuntions();
     if (isDevMode()){
       console.log('Development Mode');

@@ -33,7 +33,7 @@
     "@netlify/angular-runtime": "^2.2.1",
     "@netlify/edge-functions": "^2.11.1",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/aos": "^3.0.5",
+    "@types/aos": "^3.0.7",
     "@types/jasmine": "~4.3.0",
     "esbuild": "0.24.0",
     "jasmine-core": "~4.6.0",
