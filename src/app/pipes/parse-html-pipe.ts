@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, inject } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {SafeHtmlPipe} from "./safe-html-pipe";
 
@@ -7,8 +7,9 @@ import {SafeHtmlPipe} from "./safe-html-pipe";
   standalone: true,
 })
 export class ParseHtmlPipe extends SafeHtmlPipe {
-  constructor(protected override sanitized: DomSanitizer) {
-    super(sanitized);
+
+  constructor() {
+    super();
   }
 
   override transform(value: string): SafeHtml {

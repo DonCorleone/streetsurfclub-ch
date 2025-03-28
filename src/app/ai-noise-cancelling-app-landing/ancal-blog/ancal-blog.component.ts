@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {BloggerService} from "../../services/blogger.service";
 import {concatMap, EMPTY, from, map, Observable, of, switchMap, toArray} from "rxjs";
@@ -13,11 +13,14 @@ import {ParseHtmlPipe} from "../../pipes/parse-html-pipe";
     imports: [RouterLink, AsyncPipe, DatePipe, ParseHtmlPipe]
 })
 export class AncalBlogComponent {
+  private bloggerService = inject(BloggerService);
+  private contentService = inject(ContentService);
+
 
   content$: Observable<IContent[] | null>;
   blog$ = this.bloggerService.blog$;
 
-  constructor(private bloggerService: BloggerService, private contentService: ContentService) {
+  constructor() {
 
     this.content$ = this.bloggerService.getPosts(-1).pipe(
       switchMap(posts => {

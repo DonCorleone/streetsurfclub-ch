@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams } from "@angular/common/http";
 import {BehaviorSubject, Observable, catchError, map, of} from 'rxjs';
 import {Page, PageResponse} from "../models/pages";
@@ -11,6 +11,8 @@ import {environment} from "../../environments/environment";
   providedIn: 'root',
 })
 export class BloggerService {
+  private httpClient = inject(HttpClient);
+
   private apiBaseUrl = environment.apiBaseUrl;
 
   quickLinks: Page[] = [];
@@ -24,7 +26,7 @@ export class BloggerService {
   private pagesSubject = new BehaviorSubject<Page[]>([]);
   public pages$ = this.pagesSubject.asObservable();
 
-  constructor(private httpClient: HttpClient) {
+  constructor() {
     this.getPagesByMode().subscribe(pages => {
 
       this.quickLinks = this.getPagesByGroup(pages,'Quick Links');

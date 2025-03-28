@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, HostListener, Input, OnInit} from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, Input, OnInit, inject } from '@angular/core';
 import { AsyncPipe, NgClass } from '@angular/common';
 import {DarkmodeService} from "../../services/darkmode.service";
 import {RouterLink} from "@angular/router";
@@ -15,12 +15,13 @@ import {BloggerService} from "../../services/blogger.service";
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AncalNavbarComponent {
+  private darkmodeService = inject(DarkmodeService);
+  private bloggerService = inject(BloggerService);
+
 
   pages$: Observable<Page[]> = this.bloggerService.pages$;
 
   isDarkMode$ = this.darkmodeService.isDarkMode$;
-  constructor(private darkmodeService: DarkmodeService, private bloggerService: BloggerService) {
-  }
 
   menuOpen = false;
 

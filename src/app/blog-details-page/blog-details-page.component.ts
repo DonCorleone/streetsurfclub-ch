@@ -4,7 +4,7 @@ import { DatePipe, NgOptimizedImage } from '@angular/common';
 import {SafeHtmlPipe} from '../pipes/safe-html-pipe';
 import {BloggerService} from '../services/blogger.service';
 import {map, take} from 'rxjs';
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ContentService} from "../services/content.service";
 import {ParseHtmlPipe} from "../pipes/parse-html-pipe";
@@ -16,6 +16,10 @@ import {ParseHtmlPipe} from "../pipes/parse-html-pipe";
     imports: [NavbarComponent, FooterComponent, SafeHtmlPipe, ParseHtmlPipe, NgOptimizedImage, DatePipe]
 })
 export class BlogDetailsPageComponent implements OnInit {
+  private bloggerService = inject(BloggerService);
+  private activatedRoute = inject(ActivatedRoute);
+  private contentService = inject(ContentService);
+
 
   content = '';
   headerImg: string | null = null;
@@ -23,8 +27,6 @@ export class BlogDetailsPageComponent implements OnInit {
   date: Date | string = '';
   amountReplies = '0';
   type: 'post' | 'page' | null = null;
-  constructor(private bloggerService: BloggerService, private activatedRoute: ActivatedRoute, private contentService: ContentService) {
-  }
 
   ngOnInit(): void {
     const typeParam = this.activatedRoute.snapshot.paramMap.get('type');

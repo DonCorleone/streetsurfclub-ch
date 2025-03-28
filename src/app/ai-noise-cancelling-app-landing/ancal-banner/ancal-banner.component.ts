@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 
 import {BloggerService} from "../../services/blogger.service";
 import {map, take} from "rxjs";
@@ -14,10 +14,10 @@ import {ParseHtmlPipe} from "../../pipes/parse-html-pipe";
     imports: [SafeHtmlPipe, ParseHtmlPipe]
 })
 export class AncalBannerComponent implements OnInit {
-  parsedContent: IContent | null | undefined;
+  private bloggerService = inject(BloggerService);
+  private contentService = inject(ContentService);
 
-  constructor(private bloggerService: BloggerService, private contentService: ContentService) {
-  }
+  parsedContent: IContent | null | undefined;
 
   ngOnInit(): void {
     this.bloggerService.findPost('**Main**').pipe(

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {FooterComponent} from '../common/footer/footer.component';
 import {RouterLink} from '@angular/router';
 import {BloggerService} from '../services/blogger.service';
@@ -15,9 +15,13 @@ import {AncalNavbarComponent} from "../ai-noise-cancelling-app-landing/ancal-nav
     imports: [RouterLink, FooterComponent, AsyncPipe, DatePipe, SafeHtmlPipe, NgOptimizedImage, AncalNavbarComponent]
 })
 export class BlogPageComponent {
+  private bloggerService = inject(BloggerService);
+
   contents$: Observable<(IContent | null)[]>;
 
-  constructor(private bloggerService: BloggerService, contentService: ContentService) {
+  constructor() {
+    const contentService = inject(ContentService);
+
     // this.pages$ =
     this.contents$ = this.bloggerService.getPosts().pipe(
       take(1),

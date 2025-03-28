@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {Page} from "../../models/pages";
 import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
 
@@ -15,13 +15,15 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 ]
 })
 export class AncalFooterComponent {
+  private bloggerService = inject(BloggerService);
+
 
   supports: Page[] = [];
   terms: Page[] = [];
   resources: Page[] = [];
   quickLinks: Page[] = [];
 
-  constructor(private bloggerService: BloggerService) {
+  constructor() {
     this.bloggerService.pages$.pipe(
       takeUntilDestroyed()
     ).subscribe(pages => {

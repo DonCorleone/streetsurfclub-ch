@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Meta, MetaDefinition, Title } from '@angular/platform-browser';
 import { Blog } from '../interfaces/blog.interface';
 
@@ -8,10 +8,9 @@ const DEFAULT_LOCALE = 'en_US';
   providedIn: 'root'
 })
 export class MetaService {
-  constructor(
-    private readonly titleService: Title,
-    private readonly meta: Meta
-  ) {}
+  private readonly titleService = inject(Title);
+  private readonly meta = inject(Meta);
+
 
   updateMetaForBlog(blog: Blog): void {
     try {

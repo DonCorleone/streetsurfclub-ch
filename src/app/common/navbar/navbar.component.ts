@@ -1,4 +1,4 @@
-import {Component, HostListener, Input} from '@angular/core';
+import { Component, HostListener, Input, inject } from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {AsyncPipe, NgClass} from '@angular/common';
 import {DarkmodeService} from "../../services/darkmode.service";
@@ -10,14 +10,13 @@ import {DarkmodeService} from "../../services/darkmode.service";
     imports: [NgClass, RouterLink, AsyncPipe]
 })
 export class NavbarComponent {
+  private darkmodeService = inject(DarkmodeService);
+
 
   // Navbar Sticky
   isSticky: boolean = false;
   isDarkMode$ = this.darkmodeService.isDarkMode$;
   @Input() type!: "post" | "page" | null;
-
-  constructor(private darkmodeService: DarkmodeService) {
-  }
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {

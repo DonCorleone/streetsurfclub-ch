@@ -1,4 +1,4 @@
-import {Component, isDevMode, OnInit} from '@angular/core';
+import { Component, isDevMode, OnInit, inject } from '@angular/core';
 import {
   Router,
   NavigationCancel,
@@ -28,11 +28,13 @@ import * as AOS from 'aos';
     imports: [RouterOutlet],
 })
 export class AppComponent implements OnInit {
+  private router = inject(Router);
+
   title = 'ToDo Title';
 
   location: any;
   routerSubscription: any;
-  constructor(private router: Router) {
+  constructor() {
     AOS.init();
     if (
       window.matchMedia &&
