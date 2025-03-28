@@ -1,17 +1,15 @@
 import { Routes } from '@angular/router';
-import {
-  AiNoiseCancellingAppLandingComponent
-} from "./ai-noise-cancelling-app-landing/ai-noise-cancelling-app-landing.component";
-import {BlogPageComponent} from "./blog-page/blog-page.component";
-import {BlogDetailsPageComponent} from "./blog-details-page/blog-details-page.component";
-import {ErrorPageComponent} from "./error-page/error-page.component";
+
+
+
+
 
 export const routes: Routes = [
-  {path: '', component: AiNoiseCancellingAppLandingComponent},
-  {path: 'blog', component: BlogPageComponent},
-  {path: 'blog/blog-details/:id', component: BlogDetailsPageComponent},
-  {path: 'blog/blog-details/:type/:id', component: BlogDetailsPageComponent},
+  {path: '', loadComponent: () => import('./ai-noise-cancelling-app-landing/ai-noise-cancelling-app-landing.component').then(m => m.AiNoiseCancellingAppLandingComponent)},
+  {path: 'blog', loadComponent: () => import('./blog-page/blog-page.component').then(m => m.BlogPageComponent)},
+  {path: 'blog/blog-details/:id', loadComponent: () => import('./blog-details-page/blog-details-page.component').then(m => m.BlogDetailsPageComponent)},
+  {path: 'blog/blog-details/:type/:id', loadComponent: () => import('./blog-details-page/blog-details-page.component').then(m => m.BlogDetailsPageComponent)},
   // Here add new pages component
 
-  {path: '**', component: ErrorPageComponent} // This line will remain down from the whole pages component list
+  {path: '**', loadComponent: () => import('./error-page/error-page.component').then(m => m.ErrorPageComponent)} // This line will remain down from the whole pages component list
 ];
