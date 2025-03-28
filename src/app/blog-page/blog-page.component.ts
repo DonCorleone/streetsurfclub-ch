@@ -3,7 +3,7 @@ import {FooterComponent} from '../common/footer/footer.component';
 import {RouterLink} from '@angular/router';
 import {BloggerService} from '../services/blogger.service';
 import {map, Observable, take} from "rxjs";
-import {AsyncPipe, DatePipe, NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
+import { AsyncPipe, DatePipe, NgOptimizedImage } from "@angular/common";
 import {SafeHtmlPipe} from "../pipes/safe-html-pipe";
 import {ContentService} from "../services/content.service";
 import {IContent} from "../models/IContent";
@@ -12,7 +12,7 @@ import {AncalNavbarComponent} from "../ai-noise-cancelling-app-landing/ancal-nav
 @Component({
     selector: 'app-blog-page',
     templateUrl: './blog-page.component.html',
-    imports: [RouterLink, FooterComponent, AsyncPipe, NgForOf, DatePipe, NgIf, SafeHtmlPipe, NgOptimizedImage, AncalNavbarComponent]
+    imports: [RouterLink, FooterComponent, AsyncPipe, DatePipe, SafeHtmlPipe, NgOptimizedImage, AncalNavbarComponent]
 })
 export class BlogPageComponent {
   contents$: Observable<(IContent | null)[]>;

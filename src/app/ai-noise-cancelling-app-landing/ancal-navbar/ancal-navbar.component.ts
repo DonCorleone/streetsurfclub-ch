@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, HostListener, Input, OnInit} from '@angular/core';
-import {AsyncPipe, NgClass, NgForOf, NgIf} from '@angular/common';
+import { AsyncPipe, NgClass } from '@angular/common';
 import {DarkmodeService} from "../../services/darkmode.service";
 import {RouterLink} from "@angular/router";
 import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
@@ -11,7 +11,7 @@ import {BloggerService} from "../../services/blogger.service";
     selector: 'app-ancal-navbar',
     templateUrl: './ancal-navbar.component.html',
     styleUrls: ['./ancal-navbar.component.css'],
-    imports: [NgClass, NgIf, AsyncPipe, NgForOf, RouterLink, SafeHtmlPipe],
+    imports: [NgClass, AsyncPipe, RouterLink, SafeHtmlPipe],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AncalNavbarComponent {

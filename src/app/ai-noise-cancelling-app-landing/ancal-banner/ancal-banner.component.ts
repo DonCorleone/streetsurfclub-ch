@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NgIf} from '@angular/common';
+
 import {BloggerService} from "../../services/blogger.service";
 import {map, take} from "rxjs";
 import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
@@ -11,7 +11,7 @@ import {ParseHtmlPipe} from "../../pipes/parse-html-pipe";
     selector: 'app-ancal-banner',
     templateUrl: './ancal-banner.component.html',
     styleUrls: ['./ancal-banner.component.css'],
-    imports: [NgIf, SafeHtmlPipe, ParseHtmlPipe]
+    imports: [SafeHtmlPipe, ParseHtmlPipe]
 })
 export class AncalBannerComponent implements OnInit {
   parsedContent: IContent | null | undefined;

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
+import { AsyncPipe } from "@angular/common";
 import {Observable, ObservableInput, takeUntil, tap} from "rxjs";
 import {DarkmodeService} from "../../services/darkmode.service";
 import {Page} from "../../models/pages";
@@ -12,7 +12,7 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
     selector: 'app-footer',
     templateUrl: './footer.component.html',
     styleUrls: ['./footer.component.css'],
-    imports: [RouterLink, AsyncPipe, NgIf, NgForOf, SafeHtmlPipe]
+    imports: [RouterLink, AsyncPipe, SafeHtmlPipe]
 })
 export class FooterComponent {
   isDarkMode$ = this.darkmodeService.isDarkMode$;

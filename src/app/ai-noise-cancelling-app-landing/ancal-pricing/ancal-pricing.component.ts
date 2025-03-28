@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-ancal-pricing',
     templateUrl: './ancal-pricing.component.html',
     styleUrls: ['./ancal-pricing.component.css'],
-    imports: [NgClass, NgIf]
+    imports: [NgClass]
 })
 export class AncalPricingComponent {
 
