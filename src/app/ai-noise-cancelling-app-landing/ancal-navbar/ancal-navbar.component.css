@@ -35,8 +35,7 @@ nav.navbar {
   }
 }*/
 .isSticky {
-  padding-top: 20px;
-  padding-bottom: 20px;
+
   box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
   animation: fadeInDown 500ms ease-in-out;
 }
