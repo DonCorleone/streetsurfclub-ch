@@ -41,8 +41,6 @@ export class AppComponent implements OnInit {
       {
         duration: 1000,
         once: true,
-        mirror: false,
-        disable: 'mobile',
       }
     );
 
