@@ -54,9 +54,11 @@
       </div-->
       </div>
       }
+      @if (parsedContent?.headerImg) {
       <div class="self-center" data-aos="fade-up">
         <img [src]="parsedContent?.headerImg" class="inline" alt="banner-image">
       </div>
+      }
 
     </div>
   </div>
