@@ -11,8 +11,8 @@ import {
   PathLocationStrategy,
 } from '@angular/common';
 import {filter} from 'rxjs/operators';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import Aos from 'aos';
+
 
 @Component({
     selector: 'app-root',
@@ -37,11 +37,14 @@ export class AppComponent implements OnInit {
 
   constructor() {
     // Initialize AOS
-    AOS.init({
-      // You can add global settings here
-      once: true, // whether animation should happen only once - while scrolling down
-      duration: 800, // values from 0 to 3000, with step 50ms
-    });
+    Aos.init(
+      {
+        duration: 1000,
+        once: true,
+        mirror: false,
+        disable: 'mobile',
+      }
+    );
 
     if (
       window.matchMedia &&

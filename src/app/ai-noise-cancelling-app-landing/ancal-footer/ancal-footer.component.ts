@@ -1,18 +1,18 @@
 import { Component, inject } from '@angular/core';
-import {Page} from "../../models/pages";
-import {SafeHtmlPipe} from "../../pipes/safe-html-pipe";
+import { Page } from "../../models/pages";
+import { SafeHtmlPipe } from "../../pipes/safe-html-pipe";
 
-import {RouterLink} from "@angular/router";
-import {BloggerService} from "../../services/blogger.service";
-import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import { RouterLink } from "@angular/router";
+import { BloggerService } from "../../services/blogger.service";
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 
 @Component({
-    selector: 'app-ancal-footer',
-    templateUrl: './ancal-footer.component.html',
-    imports: [
+  selector: 'app-ancal-footer',
+  templateUrl: './ancal-footer.component.html',
+  imports: [
     SafeHtmlPipe,
     RouterLink
-]
+  ]
 })
 export class AncalFooterComponent {
   private bloggerService = inject(BloggerService);

@@ -17,8 +17,6 @@ import {BloggerService} from "../../services/blogger.service";
 export class AncalNavbarComponent {
   private darkmodeService = inject(DarkmodeService);
   private bloggerService = inject(BloggerService);
-
-
   pages$: Observable<Page[]> = this.bloggerService.pages$;
 
   isDarkMode$ = this.darkmodeService.isDarkMode$;
