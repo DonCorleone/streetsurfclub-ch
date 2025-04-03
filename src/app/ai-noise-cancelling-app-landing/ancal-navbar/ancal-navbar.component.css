@@ -54,9 +54,19 @@ nav.navbar {
     transform: translateZ(0);
   }
 }
+
+
 /* Max width 767px */
 @media only screen and (max-width: 767px) {
 
+  .navbar-toggler {
+    top: -20px;
+    right: 10px;
+  
+    &.stickymode {
+      top: 20px;
+    }
+  }
   .navbar-area .navbar .navbar-collapse {
     display: none;
     padding: 23px;
@@ -65,19 +75,26 @@ nav.navbar {
      /* Equivalent to bg-stone-100 */
     overflow-x: hidden;
   }
-  .navbar-area .navbar.active .navbar-toggler {
-    top: -31px;
-    right: -7px;
-  }
+
   .navbar-area .navbar.active .navbar-toggler .burger-menu i::before {
     content: "\eb98";
   }
   .navbar-area .navbar.active .navbar-collapse {
+
     display: block;
   }
 }
 /* Min width 768px to Max width 991px */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  .navbar-toggler {
+    top: -20px;
+    right: -27px;
+  
+    &.stickymode {
+      top: 80px;
+    }
+  }
 
   .navbar-area .navbar .navbar-collapse {
     display: none;
@@ -87,10 +104,7 @@ nav.navbar {
     overflow-y: scroll;
     overflow-x: hidden;
   }
-  .navbar-area .navbar.active .navbar-toggler {
-    top: -31px;
-    right: -7px;
-  }
+
   .navbar-area .navbar.active .navbar-toggler .burger-menu i::before {
     content: "\eb98";
   }
