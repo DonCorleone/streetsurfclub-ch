@@ -16,12 +16,18 @@
   [ngClass]="{'isSticky sticky top-0 left-0 right-0 z-991': isSticky}" data-aosx="fade-up">
   <div
     class="mx-auto px-[12px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1920px] 2xl:px-[30px] 3xl:px-[120px]">
-    <nav class="navbar relative lg:flex flex-wrap" [class.active]="menuOpen">
-      <div class="self-center text-center ">
+    <nav class="navbar relative lg:flex flex-wrap" 
+    [class.active]="menuOpen"
+    [class.stickymode]="isSticky">  
+      @if(isSticky){
+        <div class="self-center text-center px-12 lg:hidden">
+          <img [src]="(isDarkMode$ | async) ? 'assets/images/white-logo.png' : 'assets/images/logo.png'" alt="logo">
 
-      </div>
+        </div>
+      }
       <button
         class="navbar-toggler absolute ml-auto right-0 -top-[16px] lg:hidden"
+        [class.stickymode]="isSticky"
         (click)="toggleMenu()"
         type="button"
         >
