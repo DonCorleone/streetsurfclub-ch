@@ -42,7 +42,7 @@
 
           <ul class="navbar-nav self-center flex-row lg:ml-[20px] xl:ml-[50px] 2xl:ml-[110px] lg:mt-[10px] xl:mt-[15px] 2xl:mt-[20px] lg:flex">
             <li
-              class="nav-item text-center text-[14px] md:text-[15px] xl:text-[16px] font-semibold leading-none mt-[21px] lg:mt-0 first:mt-0 lg:ml-[7px] lg:mr-[7px] xl:ml-[15px] xl:mr-[15px] 2xl:ml-[19px] 2xl:mr-[19px] first:ml-0 last:mr-0"
+              class="nav-item text-center text-[14px] md:text-[15px] xl:text-[16px] font-semibold leading-none mt-[32px] lg:mt-0 lg:ml-[7px] lg:mr-[7px] xl:ml-[15px] xl:mr-[15px] 2xl:ml-[19px] 2xl:mr-[19px] first:ml-0 last:mr-0"
               [routerLink]="'/blog'"
               >
               <span
@@ -55,7 +55,7 @@
             </li>
             @for (page of pages; track page.id) {
               <li
-                class="nav-item text-center text-[14px] md:text-[15px] xl:text-[16px] font-semibold leading-none mt-[21px] lg:mt-0 first:mt-0 lg:ml-[7px] lg:mr-[7px] xl:ml-[15px] xl:mr-[15px] 2xl:ml-[19px] 2xl:mr-[19px] first:ml-0 last:mr-0"
+                class="nav-item text-center text-[14px] md:text-[15px] xl:text-[16px] font-semibold leading-none mt-[32px] lg:mt-0 first:mt-0 lg:ml-[7px] lg:mr-[7px] xl:ml-[15px] xl:mr-[15px] 2xl:ml-[19px] 2xl:mr-[19px] first:ml-0 last:mr-0"
                 [routerLink]="'/blog/blog-details/page/' + page.id"
                 >
                 <span [innerHtml]="page.title | safeHtml"

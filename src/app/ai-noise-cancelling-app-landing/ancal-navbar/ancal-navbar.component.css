@@ -70,9 +70,6 @@ nav.navbar {
   .navbar-area .navbar .navbar-collapse {
     display: none;
     padding: 23px;
-    margin-top: 25px;
-    max-height: 50vh;
-     /* Equivalent to bg-stone-100 */
     overflow-x: hidden;
   }
 
@@ -100,7 +97,6 @@ nav.navbar {
     display: none;
     padding: 25px;
     margin-top: 30px;
-    max-height: 50vh;
     overflow-y: scroll;
     overflow-x: hidden;
   }
