@@ -3,7 +3,7 @@
     >
     <img id="img-logo" [src]="(isDarkMode$ | async) ? 'assets/images/white-logo.png' : 'assets/images/logo.png'" class="hidden lg:inline mt10- z-1"
       alt="logo">
-    <img id="img-logo-full" [src]="(isDarkMode$ | async) ? 'assets/images/logo-full-dark.png' : 'assets/images/logo-full.png'" class="inline lg:hidden  z-1"
+    <img id="img-logo-full" [src]="(isDarkMode$ | async) ? 'assets/images/logo-full-dark.png' : 'assets/images/logo-full.png'" class="inline lg:hidden z-1"
       alt="logo">
     <img id="img-logo-icon" [src]="(isDarkMode$ | async) ? 'assets/images/logo-icon-dark.png' : 'assets/images/logo-icon.png'" class="hidden lg:inline py-3 md:py-4 lg:py-5 xl:py-6 2xl:py-7  z-1"
       alt="logo">
@@ -15,7 +15,7 @@
   class="navbar-area py-[10px] md:py-[20px] 2xl:py-[30px] bg-stone-100 dark:bg-stone-800 pt-6 pb-6 lg:pt-auto lg:pb-auto"
   [ngClass]="{'isSticky sticky top-0 left-0 right-0 z-991': isSticky}" data-aosx="fade-up">
   <div
-    class="mx-auto px-[12px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1920px] 2xl:px-[30px] 3xl:px-[120px]">
+    class="mx-auto px-[12px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1920px] 2xl:px-[80px] 3xl:px-[120px]">
     <nav class="navbar relative lg:flex flex-wrap" 
     [class.active]="menuOpen"
     [class.stickymode]="isSticky">  
@@ -40,7 +40,7 @@
         <div class="navbar-collapse flex self-center grow basis-auto">
           @if(pages && pages.length > 0) {
 
-          <ul class="navbar-nav self-center flex-row lg:ml-[20px] xl:ml-[50px] 2xl:ml-[110px] lg:mt-[10px] xl:mt-[15px] 2xl:mt-[20px] lg:flex">
+          <ul class="navbar-nav self-center flex-row lg:my-[20px] xl:my-[50px] 2xl:my-[110px] lg:mt-[10px] xl:mt-[15px] 2xl:mt-[20px] lg:flex">
             <li
               class="nav-item text-center text-[14px] md:text-[15px] xl:text-[16px] font-semibold leading-none mt-[32px] lg:mt-0 lg:ml-[7px] lg:mr-[7px] xl:ml-[15px] xl:mr-[15px] 2xl:ml-[19px] 2xl:mr-[19px] first:ml-0 last:mr-0"
               [routerLink]="'/blog'"
