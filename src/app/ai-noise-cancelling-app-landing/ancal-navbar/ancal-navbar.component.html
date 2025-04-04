@@ -1,5 +1,5 @@
 <a [routerLink]="'/'">
-  <div class="flex flex-row items-center justify-center gap-6  bg-stone-100 dark:bg-stone-800 md:gap-8 lg:gap-10 xl:gap-14 2xl:gap-18 -mb-8 lg:mb-auto"
+  <div class="flex flex-row items-center justify-center gap-6  bg-stone-100 dark:bg-stone-800 md:gap-8 lg:gap-10 xl:gap-14 2xl:gap-18 -mb-8"
     >
     <img id="img-logo" [src]="(isDarkMode$ | async) ? 'assets/images/white-logo.png' : 'assets/images/logo.png'" class="hidden lg:inline mt10- z-1"
       alt="logo">
@@ -65,8 +65,15 @@
                   alt="image">-->
                 </span>
               </li>
+
             }
+            <li>
+              <div class="w-30 -mt-12 py-2" >
+                <img id="img-logo-sticky" [src]="(isDarkMode$ | async) ? 'assets/images/logo-icon-dark.png' : 'assets/images/logo-icon.png'" [ngClass]="isSticky ? 'hidden lg:block' : 'hidden' " alt="logo">
+              </div>
+            </li>
           </ul>
+
         }
           <!--div class="other-options ml-auto self-center md:mt-[20px] md:border-t md:pt-[20px] lg:mt-0 lg:border-none lg:pt-0">
           <span
