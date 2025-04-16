@@ -12,7 +12,7 @@
               Home
             </a>
           </li>
-          @for (quickLink of quickLinks; track quickLink) {
+                    @for (quickLink of quickLinks; track quickLink) {
             <li class="mb-[15px] last:mb-0">
               <a [routerLink]="'/blog/blog-details/page/' + quickLink.id" [innerHtml]="quickLink.title | safeHtml"
                 class="inline-block text-stone-500 dark:yellow-400 transition-all hover:underline">
@@ -28,11 +28,19 @@
         </h3>
         <ul class="text-[13px] md:text-[14px] lg:text-[15px]">
           <li class="mb-[15px] last:mb-0">
-            <a [routerLink]="'/blog'"
-              class="inline-block text-stone-500 dark:yellow-400 transition-all hover:underline">
+            <a [routerLink]="'/blog'" class="inline-block text-stone-500 dark:yellow-400 transition-all hover:underline">
               Blog
             </a>
           </li>
+          @if (showAdditionalResources) {
+            @for (link of navigationLinks; track link) {
+              <li class="mb-[15px] last:mb-0">
+                <a [routerLink]="'/' + link.path" class="inline-block text-stone-500 dark:yellow-400 transition-all hover:underline">
+                  {{link.title}}
+                </a>
+              </li>
+            }
+          }
           @for (resource of resources; track resource) {
             <li class="mb-[15px] last:mb-0">
               <a [routerLink]="'/blog/blog-details/page/' + resource.id" [innerHtml]="resource.title | safeHtml"
