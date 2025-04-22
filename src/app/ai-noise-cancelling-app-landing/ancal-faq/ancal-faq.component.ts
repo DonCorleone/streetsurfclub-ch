@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-ancal-faq',
     templateUrl: './ancal-faq.component.html',
     styleUrls: ['./ancal-faq.component.css'],
-    imports: [NgClass]
 })
 export class AncalFaqComponent {
 

@@ -26,7 +26,7 @@
     }
     <div class="lg:max-w-[870px] mx-auto" data-aos="fade-up" data-aosx-duration="500" data-aosx-delay="200">
       @if (content) {
-      <ul class="text-[13px] md:text-[14px] lg:text-[15px] text-stone-500 dark:yellow-400 mb-[12px] lg:mb-[14px]">
+      <ul class="flex text-[13px] md:text-[14px] lg:text-[15px] text-stone-500 dark:yellow-400 mb-[12px] lg:mb-[14px]">
         <li class="relative pl-[27px] pt-[1px] leading-none inline-block mr-[20px] md:mr-[30px] last:mr-0">
           <span class="absolute left-0 top-1/2 -translate-y-2/4 inline-block">
             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
@@ -96,9 +96,17 @@
                 fill="#666666" />
             </svg>
           </span>
-          {{ amountReplies }} Comments
         </li>
       </ul>
+
+      @if (type === 'post') {      
+        <app-comment-dialog 
+        [isOpen]="isCommentsOpen"
+        [postId]="currentPostId"
+        (closeModal)="closeComments()"
+      />
+      }
+
 
       <article [innerHTML]="content | parseHtml" class="prose max-w-none
                prose-p:text-amber-900 dark:prose-p:text-amber-100
@@ -111,5 +119,8 @@
   </div>
 </div>
 <!-- End Blog Details -->
+<button (click)="openComments()" class="inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-slate-900 dark:text-slate-900 font-semibold rounded-[7px] bg-amber-200 dark:bg-indigo-300 px-[25px] md:px-[35px] lg:px-[40px] py-[13px] md:py-[14px] lg:py-[16px] transition-all hover:bg-cyan-300 dark:bg-yellow-600">
+  Open Comments
+</button>
 
 <app-footer />

@@ -8,18 +8,25 @@ import { Component, OnInit, inject } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ContentService} from "../services/content.service";
 import {ParseHtmlPipe} from "../pipes/parse-html-pipe";
-
+import {CommentDialogComponent} from "../common/comment-dialog/comment-dialog.component";
 
 @Component({
     selector: 'app-blog-details-page',
     templateUrl: './blog-details-page.component.html',
-    imports: [NavbarComponent, FooterComponent, SafeHtmlPipe, ParseHtmlPipe, NgOptimizedImage, DatePipe]
+    imports: [
+      NavbarComponent, 
+      FooterComponent, 
+      SafeHtmlPipe, 
+      ParseHtmlPipe, 
+      NgOptimizedImage, 
+      DatePipe,
+      CommentDialogComponent
+    ]
 })
 export class BlogDetailsPageComponent implements OnInit {
   private bloggerService = inject(BloggerService);
   private activatedRoute = inject(ActivatedRoute);
   private contentService = inject(ContentService);
-
 
   content = '';
   headerImg: string | null = null;
@@ -27,6 +34,8 @@ export class BlogDetailsPageComponent implements OnInit {
   date: Date | string = '';
   amountReplies = '0';
   type: 'post' | 'page' | null = null;
+  currentPostId: string = '';
+  isCommentsOpen = false;
 
   ngOnInit(): void {
     const typeParam = this.activatedRoute.snapshot.paramMap.get('type');
@@ -45,6 +54,8 @@ export class BlogDetailsPageComponent implements OnInit {
       return;
     }
 
+    this.currentPostId = siteId;
+
     (this.type === 'post'
       ? this.bloggerService.getPost(siteId)
       : this.bloggerService.getPage(siteId))
@@ -62,5 +73,13 @@ export class BlogDetailsPageComponent implements OnInit {
         })
       )
       .subscribe();
+  }
+
+  openComments() {
+    this.isCommentsOpen = true;
+  }
+
+  closeComments() {
+    this.isCommentsOpen = false;
   }
 }

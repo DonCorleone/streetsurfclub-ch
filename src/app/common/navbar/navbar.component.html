@@ -4,16 +4,14 @@
 >
     <div class="container mx-auto px-[12px] 2xl:px-0">
         <div class="flex items-center justify-around gap-6 md:gap-8 lg:gap-10 xl:gap-14">
-            <div>
-                <a routerLink="/" class="inline-block">
-                    <img [src]="(isDarkMode$ | async) ? 'assets/images/white-logo.png' : 'assets/images/logo.png'" alt="logo">
-                </a>
-            </div>
-            <div>
-                <a [routerLink]="type() == 'post' ? '/blog' : '/'" class="inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-slate-900 dark:text-slate-900 font-semibold rounded-[7px] bg-amber-200 dark:bg-indigo-300 px-[25px] md:px-[35px] lg:px-[40px] py-[13px] md:py-[14px] lg:py-[16px] transition-all hover:bg-cyan-300 dark:bg-yellow-600">
-                   Zurück
-                </a>
-            </div>
+            <a routerLink="/" class="inline-block">
+                <img [src]="(isDarkMode$ | async) ? 'assets/images/white-logo.png' : 'assets/images/logo.png'" alt="logo">
+            </a>
+        
+        
+            <a [routerLink]="type() == 'post' ? '/blog' : '/'" class="inline-block text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] text-slate-900 dark:text-slate-900 font-semibold rounded-[7px] bg-amber-200 dark:bg-indigo-300 px-[25px] md:px-[35px] lg:px-[40px] py-[13px] md:py-[14px] lg:py-[16px] transition-all hover:bg-cyan-300 dark:bg-yellow-600">
+                Zurück
+            </a>
         </div>
     </div>
 </div>

@@ -6,6 +6,13 @@ import {Post, PostResponse} from "../models/posts";
 import {BlogResponse} from "../models/blog";
 import {environment} from "../../environments/environment";
 
+interface Comment {
+  id?: string;
+  postId: string;
+  author: string;
+  content: string;
+  timestamp: Date;
+}
 
 @Injectable({
   providedIn: 'root',
@@ -116,5 +123,23 @@ export class BloggerService {
           return of([]);
         }
       ));
+  }
+
+  getComments(postId: string): Observable<Comment[]> {
+    return this.httpClient.get<Comment[]>(`${this.apiBaseUrl}/list-comments?postId=${postId}`).pipe(
+      catchError(err => {
+        console.error('Error fetching comments:', err);
+        return of([]);
+      })
+    );
+  }
+
+  addComment(comment: Comment): Observable<Comment> {
+    return this.httpClient.post<Comment>(`${this.apiBaseUrl}/add-comment`, comment).pipe(
+      catchError(err => {
+        console.error('Error adding comment:', err);
+        throw err;
+      })
+    );
   }
 }
