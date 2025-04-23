@@ -51,8 +51,10 @@ export default async (request: Request, context: Context) => {
       });
     }
     // Convert the value to a JSON string');
+// Convert the response into an array of comment objects
+    const comments = Object.values(value).map(commentString => JSON.parse(commentString));
 
-    return new Response(JSON.stringify(value), {
+    return new Response(JSON.stringify(comments), {
       headers: {
         "content-type": "application/json",
         "Access-Control-Allow-Origin": "*",

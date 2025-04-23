@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { BloggerService } from '../../services/blogger.service';
 import {DatePipe} from "@angular/common";
+import {BloggerComment} from "../../models/comment";
 
 @Component({
   selector: 'app-comment-dialog',
@@ -43,11 +44,19 @@ export class CommentDialogComponent {
   async submitComment(event: Event) {
     event.preventDefault();
 
-    const comment = {
-      postId: this.postId,
-      author: this.newComment.author,
+    const comment:BloggerComment = {
+      author: {displayName: "", id: "", image: {url: ""}, url: ""},
+      blog: {id: ""},
+      id: "",
+      kind: "blogger#comment",
+      published: "",
+      selfLink: "",
+      status: "",
+      post: {
+        id: this.postId
+      },
       content: this.newComment.content,
-      timestamp: new Date()
+      updated: new Date().toDateString()
     };
 
     this.bloggerService.addComment(comment).subscribe({
