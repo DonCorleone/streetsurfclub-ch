@@ -9,19 +9,21 @@ import {ActivatedRoute} from '@angular/router';
 import {ContentService} from "../services/content.service";
 import {ParseHtmlPipe} from "../pipes/parse-html-pipe";
 import {CommentDialogComponent} from "../common/comment-dialog/comment-dialog.component";
+import {AncalFaqComponent} from "../ai-noise-cancelling-app-landing/ancal-faq/ancal-faq.component";
 
 @Component({
     selector: 'app-blog-details-page',
     templateUrl: './blog-details-page.component.html',
-    imports: [
-      NavbarComponent, 
-      FooterComponent, 
-      SafeHtmlPipe, 
-      ParseHtmlPipe, 
-      NgOptimizedImage, 
-      DatePipe,
-      CommentDialogComponent
-    ]
+  imports: [
+    NavbarComponent,
+    FooterComponent,
+    SafeHtmlPipe,
+    ParseHtmlPipe,
+    NgOptimizedImage,
+    DatePipe,
+    CommentDialogComponent,
+    AncalFaqComponent
+  ]
 })
 export class BlogDetailsPageComponent implements OnInit {
   private bloggerService = inject(BloggerService);
@@ -35,7 +37,6 @@ export class BlogDetailsPageComponent implements OnInit {
   amountReplies = '0';
   type: 'post' | 'page' | null = null;
   currentPostId: string = '';
-  isCommentsOpen = false;
 
   ngOnInit(): void {
     const typeParam = this.activatedRoute.snapshot.paramMap.get('type');
@@ -73,13 +74,5 @@ export class BlogDetailsPageComponent implements OnInit {
         })
       )
       .subscribe();
-  }
-
-  openComments() {
-    this.isCommentsOpen = true;
-  }
-
-  closeComments() {
-    this.isCommentsOpen = false;
   }
 }

@@ -1,46 +1,47 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, input, OnInit,} from '@angular/core';
 import {BloggerComment} from "../../models/comment";
 import {BloggerService} from "../../services/blogger.service";
+import {CommentDialogComponent} from "../../common/comment-dialog/comment-dialog.component";
 
 @Component({
   selector: 'app-ancal-faq',
   templateUrl: './ancal-faq.component.html',
   styleUrls: ['./ancal-faq.component.css'],
+  imports: [
+    CommentDialogComponent
+  ]
 })
 export class AncalFaqComponent implements OnInit {
 
+  currentPostId = input.required<string>();
+
   private bloggerService = inject(BloggerService);
 
-  // Accordion
-  contentHeight: number = 0;
-  openSectionIndex: number = 0; // Set to 0 to open the first section by default
   comments: BloggerComment[] = [];
+  openSections: boolean[] = []; // Array to track open state of each section
+  type = 'post';
+  isCommentsOpen = false;
 
   toggleSection(index: number): void {
-    if (this.openSectionIndex === index) {
-      this.openSectionIndex = -1;
-    } else {
-      this.openSectionIndex = index;
-      this.calculateContentHeight();
-    }
+    this.openSections[index] = !this.openSections[index]; // Toggle the state of the clicked section
   }
 
   isSectionOpen(index: number): boolean {
-    return this.openSectionIndex === index;
-  }
-
-  calculateContentHeight(): void {
-    const contentElement = document.querySelector('.accordion-content');
-    if (contentElement) {
-      this.contentHeight = contentElement.scrollHeight;
-    }
+    return this.openSections[index]; // Return the state of the section
   }
 
   ngOnInit(): void {
-
-    // inject the comments from the service
     this.bloggerService.getComments('940777483961202531').subscribe((comments: BloggerComment[]) => {
       this.comments = comments;
+      this.openSections = new Array(comments.length).fill(true); // Initialize all sections as closed
     });
+  }
+
+  openComments() {
+    this.isCommentsOpen = true;
+  }
+
+  closeComments() {
+    this.isCommentsOpen = false;
   }
 }
